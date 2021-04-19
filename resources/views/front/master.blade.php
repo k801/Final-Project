@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner Club</title>
+    <link href="{{asset('css/global.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('css/app.css')}}" rel="stylesheet"> --}}
+    {{-- <link href="{{asset('js/app.js')}}" rel="stylesheet"> --}}
+    {{-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> --}}
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('fonts/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/global.css')}}" rel="stylesheet">
+    <link href="{{asset('css/index.css')}}" rel="stylesheet">
+    <link href="{{asset('css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('css/ken-burns.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+@yield('style')
+@yield('title')
+	<link href="css/contact.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  </head>
+<body>
+    <section id="header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header page-scroll">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+                   <div class="navbar-brand navbar-brand-centered"><a href="index.php"><div class="ribbon  ">Dinner club</div></a></div>
+                </div>
+               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <div>
+                   <ul class="nav navbar-nav navbar">
+                       <li class="active"><a href="index.php">HOME</a></li>
+                       <li><a href="recipes.php">RECIPES</a></li>
+                       <li><a href="details.php">DETAILS</a></li>
+                       <li><a href="products-details.php"> order Recie </a></li>
+                       <li><a href="contact.php">CONTACT</a></li>
+                   </ul>
+               </div>
+               <!-- /.navbar-collapse -->
+           </div>
+           <!-- /.container-fluid -->
+       </nav>
+</section>
+
+@yield('content')
+
+<section id="footer">
+    <div class="container">
+     <div class="row">
+      <div class="footer_1 clearfix">
+       <div class="col-sm-2">
+        <div class="footer_2">
+         <h4>Home</h4>
+         <ul>
+              <li><a href="#">Our Range</a></li>
+              <li><a href="#">From our kitchen</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-sm-2">
+        <div class="footer_2">
+         <h4>Favourites</h4>
+         <ul>
+              <li><a href="#">Chicken Recipes</a></li>
+              <li><a href="#">Aloo Recipes</a></li>
+              <li><a href="#">MAGGI Noodle Recipes</a></li>
+              <li><a href="#">Paneer Recipes</a></li>
+              <li><a href="#">Small Meals Recipes</a></li>
+              <li><a href="#">Breakfast Recipes</a></li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-sm-2">
+        <div class="footer_2">
+         <h4>Recipes</h4>
+         <ul>
+              <li><a href="#">Palak Paneer Recipe</a></li>
+              <li><a href="#">Matar Paneer Recipe</a></li>
+              <li><a href="#">Chicken Biryani Recipe</a></li>
+              <li><a href="#">Chilli Chicken Recipe</a></li>
+              <li><a href="#">Aloo Matar Recipe</a></li>
+              <li><a href="#">Aloo Gobhi Recipe</a></li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-sm-3">
+        <div class="footer_2">
+         <h4>Talk To Us</h4>
+         <ul>
+              <li><a href="#">Copyright</a></li>
+              <li><a href="#">About Nestlé</a></li>
+              <li><a href="#">Creating Shared Value at Nestlé</a></li>
+              <li><a href="#">Nutrition, Health & Wellness at Nestlé</a></li>
+              <li><a href="#">Our Websites and Social Media</a></li>
+              <li><a href="#">Contact Us</a></li>
+         </ul>
+        </div>
+       </div>
+       <div class="col-sm-3">
+        <div class="footer_3">
+         <h4>Follow Us</h4>
+         <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="footer_main" class="clearfix">
+     <div class="footer_main_1">
+     </div>
+   </section>
+
+<script src="./js/jquery-2.1.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/custom.js"></script>
+@yield('scripts')
+</body>
+</html>

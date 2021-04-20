@@ -11,10 +11,12 @@ use App\Mail\ContactResponseMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Controllers\frontent\indexController;
-use App\Http\Controllers\RcpController;
-use App\Http\Controllers\Catcontroller;
 
+use App\Http\Controllers\frontent\indexController;
+use App\Http\Controllers\frontent\RcpController;
+use App\Http\Controllers\frontent\Catcontroller;
+use App\Http\Controllers\frontent\ContactController;
+use App\Http\Controllers\frontent\UsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,22 +43,12 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
 
-
-
-
-
     Route::resource('homePage',indexController::class);
     
-    Route::get('ind' ,function()
-    {
-        return view('front.index') ;
-    }) ;
-    
-    
-    Route::get('rc' ,function()
-    {
-        return view('front.recipes') ;
-    }) ;
+   
 
     Route::resource('rcps',RcpController::class);
     Route::resource('Cats', CatController::class);
+    Route::resource('sign', UsController::class);
+    Route::resource('contact',ContactController::class) ;
+    // ->Middleware("auth") 

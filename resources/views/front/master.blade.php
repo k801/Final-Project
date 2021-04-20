@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dinner Club Final</title>
+    <title> Final Version </title>
     <link href="{{asset('css/global.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('fonts/font-awesome.min.css')}}" rel="stylesheet">
@@ -35,11 +35,12 @@
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <div>
                    <ul class="nav navbar-nav navbar">
-                       <li class="active" ><a href="/ind">HOME</a></li>
+                       <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
                        <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
-                       <li><a href="details.php">DETAILS</a></li>
-                       <li><a href="products-details.php"> order Recie </a></li>
-                       <li><a href="contact.php">CONTACT</a></li>
+                       {{-- <li><a href="details.php">DETAILS</a></li> --}}
+                       {{-- <li><a href="products-details.php"> order Recie </a></li> --}}
+                       <li><a href="{{route('sign.create')}}">Signin</a></li>
+                       <li><a href="{{route('contact.create')}}">CONTACT</a></li>
                    </ul>
                </div>
                <!-- /.navbar-collapse -->

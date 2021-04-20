@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dinner Club</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/global.css" rel="stylesheet">
-	<link href="css/contact.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </head>
-<body>
-<?php
-// include('./incs/header.php')
-?>
-</section>
+@extends('front.master')
+@section('style')
+@endsection
+
+<link href="{{asset('css/contact.css')}}" rel="stylesheet">
+
+@section('content')
 <section id="contact_main">
  <div class="contact_inner clearfix">
   <div class="container">
@@ -34,11 +21,13 @@
  </div>
  </div>
 </section>
-<section id="contact_inner">
+{{-- <section id="contact_inner">
  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3635689.793072721!2d78.6421709625!3d27.141236999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1531201517392 " height="600" style="border:0; width:100%;" allowfullscreen=""></iframe>
-</section>
+</section> --}}
+
+
 <section id="contact">
- <div class="container">
+ <div class="container-fluid">
   <div class="row">
    <div class="col-sm-12">
 	 <div class="col-sm-8">
@@ -86,34 +75,6 @@
 	 </div>
 	 </form>
 
-
-
-
-	 <?php
-
-	// include "./incs/db.php";
-	if(isset($_POST["submit"]))
-	{
-
-		 //validation
-		 $name=$_POST["name"];
-		 $email=$_POST["email"];
-		 $message=$_POST["message"];
-
-
-		 $sql="insert into contact(name,email,message)
-		  values('$name','$email','$message')";
-
-		  $result=mysqli_query($conn,$sql);
-
-		  if($result)
-		  {
-			  echo "<div class='alert alert-success'>date Inserted success</div>";
-		  }
-
-	}
-
-  ?>
 	 <div class="col-sm-4">
 	  <div class="contact_8 clearfix">
 	   <div class="contact_7">
@@ -142,10 +103,5 @@
   </div>
  </div>
 </section>
-<?php
 
-require('./incs/')
-?>
-
-</body>
-</html>
+@endsection

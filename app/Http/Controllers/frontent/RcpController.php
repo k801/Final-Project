@@ -4,8 +4,8 @@ namespace App\Http\Controllers\frontent;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reciepe;
+use App\Models\Category ;
 use Illuminate\Http\Request;
-
 
 class RcpController extends Controller
 {
@@ -16,7 +16,10 @@ class RcpController extends Controller
      */
     public function index()
     {
-        //
+        $cat =Category::all() ;
+        $recps = reciepe::all();
+        // dump($recps) ;
+        return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 
     /**
@@ -46,9 +49,12 @@ class RcpController extends Controller
      * @param  \App\Models\Reciepe  $reciepe
      * @return \Illuminate\Http\Response
      */
-    public function show(Reciepe $reciepe)
+    public function show($id)
     {
-        //
+        $reciepe = new reciepe ;
+        $reciepe = $reciepe->findorfail($id);
+        // dump($reciepe) ;
+        return view("front.details", ["rc_data"=> $reciepe]);
     }
 
     /**
@@ -59,7 +65,7 @@ class RcpController extends Controller
      */
     public function edit(Reciepe $reciepe)
     {
-        //
+        
     }
 
     /**

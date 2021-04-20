@@ -3,17 +3,12 @@
 namespace App\Http\Controllers\frontent;
 
 use App\Http\Controllers\Controller;
-use App\Models\Reciepe;
+use App\Models\user;
 use Illuminate\Http\Request;
 
-
-class RcpController extends Controller
+class UsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         //
@@ -26,8 +21,8 @@ class RcpController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('front.signin') ;
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -37,16 +32,24 @@ class RcpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate 
+        ([
+            'name'=>'required|min:3|max:30' , 
+            'email'=>'required|email' ,
+            'password'=>'required|min:5' ,
+            'phone'=>'required|max:11|starts_with:012,011,010'  
+         ]) ;
+        user::create ($request->all()) ;
+        return redirect()->route('contact.create') ;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Reciepe $reciepe)
+    public function show(user $user)
     {
         //
     }
@@ -54,10 +57,10 @@ class RcpController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reciepe $reciepe)
+    public function edit(user $user)
     {
         //
     }
@@ -66,10 +69,10 @@ class RcpController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reciepe $reciepe)
+    public function update(Request $request, user $user)
     {
         //
     }
@@ -77,10 +80,10 @@ class RcpController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reciepe $reciepe)
+    public function destroy(user $user)
     {
         //
     }

@@ -49,7 +49,7 @@
 <div class="container-fluid">
 	<div class="row">
 		@foreach($rc_data as $item)
-		<div class="col-md-4 mr-2 mb-2 mt-2 p-2 card">
+		<div class="col-sm-4 mr-2 p-2 card">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				    class=" img-responsive rounded" width="98%" height="320px"></a>
 			<div class="card-body">
@@ -62,6 +62,8 @@
 </div>
 
 @endsection
+
+
 {{-- <script>
 	$(document).ready(function() {
 		$('select[name="section"]').on('change', function() {

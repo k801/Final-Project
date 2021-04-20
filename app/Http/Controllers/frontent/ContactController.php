@@ -1,24 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\frontent;
 
-use App\Models\Reciepe;
-use App\Models\Category ;
+use App\Http\Controllers\Controller;
+use App\Models\contact;
 use Illuminate\Http\Request;
 
-class RcpController extends Controller
+class ContactController extends Controller
+
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        $cat =Category::all() ;
-        $recps = reciepe::all();
-        // dump($recps) ;
-        return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
+        
     }
 
     /**
@@ -28,7 +22,7 @@ class RcpController extends Controller
      */
     public function create()
     {
-        //
+        return view('front.contact') ;
     }
 
     /**
@@ -45,36 +39,33 @@ class RcpController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(contact $contact)
     {
-        $reciepe = new reciepe ;
-        $reciepe = $reciepe->findorfail($id);
-        // dump($reciepe) ;
-        return view("front.details", ["rc_data"=> $reciepe]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reciepe $reciepe)
+    public function edit(contact $contact)
     {
-        
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reciepe $reciepe)
+    public function update(Request $request, contact $contact)
     {
         //
     }
@@ -82,10 +73,10 @@ class RcpController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reciepe $reciepe)
+    public function destroy(contact $contact)
     {
         //
     }

@@ -7,10 +7,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\backend\ReciepeController;
 use App\Http\Controllers\backend\ReservationsController;
-use App\Http\Controllers\frontent\indexController;
 use App\Mail\ContactResponseMail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\frontent\indexController;
+use App\Http\Controllers\RcpController;
+use App\Http\Controllers\Catcontroller;
 
 
 /*
@@ -24,11 +27,8 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::resource('homePage',indexController::class);
 
-
-
-Auth::routes();
+Auth::routes() ;
 Route::resource('categories',CategoryController::class);
 Route::resource('users',CategoryController::class);
 Route::resource('messages',MessageController::class);
@@ -41,3 +41,22 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
 
+
+
+
+
+    Route::resource('homePage',indexController::class);
+    
+    Route::get('ind' ,function()
+    {
+        return view('front.index') ;
+    }) ;
+    
+    
+    Route::get('rc' ,function()
+    {
+        return view('front.recipes') ;
+    }) ;
+
+    Route::resource('rcps',RcpController::class);
+    Route::resource('Cats', CatController::class);

@@ -13,12 +13,15 @@ class AddUserIdToContactsTable extends Migration
      */
     public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-
-
+        Schema::table('contacts', function (Blueprint $table) 
+        {
             $table->unsignedBigInteger('user_id');
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');        });
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');        
+        });
     }
 
     /**

@@ -8,7 +8,7 @@
 			<!-- Wrapper-for-Slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active"><!-- First-Slide -->
-                    <img src="{{asset('images/$item->image')}}" alt="" class="img-responsive">
+                    <img src="{{asset('images/bg45.jpg')}}" alt="" class="img-responsive">
                     <div class="carousel-caption kb_caption kb_caption_right">
                         <h1 data-animation="animated flipInX" class="">Dinner Club Restaurant</h1>
                         <p data-animation="animated flipInX" class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
@@ -48,11 +48,11 @@
   </section>
 <section>
   <div class="row">
-@foreach($reciepes as $reciepe)
+{{-- @foreach($reciepes as $reciepe)
 
     <div class="col-md-4">
         <div class="reciepe card">
-        <img class="card-img-top" src="{{$reciepe->image}}" alt="Card image cap">
+        <img class="card-img-top" src="{{asset('images')}}/{{$reciepe->image}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{$reciepe->name}}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -60,7 +60,7 @@
         </div>
     </div>
   </div>
-      @endforeach
+      @endforeach --}}
 </div>
     </section>
     @endsection

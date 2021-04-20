@@ -11,8 +11,8 @@ class indexController extends Controller
     
     function index() 
     {
-    $data['reciepes']=Reciepe::all();
-     return view('front.index')->with($data);   
+      $data['reciepes']=Reciepe::all();
+      return view('front.index')->with($data);   
     }
 
 

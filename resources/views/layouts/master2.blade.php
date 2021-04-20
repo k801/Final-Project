@@ -17,7 +17,6 @@
 			<img src="{{URL::asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
 		</div>
 		<!-- /Loader -->
-		@yield('content')
-		@include('layouts.footer-scripts')
+		@yield('content')		@include('layouts.footer-scripts')
 	</body>
 </html>

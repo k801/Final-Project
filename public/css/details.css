@@ -1,15 +1,5 @@
-/*
-Template Name:Private Chef
-File: Layout CSS
-Author: Templates On Web
-Author URI: http://templateonweb.com/
-Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
-*/
-
-
-/********************* details_main ****************/
 #details_main{ 
-    background-image: url(../img/bg50.jpg);
+    background-image: url(../images/bg50.jpg);
     background-repeat: no-repeat;
  background-size: cover;
 }

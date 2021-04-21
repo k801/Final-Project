@@ -26,20 +26,20 @@
                         @csrf
                         <div class="form-group ">
                             <label class="label"> <h5>  Name :  </h5></label>
-                            <input type="text" name="name" class="form-control" value="{{old('name')}}" />
+                            <input type="text" name="name" class="form-control" value="{{old('name')}}" autocomplete="no" />
                             <label class="text-danger">{{$errors->first('name')}}</label>
 
                         </div>
 
                         <div class="form-group ">
                             <label class="label"> <h5>  Email :  </h5></label>
-                            <input type="text" name="email" class="form-control" value="{{old('email')}}" />
+                            <input type="text" name="email" class="form-control" value="{{old('email')}}" autocomplete="no" />
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
         
                         <div class="form-group  mt-2">
                             <label class="label"> <h5> PassWord : </h5> </label>
-                            <input type="text" name="password" class="form-control" value="{{old('password')}}" />
+                            <input type="text" name="password" class="form-control" value="{{old('password')}}" autocomplete="no"/>
                             <label class="text-danger">{{$errors->first('password')}}</label>
                         </div>
 

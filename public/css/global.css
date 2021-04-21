@@ -6,7 +6,7 @@
 /* Track */
 ::-webkit-scrollbar-track 
 {
-  box-shadow: inset 0 0 5px rgb(61, 7, 161); 
+  box-shadow: inset 0 0 5px rgb(34, 6, 87); 
   border-radius: 8px;
 }
  
@@ -18,9 +18,17 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#7a3573 ,red); ; 
+  background: linear-gradient(#582353 ,red); ; 
 }
 
+
+img.logo
+{
+  padding: 5px 0px;
+  border-radius: 25%;
+  height: 50px;
+  width: 130px;
+}
 body{
 font-family: 'Josefin Sans', sans-serif;
   }
@@ -128,8 +136,9 @@ padding-right:30px;
 }
 #header .navbar-brand {
  padding: 0px;
- padding-left:120px;
+ padding-left:20px;
 }
+
 #header .navbar-default {
 border:none;
 background:rgb(92, 42, 42);

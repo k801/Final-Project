@@ -49,12 +49,12 @@
 	  <div class="col-sm-12 space_all">
 	   <div class="col-sm-6">
 	    <div class="contact_4">
-		 <input type="text" class="form-control" name="name" placeholder="Name">
+		 <input type="text" class="form-control" name="name" placeholder="Name" autocomplete="no">
 		</div>
 	   </div>
 	   <div class="col-sm-6">
 	    <div class="contact_4">
-		 <input type="text" class="form-control" name="email" placeholder="Email">
+		 <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="no">
 		</div>
 	   </div>
 	  </div>

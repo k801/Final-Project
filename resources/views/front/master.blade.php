@@ -34,8 +34,11 @@
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                    </button>
-                   <div class="navbar-brand navbar-brand-centered"><a href="{{route('homePage.index')}}">
-                        <div class="ribbon">Dinner club</div></a></div>
+                   <div class="navbar-brand navbar-brand-centered ">
+                       <a href="{{route('homePage.index')}}">
+                            <img src="{{asset('images/Logo3.jpg')}}" class="logo">
+                       </a>
+                   </div>
                 </div>
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <div>

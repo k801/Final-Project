@@ -12,7 +12,7 @@
           <div class="details_main_1">
                <h1>Recipes Details</h1>
                <ul>
-                    <li><a href="/home">Home</a></li>
+                    <li><a href="{{route('homePage.index')}}">Home</a></li>
                     <li><i class="fa fa-angle-double-right"></i></li>
                     <li>Details</li>
                </ul>
@@ -39,21 +39,24 @@
                          <ul>
                               <li> <img src="{{asset('images')}}/{{$rc_data->image}}"  
                                         width="100%" height="400px" > </li>
-                              {{-- <li class="well_1"><i class="fa fa-leaf">
-                                                  </i>MAGGI Masala-ae-Magic
-                              </li> --}}
+                              <li class="well_1"> <i class="fa fa-leaf"> </i> </li> 
                          
                               <li class="well_2 alert-info mt-3 p-4 rounded"><h5> {{$rc_data->description}} </h5></li>
                               <li class="well_2 alert-warning mt-3 p-4 rounded"><h5> ingrediants of This reciepe IS :{{$rc_data->ingrediens}} </h5></li>
                               <li class="well_2 alert-success mt-3 p-4 rounded"><h5> The Price after Discount Is: {{$rc_data->price}} &dollar; </h5></li>
                          </ul>
+
                          <div class="form-group mt-4">
-                              <label class="label"> <h5>  How Much Recipes You Need :  </h5></label>
-                              <input type="number" name="name" class="form-control" required/>
-                              <a class ="button" href="/ords"> <i class="fas fa-shopping-cart"></i> </a>
-                          </div>
+                              <form method="POST" action="" class="orderform">
+                                   <label class="label"> <h5>  How Much Recipes You Need :  </h5></label>
+                                   <input type="number" name="name" class="form-control" required/>
+                                   <input type="submit" value ="Enter" class="btn btn-danger"/> <i class="fas fa-car"></i>
+                              <form>
+                         </div>
+                    
                     </div>
                </div>
           </div>
+          
       </div>
 @endsection 

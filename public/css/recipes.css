@@ -122,3 +122,27 @@
    @media (min-width:1201px) and (max-width:1320px) {
    
    }
+
+   div.div_row
+{
+  margin-left: 10px;
+}
+.card
+{
+  margin: 10px 0px; 
+}
+h5.rec_name
+{
+  text-align: center;
+  font-size: 20px;
+}
+p.btn
+{
+  text-align:center;
+  margin:  2px 25% ;
+}
+
+.img-responsive
+{
+  border-radius: 4%;
+}

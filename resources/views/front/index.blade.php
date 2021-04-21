@@ -1,6 +1,9 @@
 @extends('front.master')
 @section('style')
 @endsection
+
+<link href="{{asset('css/index.css')}}" rel="stylesheet">
+
 @section('content')
   <section id="center" class="center_home h-50">
      <div class="banner">
@@ -16,7 +19,7 @@
                     </div>
                 </div>
                 <div class="item"> <!-- Second-Slide -->
-                    <img src="{{asset('images/bg45.jpg')}}" alt="" class="img-responsive">
+                    <img src="{{asset('images/8.jpg')}}" alt="" class="img-responsive">
                     <div class="carousel-caption kb_caption kb_caption_right">
                         <h1 data-animation="animated fadeInDown">We Provide Our best</h1>
                         <p data-animation="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -49,15 +52,15 @@
   
 
   <div class="container-fluid">
-	<div class="row">
+	<div class="row div_row">
 		@foreach($rc_data as $item)
         @if($item->id < 10)
-		<div class="col-sm-4 mr-2 p-2 card">
+		<div class="col-sm-4  offset-4 card">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				    class=" img-responsive rounded" width="98%" height="320px"></a>
 			<div class="card-body">
-				<h5 class=" mb-2 p-3"> This Is  Form Best Brands {{$item->name}}</h5> 
-				<p class="text-center mt-3"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+				<h5 class="rec_name"> This Is  Form Best Brands {{$item->name}}</h5> 
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
 			</div>
 		</div>
         @endif
@@ -65,5 +68,6 @@
 	</div>
 </div>
     </section>
+    
 @endsection
 

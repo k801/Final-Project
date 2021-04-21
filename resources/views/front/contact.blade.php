@@ -12,7 +12,7 @@
     <div class="contact_main_1">
      <h1>Contact</h1>
 	<ul>
-	     <li><a href="#">Home</a></li>
+	     <li><a href="{{route('homePage.index')}}">Home</a></li>
 		 <li><i class="fa fa-angle-double-right"></i></li>
 		 <li>Contact</li>
 	</ul>
@@ -44,10 +44,8 @@
 
 
 
-	  <form method="post" action="">
-
-
-
+	  <form method="post" action="{{route('contact.store')}}"> 
+		@csrf
 	  <div class="col-sm-12 space_all">
 	   <div class="col-sm-6">
 	    <div class="contact_4">

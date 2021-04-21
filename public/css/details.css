@@ -81,9 +81,18 @@
 .well_1{ 
  font-size:18px;
 }
-.well_2{ 
- padding-left:30px;
- padding-bottom: 10px;
+li.well_2
+{
+
+ margin: 10px 0px;
+ padding: 10px;
+ size: 80%;
+ background-color: #a3a4c7;
+}
+
+.well_2 h5
+{
+    font-size: 20px;
 }
 /********************* details_end ****************/
 
@@ -114,3 +123,23 @@
 @media (min-width:1201px) and (max-width:1320px) {
 
 }
+
+.form-group 
+{
+    width: 30%;
+}
+.orderform.label
+{
+    margin: 5px;
+}
+.label h5
+{
+    color: #000;
+    font-size: 25px;
+}
+
+.orderform input
+{
+    margin: 5px;
+}
+

@@ -33,7 +33,13 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate 
+        ([
+            'name'=>'required|min:3|max:30' , 
+            'email'=>'required|email'  
+         ]) ;
+        contact::create($request->all());
+        return redirect()->route('front.home') ;
     }
 
     /**

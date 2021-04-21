@@ -5,47 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Final Version </title>
+    
+    
+   
     <link href="{{asset('css/global.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('fonts/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/global.css')}}" rel="stylesheet">
-    <link href="{{asset('css/index.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/ken-burns.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-@yield('style')
-@yield('title')
-	<link href="css/contact.css" rel="stylesheet">
+
+	{{-- <link href="css/contact.css" rel="stylesheet"> --}}
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" 
+          rel="stylesheet">
+          @yield('style')
+          @yield('title')  
   </head>
-<body>
+
+  <body>
     <section id="header">
         <nav class="navbar navbar-default navbar-fixed-top bg-info">
-               <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header page-scroll">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                           data-target="#bs-example-navbar-collapse-1">
                        <span class="sr-only">Toggle navigation</span>
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                    </button>
-                   <div class="navbar-brand navbar-brand-centered"><a href="index.php"><div class="ribbon  ">Dinner club</div></a></div>
+                   <div class="navbar-brand navbar-brand-centered"><a href="{{route('homePage.index')}}">
+                        <div class="ribbon">Dinner club</div></a></div>
                 </div>
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <div>
                    <ul class="nav navbar-nav navbar">
                        <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
                        <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
-                       {{-- <li><a href="details.php">DETAILS</a></li> --}}
-                       {{-- <li><a href="products-details.php"> order Recie </a></li> --}}
                        <li><a href="{{route('sign.create')}}">Signin</a></li>
                        <li><a href="{{route('contact.create')}}">CONTACT</a></li>
                    </ul>
                </div>
-               <!-- /.navbar-collapse -->
+               
            </div>
-           <!-- /.container-fluid -->
        </nav>
 </section>
 
@@ -129,6 +131,7 @@
 <script src="./js/jquery-2.1.1.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/custom.js"></script>
+
 @yield('scripts')
 </body>
 </html>

@@ -9,3 +9,8 @@ body
 {
     background-color: rgb(245, 245, 245) ;
 }
+
+input.form-control
+{
+    width: 50%;
+}

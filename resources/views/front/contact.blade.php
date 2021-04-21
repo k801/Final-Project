@@ -21,9 +21,9 @@
  </div>
  </div>
 </section>
-{{-- <section id="contact_inner">
+<section id="contact_inner">
  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3635689.793072721!2d78.6421709625!3d27.141236999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1531201517392 " height="600" style="border:0; width:100%;" allowfullscreen=""></iframe>
-</section> --}}
+</section>
 
 
 <section id="contact">

@@ -5,7 +5,6 @@
 <link href="{{asset('css/signin.css')}}" rel="stylesheet">
 
 
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -23,41 +22,57 @@
                         </div>
                     @endif --}}
 
-                    <form method="POST"  class="form" action="{{route('sign.store')}}"> 
+                    <form method="POST"  class="form" action="{{route('sign.store')}}">
                         @csrf
+                        <div class="form-group mt-2">
+                            <label class="label" > <h5 style="display: none"> Phone Number : </h5> </label>
+                            <input type="hidden" />
+                        </div>
+                        <div class="form-group mt-2">
+                            <label class="label" > <h5 style="display: none"> Phone Number : </h5> </label>
+                            <input type="hidden" />
+                        </div>
+                        <div class="form-group mt-2">
+                            <label class="label" > <h5 style="display: none"> Phone Number : </h5> </label>
+                            <input type="hidden" />
+                        </div>
                         <div class="form-group ">
-                            <label class="label"> <h5>  Name :  </h5></label>
-                            <input type="text" name="name" class="form-control" value="{{old('name')}}" autocomplete="no" />
+                            <label class="label" for="name" > <h5 style="display: none">  Name :  </h5></label>
+                            <input type="text" name="name" style="height:40px" class="form-control" value="{{old('name')}}" placeholder="Enter Your Name"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('name')}}</label>
 
                         </div>
 
                         <div class="form-group ">
-                            <label class="label"> <h5>  Email :  </h5></label>
-                            <input type="text" name="email" class="form-control" value="{{old('email')}}" autocomplete="no" />
+                            <label class="label"> <h5  style="display: none">  Email :  </h5></label>
+                            <input type="text" name="email" style="height:40px" class="form-control" value="{{old('email')}}" placeholder="Enter Your Email"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
-        
+
                         <div class="form-group  mt-2">
-                            <label class="label"> <h5> PassWord : </h5> </label>
-                            <input type="text" name="password" class="form-control" value="{{old('password')}}" autocomplete="no"/>
+                            <label class="label" > <h5 style="display: none"> PassWord : </h5> </label>
+                            <input type="text" name="password" style="height:40px" class="form-control" value="{{old('password')}}"placeholder="Enter Your PassWord"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('password')}}</label>
                         </div>
 
-                        <div class="form-group">
-                            <label class="label"> <h5>  Address: </h5> </label>
-                            <textarea name="address" class="form-control"></textarea>
+                        <div class="form-group ">
+                            <label class="label" > <h5 style="display: none">  Address: </h5> </label>
+                            <textarea name="address" class="form-control" placeholder="Enter Your Address"style="width: 450px;"></textarea>
                         </div>
                         <div class="form-group mt-2">
-                            <label class="label"> <h5> Phone Numberr : </h5> </label>
-                            <input type="text" name="phone" class="form-control" value="{{old('phone')}}"/>
+                            <label class="label" > <h5 style="display: none"> Phone Number : </h5> </label>
+                            <input type="text" name="phone" class="form-control" value="{{old('phone')}}" placeholder="Enter Your Phone" style="width: 450px;"/>
                             <label class="text-danger">{{$errors->first('phone')}}</label>
                         </div>
+                        <div class="form-group mt-2">
+                            <label class="label" > <h5 style="display: none ; height:40px"> Phone Number : </h5> </label>
+                            <input type="hidden" />
 
+                        </div>
 
-                        <div class="form-group text-center mt-3">
-                            <input type="submit" class="btn btn-success"/>
-                            <a class="text-bold p-3" href="{{route('contact.create')}}">Alreay Register </a>
+                        <div class="form-group  mt-3" style="padding-left: 100px;">
+                            <input type="submit" class="btn text-warning btn-lg"/>
+                            <a class="btn  text-warning btn-lg" href="{{route('contact.create')}}"><button> Already Registered</button>  </a>
                         </div>
                     </form>
                 </div>
@@ -65,6 +80,6 @@
         </div>
     </div>
 </div>
-
 @endsection
+
 

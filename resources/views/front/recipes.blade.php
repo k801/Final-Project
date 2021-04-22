@@ -48,7 +48,7 @@
 <div class="container-fluid">
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-		<div class="col-sm-4  offset-4 card">
+		<div class="col-sm-4  ">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				    class=" img-responsive rounded" width="98%" height="320px"></a>
 			<div class="card-body">

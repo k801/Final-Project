@@ -22,41 +22,41 @@
                         </div>
                     @endif --}}
 
-                    <form method="POST"  class="form" action="{{route('sign.store')}}"> 
+                    <form method="POST"  class="form" action="{{route('sign.store')}}">
                         @csrf
-                        <div class="form-group ">
-                            <label class="label"> <h5>  Name :  </h5></label>
-                            <input type="text" name="name" class="form-control" value="{{old('name')}}" />
+
+                        <div class="form-group " style="padding-top: 45px">
+
+                            <input type="text" name="name" class="form-control" value="{{old('name')}}" placeholder="Enter Your Name"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('name')}}</label>
 
                         </div>
 
                         <div class="form-group ">
-                            <label class="label"> <h5>  Email :  </h5></label>
-                            <input type="text" name="email" class="form-control" value="{{old('email')}}" />
+
+                            <input type="text" name="email" class="form-control" value="{{old('email')}}" placeholder="Enter Your Email"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
-        
+
                         <div class="form-group  mt-2">
-                            <label class="label"> <h5> PassWord : </h5> </label>
-                            <input type="text" name="password" class="form-control" value="{{old('password')}}" />
+
+                            <input type="text" name="password" class="form-control" value="{{old('password')}}"placeholder="Enter Your PassWord"style="width: 450px;" />
                             <label class="text-danger">{{$errors->first('password')}}</label>
                         </div>
 
-                        <div class="form-group">
-                            <label class="label"> <h5>  Address: </h5> </label>
-                            <textarea name="address" class="form-control"></textarea>
+                        <div class="form-group ">
+
+                            <textarea name="address" class="form-control" placeholder="Enter Your Address"style="width: 450px;"></textarea>
                         </div>
                         <div class="form-group mt-2">
-                            <label class="label"> <h5> Phone Numberr : </h5> </label>
-                            <input type="text" name="phone" class="form-control" value="{{old('phone')}}"/>
+
+                            <input type="text" name="phone" class="form-control" value="{{old('phone')}}" placeholder="Enter Your Phone" style="width: 450px;"/>
                             <label class="text-danger">{{$errors->first('phone')}}</label>
                         </div>
 
-
-                        <div class="form-group text-center mt-3">
-                            <input type="submit" class="btn btn-success"/>
-                            <a class="text-bold p-3" href="{{route('contact.create')}}">Alreay Register </a>
+                        <div class="form-group  mt-3" style="padding-left: 100px;">
+                            <input type="submit" class="btn text-warning btn-lg"/>
+                            <a class="btn  text-warning btn-lg" href="{{route('contact.create')}}"><button> Already Registered</button></a>
                         </div>
                     </form>
                 </div>
@@ -65,4 +65,5 @@
     </div>
 </div>
 @endsection
+
 

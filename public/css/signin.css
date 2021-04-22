@@ -1,7 +1,7 @@
 body
 {
 
-    background-image: url(../images/bg50.jpg);
+    background-image: url(../images/indian-food-25189724.jpg);
     background-size:cover ;
 }
 
@@ -9,3 +9,7 @@ body
 {
     background-color: rgb(245, 245, 245) ;
 }
+.form-group{
+    padding-bottom: 15px;
+}
+

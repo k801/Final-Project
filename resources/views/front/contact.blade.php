@@ -21,9 +21,6 @@
  </div>
  </div>
 </section>
-{{-- <section id="contact_inner">
- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3635689.793072721!2d78.6421709625!3d27.141236999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1531201517392 " height="600" style="border:0; width:100%;" allowfullscreen=""></iframe>
-</section> --}}
 
 
 <section id="contact">
@@ -39,34 +36,26 @@
 	   </div>
 	   <p>Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh.</p></div>
 	  </div>
+<section id="f1">
 
-
-
-
-
-	  <form method="post" action="{{route('contact.store')}}"> 
+    <form method="post"  action="{{route('contact.store')}}">
 		@csrf
-	  <div class="col-sm-12 space_all">
-	   <div class="col-sm-6">
-	    <div class="contact_4">
-		 <input type="text" class="form-control" name="name" placeholder="Name">
-		</div>
-	   </div>
-	   <div class="col-sm-6">
-	    <div class="contact_4">
-		 <input type="text" class="form-control" name="email" placeholder="Email">
-		</div>
-	   </div>
-	  </div>
-	  <div class="col-sm-12">
-	   <div class="contact_5">
-	    <textarea placeholder="Message"  name="message"class="form-control"></textarea>
-	   </div>
-	  </div>
+
+        <div class="form-group  mt-2">
+            <input type="text" name="name" class="form-control" placeholder="Enter Your Name"style="width: 450px;" />
+        </div>
+
+        <div class="form-group mt-2">
+            <input type="text" name="email" class="form-control"  placeholder="Enter Your Email" style="width: 450px;"/>
+        </div>
+
+        <div class="form-group ">
+            <textarea name="message" class="form-control" placeholder="Enter Your Message"style="width: 450px;"></textarea>
+        </div>
 	  <div class="col-sm-12">
 	   <div class="contact_6">
 	       <ul>
-	            <li><button class="button hvr-shutter-out-horizontal"   name="submit"  type="submit" class="button">SEND</button></li>
+	            <li><button class="button hvr-shutter-out-horizontal "  id="b1" name="submit"  type="submit" class="button">SEND</button></li>
 	      </ul>
 	   </div>
 	  </div>
@@ -77,13 +66,24 @@
 	  <div class="contact_8 clearfix">
 	   <div class="contact_7">
 	   <h2>Connect Us</h2>
+
 	   <div class=" content-top2">
 	   <h4 class="text-center">O</h4>
 	   </div>
 	  </div>
-	  <div class="contact_2">
+	  <div class="contact_2 ">
 	   <h4>Address:</h4>
-	   <h5><i class="fa fa-home"></i><span class="media_1">123 Lorem ipsum dolor sit amet</span></h5>
+	   {{-- <h5><i class="fa fa-home"></i><span class="media_1">Visit Us IN</span></h5> --}}
+	   <section id="contact_inner">
+		{{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3635689.793072721!2d78.6421709625!3d27.141236999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1531201517392 " height="600" style="border:0; width:100%;" allowfullscreen=""></iframe> --}}
+		<iframe width="425" height="150" frameborder="0" scrolling="no" marginheight="0"
+		marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mumbai&amp;aq=&amp;sll=19.056545,72.853394&amp;sspn=0.010121,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;t=m&amp;z=10&amp;ll=19.075984,72.877656&amp;output=embed">
+	   </iframe>
+	   <br />
+	   <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Mumbai&amp;aq=&amp;sll=19.056545,72.853394&amp;sspn=0.010121,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;t=m&amp;z=10&amp;ll=19.075984,72.877656"
+		style="color: #0000FF; text-align: left">View Larger Map</a></small>
+
+	   </section>
 	  </div>
 	  <div class="contact_2">
 	   <h4>Phones:</h4>
@@ -93,13 +93,21 @@
 	  <div class="contact_2">
 	   <h4>E-mail:</h4>
 	   <h5><i class="fa fa-envelope"></i><a href="#"><span class="media_2">team@gmail.com</span></a></h5>
-	   <h5>Sed Dignissim Lacinia:<a href="#"><span class="media_3"> cairo</span></a></h5>
+	   {{-- <h5>Sed Dignissim Lacinia:<a href="#"><span class="media_3"> cairo</span></a></h5> --}}
 	  </div>
 	  </div>
 	 </div>
 	</div>
   </div>
  </div>
+
 </section>
 
 @endsection
+
+
+
+</section>
+
+
+

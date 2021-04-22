@@ -34,6 +34,7 @@
 	 <div class="col-sm-4">
 	 <div class="cooking_2">
 	    <select class="input-text" name="section">
+
 			@foreach($cat_data as $item)
 			<option value="{{$item->id}}"> {{$item->name}} </option>
 			@endforeach
@@ -50,9 +51,9 @@
 		@foreach($rc_data as $item)
 		<div class="col-sm-4  ">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive rounded" width="98%" height="320px"></a>
+				    class="img-responsive rounded" width="98%" height="200px"></a>
 			<div class="card-body">
-				<h5 class="rec_name"> This Is  Form Best Brands {{$item->name}}</h5> 
+				<h5 class="rec_name"> This Recipe Named  {{$item->name}}</h5> 
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
 			</div>
 		</div>

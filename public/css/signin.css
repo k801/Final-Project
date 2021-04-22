@@ -9,11 +9,7 @@ body
 {
     background-color: rgb(245, 245, 245) ;
 }
-<<<<<<< HEAD
-
-input.form-control
-{
-    width: 50%;
+.form-group{
+    padding-bottom: 15px;
 }
-=======
->>>>>>> 90f9f72676f86d14b417efe0f03588531fe21a68
+

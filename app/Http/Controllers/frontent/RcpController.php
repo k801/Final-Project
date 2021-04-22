@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Reciepe;
 use App\Models\Category ;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RcpController extends Controller
 {
@@ -20,6 +21,17 @@ class RcpController extends Controller
         $recps = reciepe::all();
         // dump($recps) ;
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
+    }
+
+   
+    public function showbycategory($id)
+    {
+        // $recipes=Reciepe::where('category_id','=',6);
+        // return json_encode($recipes);
+
+        $recipes=DB::table("receipes")->where("category_id",$id)->pluck("name","image");
+        return json_encode($recipes);
+        return view ('front.recipes') ;
     }
 
     /**

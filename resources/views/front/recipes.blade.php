@@ -1,10 +1,7 @@
 @extends('front.master')
-@section('style')
-
+@section('style')  @endsection
 
 <link href="{{asset('css/recipes.css')}}" rel="stylesheet">
-@endsection
-
 
 @section('content')
 
@@ -47,7 +44,7 @@
 
 
 <div class="container-fluid">
-	<div class="row div_row">
+	<div class="row">
 		@foreach($rc_data as $item)
 		<div class="col-sm-4  offset-4 card">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
@@ -61,6 +58,37 @@
 	</div>
 </div>
 
+
+<script>	
+
+	$(document).ready(function()
+	{
+			
+		$('select[name="section"]').on('change', function() 
+		{
+			var sectionId = $(this).val();
+			console.log(sectionId);
+			
+		 	if (sectionId) 
+			{
+		 		$.ajax
+				 ({
+		 			url: "{{ URL::to('section') }}/" + sectionId,
+		 			type: "GET",
+		 			dataType: "json",
+		 			success: function(showbycategory(sectionId))
+					 {
+
+					 } ,
+				});
+		 	} 
+			 else 
+			 {
+		 		console.log('AJAX load did not work');
+			 }
+		});
+	});
+	</script>
 @endsection
 
 

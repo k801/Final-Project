@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Reciepe;
 use Illuminate\Http\Request;
+use App\Models\Order;
 
-class ReciepeController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ReciepeController extends Controller
      */
     public function index()
     {
-        $data['receipes']=Reciepe::all();
-        return view('backend.receipes.index')->with($data);
+        $data['orders']=Order::all();
+        return view('backend.orders.index')->with($data);
     }
 
     /**
@@ -28,8 +27,8 @@ class ReciepeController extends Controller
     public function create()
     {
 
-        $data['categories']=Category::all();
-        return view('backend.receipes.create')->with($data);
+        $data['categories']=Order::all();
+        return view('backend.orders.create')->with($data);
     }
 
     /**
@@ -52,7 +51,7 @@ class ReciepeController extends Controller
 
         }
 
-        Reciepe::create([
+        Order::create([
 
             'name'=>$request->name,
             'ingrediens'=>$request->ingrediens,
@@ -64,7 +63,7 @@ class ReciepeController extends Controller
 
 
         session()->flash('success','Reciepe is inserted sucessfully');
-        return redirect()->route('receipes.index');
+        return redirect()->route('reciepes.index');
     }
 
     /**
@@ -73,11 +72,11 @@ class ReciepeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Reciepe $reciepe)
+    public function show(Order $order)
     {
 
-        $data['receipes']=$reciepe;
-        return view('backend.receipes.show')->with($data);
+        $data['order']=$order;
+        return view('backend.orders.show')->with($data);
 
 
     }
@@ -88,11 +87,11 @@ class ReciepeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reciepe $reciepe)
+    public function edit(Order $orders)
     {
-        $data['receipes']=$reciepe;
-        $data['categories']=Category::all();
-        return view('backend.receipes.edit')->with($data);
+        $data['order']=$orders;
+        $data['categories']=Order::all();
+        return view('backend.orders.edit')->with($data);
     }
 
     /**
@@ -102,7 +101,7 @@ class ReciepeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reciepe $reciepe)
+    public function update(Request $request, Order $reciepe)
     {
 
         $reciepe->update([
@@ -116,7 +115,7 @@ class ReciepeController extends Controller
             ]);
 
         session()->flash('success','Reciepe is inserted sucessfully');
-        return redirect()->route('receipes.index');    }
+        return redirect()->route('orders.index');    }
 
     /**
      * Remove the specified resource from storage.

@@ -8,7 +8,7 @@
 
 
 @section('title')
-عرض الصلاحيات - مورا سوفت للادارة القانونية
+Add permission
 @stop
 
 

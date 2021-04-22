@@ -21,8 +21,8 @@ Dinner Club
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">reciepes</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                reciepes List</span>
+            <h4 class="content-title mb-0 my-auto">orders</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                order detail </span>
         </div>
     </div>
 </div>
@@ -44,7 +44,6 @@ Dinner Club
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn" href="{{ route('reciepes.create') }}"> New</a>
                 </div>
             </div>
             <div class="card-body">
@@ -52,56 +51,63 @@ Dinner Club
                     <table class="table table-hover" id="example1" data-page-length='50' style=" text-align: center;">
                         <thead>
                             <tr>
-                                <th class="wd-10p border-bottom-0">#</th>
-                                <th class="wd-15p border-bottom-0"> name</th>
-                                <th class="wd-20p border-bottom-0"> description</th>
-                                {{-- <th class="wd-15p border-bottom-0"> ingrediens</th> --}}
-                                <th class="wd-15p border-bottom-0">image</th>
-                                {{-- <th class="wd-15p border-bottom-0">category </th> --}}
-                                <th class="wd-15p border-bottom-0"> Action</th>
+                                <th class="wd-10p border-bottom-0"> id</th>
+                                <th class="wd-10p border-bottom-0"> order id</th>
+                                <th class="wd-10p border-bottom-0"> meals_numbers</th>
+                                <th class="wd-10p border-bottom-0">status</th>
+                                <th class="wd-10p border-bottom-0"> total price</th>
+                                <th class="wd-15p border-bottom-0"> total price</th>
+                                <th class="wd-15p border-bottom-0">  user</th>
+                                {{-- <th class="wd-20p border-bottom-0"> count</th>
+                                <th class="wd-20p border-bottom-0"> Tatal</th> --}}
+
 
                             </tr>
                         </thead>
                         <tbody>
-                            <?php  $i=0 ?>
-                            @foreach ($reciepes as $reciepe)
+                            @foreach ($orderDetails as $orderDetail )
+
                                 <tr>
-                                    <td>{{ ++$i }}</td>
-                                    <td>{{ $reciepe->name }}</td>
-                                    <td>{{ $reciepe->description }}</td>
-                                    {{-- <td>{{ $reciepe->ingrediens}}</td> --}}
-                                    <td><img src="{{$reciepe->image}}"></td>
-                                    {{-- <td>{{ $reciepe->category->name }}</td> --}}
+                                    {{-- <td>{{ ++$i }}</td> --}}
+                                    <td>{{ $orderDetail->id }}</td>
+                                    <td>{{ $orderDetail->order_id }}</td>
+                                    <td>{{ $orderDetail->meals_numbers }}</td>
+                                    <td>{{ $orderDetail->status}}</td>
+                                      <td>{{ $orderDetail->total_price }}</td>
 
-                                    <td>
-                                        <form action="{{ route('receipes.edit', $reciepe->id) }}" class="d-inline" method="POST">
-                                       @csrf
-                                       @method("get")
-                                            <button class="btn btn-sm text-light btn-success"
-                                           ><i class="las la-pen"></i></button>
+                                    <td>{{ $orderDetail->order->order_time}}</td>
+                                    <td>{{ $orderDetail->order->user_id}}</td>
+                                    {{-- <td> --}}
+                                        {{-- @foreach ($orderDetail->roles as $role) {
+                                            echo $role->pivot->created_at;
+                                        } --}}
 
-                                        </form>
-                                        <form action="{{ route('receipes.destroy', $reciepe->id) }}" class="d-inline" method="POST">
-                                            @csrf
-                                            @method("delete")
-                                                 <button class="btn btn-sm text-light btn-danger"
-                                                ><i class="las la-trash"></i></button>
 
-                                             </form>
 
-                                             <form action="{{ route('receipes.show', $reciepe->id) }}" class="d-inline" method="POST">
-                                                @csrf
-                                                @method("get")
-                                                     <button class="btn btn-sm text-light btn-danger"
-                                                    > <i class="fas fa-eye"></i>
 
-                                                 </form>
+                                        {{-- {{ $orderDetail->receipes->name }} --}}
 
-                                        </td>
+                                    {{-- </td> --}}
+                                    {{-- <td>{{ $orderDetail->count }}</td>
+                                    <td>{{ $orderDetail->count*$orderDetail->price }}L.E</td> --}}
 
 
                                 </tr>
-                            @endforeach
+
+                                @endforeach
+<tr>
+    <td>Total price</td>
+
+    <td colspan="4"></td>
+
+    <td><span>563</span></td>
+</tr>
+<tr>
+
+<td>
+<a href="{{route('Print_order',$orderDetail->order_id)}}">print</a>
+</td>
+</tr>
                         </tbody>
                     </table>
                 </div>

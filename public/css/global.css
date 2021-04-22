@@ -72,7 +72,7 @@ section{
  }
 .button{ 
 font-size: 18px;
-border: 1px solid #0e0e0e;
+border: 1px solid #9b297e;
 padding: 13px 38px 13px 38px;
 border-radius: 10px;
 color: rgb(0 0 0);
@@ -186,7 +186,6 @@ padding: 15px 16px;
 }
 .footer_2 li a{ 
  line-height: 25px;
- color: #000;
  font-size: 18px;
 }
 .footer_2 li a:hover{ 
@@ -202,13 +201,13 @@ padding: 15px 16px;
  width: 46px;
  height: 47px;
  font-size: 20px;
- background-color: #000;
+ background-color:red;
  line-height: 46px;
  color: #261253;
 }
 .footer_3 li a i:hover{ 
  background-color:#e42929;
- color: #fff;
+ color: white;
 }
 /********************* footer_end ****************/
 /********************* footer_main ****************/

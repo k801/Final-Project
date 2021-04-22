@@ -70,7 +70,7 @@ Dinner Club
                                     <td>{{ $reciepe->description }}</td>
                                     <td>{{ $reciepe->ingrediens}}</td>
                                     <td><img src="{{$reciepe->image}}"></td>
-                                    <td>{{ $reciepe->category->name }}</td>
+                                    {{-- <td>{{ $reciepe->category->name }}</td> --}}
 
                                     <td>
                                         <form action="{{ route('categories.edit', $reciepe->id) }}" class="d-inline">

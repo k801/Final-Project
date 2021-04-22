@@ -35,7 +35,7 @@
 	 <div class="cooking_2">
 	    <select class="input-text" name="section">
 			@foreach($cat_data as $item)
-			<option value="Religion"> {{$item->name}} </option>
+			<option value="{{$item->id}}"> {{$item->name}} </option>
 			@endforeach
 		 </select>
 	  </div>
@@ -61,6 +61,34 @@
 </div>
 
 @endsection
+
+@section('scripts')
+
+<script>
+	$(document).ready(function() {
+		$('select[name="section"]').on('change', function() {
+			var sectionId = $(this).val();
+			// console.log(sectionId);
+			if (sectionId) {
+				$.ajax({
+					url: "{{ URL::to('section') }}/" + sectionId,
+					type: "GET",
+					dataType: "json",
+					success: function(data) {
+                        console.log('data');
+					
+					},
+				});
+			} else {
+				console.log('AJAX load did not work');
+			}
+		});
+	});
+</script>
+
+
+@endsection
+
 
 
 

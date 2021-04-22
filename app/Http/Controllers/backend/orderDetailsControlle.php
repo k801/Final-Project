@@ -1,15 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\frontent;
+namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Reciepe;
-use App\Models\Category ;
 use Illuminate\Http\Request;
+use App\Models\OrderRecipe;
+use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\about;
 use Illuminate\Support\Facades\DB;
-use SebastianBergmann\Environment\Console;
+use Illuminate\Support\Facades\Auth;
 
-class RcpController extends Controller
+class orderDetailsControlle extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +20,7 @@ class RcpController extends Controller
      */
     public function index()
     {
-        $cat =Category::all() ;
-        $recps = reciepe::all();
-        // dump($recps) ;
-        return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
+        //
     }
 
     /**
@@ -29,14 +28,9 @@ class RcpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getRecipes($id)
+    public function create()
     {
-        // $recipes=Reciepe::where('category_id','=',6);
-        // return json_encode($recipes);
-
-
-      $recipes=DB::table("receipes")->where("category_id",6)->pluck("name","description");
-        return json_encode($recipes);
+        //
     }
 
     /**
@@ -53,36 +47,47 @@ class RcpController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $reciepe = new reciepe ;
-        $reciepe = $reciepe->findorfail($id);
-        // dump($reciepe) ;
-        return view("front.details", ["rc_data"=> $reciepe]);
+        $data['orderDetails']=OrderDetail::where('order_id','=',$id)->distinct()->get();
+        // dd($data);
+        $data['sum']=DB::table("orders_receipes")->get()->sum("price");
+        return view('backend.ordersDetails.show')->with($data);
+
+    }
+
+    public function Print_order($id)
+    {
+        $data['orderDetails']=OrderRecipe::where('order_id','=',$id)->get();
+        $data['order']=Order::findOrFail($id);
+        $data['user']=Auth::user();
+        $data['about']=About::first();
+        // dd($data);
+        return view('backend.ordersDetails.print_reseet')->with($data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reciepe $reciepe)
+    public function edit($id)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reciepe $reciepe)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -90,10 +95,10 @@ class RcpController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reciepe  $reciepe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reciepe $reciepe)
+    public function destroy($id)
     {
         //
     }

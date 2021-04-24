@@ -55,10 +55,9 @@ Route::resource('homePage',indexController::class);
     Route::resource('Cats', CatController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
-<<<<<<< HEAD
+
     route::get('section/{id}',[RcpController::class , 'showbycategory']) ;
-    // ->Middleware("auth") =  
-=======
+    // ->Middleware("auth")  
+
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
-    // ->Middleware("auth") =
->>>>>>> ea340f5c2e856a82f9a74e7724c17b2f9c44392d
+    //  ->Middleware("auth") 

@@ -51,14 +51,20 @@
   </section>
   
 
-  <div class="container-fluid">
+  <div class="container first-section">
+    <div class="text-center header">
+		<h3> Quick & Easy Recipes </h3>
+        <h3> ـــــــــــ O ـــــــــــ </h3>
+	</div>
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-        @if($item->id < 10)
-		<div class="col-sm-4  offset-4 card">
-			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive rounded" width="98%" height="120px"></a>
-			<div class="card-body">
+        @if($item->id <4)
+		<div class="col-sm-4">
+			<div class="card">
+				<a> 
+					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
+				    class=" img-responsive rounded"  height="100px">
+				</a>
 				<h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> 
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
 			</div>
@@ -67,7 +73,55 @@
 		@endforeach
 	</div>
 </div>
-    </section>
+ 
+
+<div class="container-fluid second-section">
+    <div class="text-center header">
+		<h3> Quick &  Recipes </h3>
+        <h3> ـــــــــــ O ـــــــــــ </h3>
+	</div>
+	<div class="row div_row2">
+        @if($rc_data->id =5 )
+		<div class="col-sm-6">
+			<div class="card2">
+				<a> 
+					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
+				    class=" img-responsive rounded">
+				</a>
+			</div>
+		</div>
+        <div class="col-sm-6">
+			<div class="card3">
+				<h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> 
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+			</div>
+		</div>
+        @endif
+	</div>
+</div>
     
+
+<div class="container third-section">
+    <div class="text-center header">
+		<h3> All FavouriteRecipes </h3>
+        <h3> ـــــــــــ O ـــــــــــ </h3>
+	</div>
+	<div class="row div_row4">
+        @if($rc_data->id =5 )
+		<div class="col-sm-6">
+			<div class="card4"> 
+					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
+				    class=" img-responsive rounded">
+			</div>
+		</div>
+        <div class="col-sm-6">
+			<div class="card4"> 
+					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
+				    class=" img-responsive rounded">
+			</div>
+		</div>
+        @endif
+	</div>
+</div>
 @endsection
 

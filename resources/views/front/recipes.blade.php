@@ -33,7 +33,7 @@
 	    <select class="input-text" name="section">
 
 			@foreach($cat_data as $item)
-			<option value="Religion"> {{$item->name}} </option>
+			<option value="{{$item->id}}"> {{$item->name}} </option>
 			@endforeach
 		 </select>
 	  </div>
@@ -46,9 +46,10 @@
 <div class="container-fluid">
 	<div class="row">
 		@foreach($rc_data as $item)
+		
 		<div class="col-sm-4  offset-4 card">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class="img-responsive rounded" width="98%" height="200px"></a>
+				    class="img-responsive rounded-circle" width="98%" height="200px"></a>
 			<div class="card-body">
 				<h5 class="rec_name"> This Recipe Named  {{$item->name}}</h5> 
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
@@ -58,12 +59,11 @@
 	</div>
 </div>
 
-
+@section('scripts')
 <script>	
-
 	$(document).ready(function()
 	{
-			
+		
 		$('select[name="section"]').on('change', function() 
 		{
 			var sectionId = $(this).val();
@@ -76,9 +76,9 @@
 		 			url: "{{ URL::to('section') }}/" + sectionId,
 		 			type: "GET",
 		 			dataType: "json",
-		 			success: function(showbycategory(sectionId))
-					 {
-
+		 			success: function(data)
+					{
+						 console.log(data) ;
 					 } ,
 				});
 		 	} 
@@ -89,6 +89,7 @@
 		});
 	});
 	</script>
+	@endsection
 @endsection
 
 

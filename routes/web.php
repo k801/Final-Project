@@ -51,4 +51,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('Cats', CatController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
+    route::get('section/{id}',[RcpController::class , 'showbycategory']) ;
     // ->Middleware("auth") =  

@@ -31,7 +31,7 @@ class RcpController extends Controller
 
         $recipes=DB::table("receipes")->where("category_id",$id)->pluck("name","image");
         return json_encode($recipes);
-        return view ('front.recipes') ;
+        // return view ('front.recipes') ;
     }
 
     /**

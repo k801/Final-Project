@@ -16,7 +16,12 @@ class Reciepe extends Model
 function category()
 {
 
-    return $this->belongsTo(Category::class);
+    return $this->belongsToMany(Category::class);
+}
+
+function orders()
+{
+    return $this->belongsToMany(Order::class);
 }
 
 }

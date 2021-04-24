@@ -44,7 +44,7 @@ Dinner Club
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn" href="{{ route('reciepes.create') }}"> New</a>
+                        <a class="btn btn-primary btn" href="{{ route('orders.create') }}"> New</a>
                 </div>
             </div>
             <div class="card-body">
@@ -55,33 +55,31 @@ Dinner Club
                                 <th class="wd-10p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0"> name</th>
                                 <th class="wd-20p border-bottom-0"> description</th>
-                                {{-- <th class="wd-15p border-bottom-0"> ingrediens</th> --}}
+                                <th class="wd-15p border-bottom-0"> ingrediens</th>
                                 <th class="wd-15p border-bottom-0">image</th>
-                                {{-- <th class="wd-15p border-bottom-0">category </th> --}}
+                                <th class="wd-15p border-bottom-0">category </th>
                                 <th class="wd-15p border-bottom-0"> Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <?php  $i=0 ?>
-                            @foreach ($reciepes as $reciepe)
                                 <tr>
                                     <td>{{ ++$i }}</td>
-                                    <td>{{ $reciepe->name }}</td>
-                                    <td>{{ $reciepe->description }}</td>
-                                    {{-- <td>{{ $reciepe->ingrediens}}</td> --}}
-                                    <td><img src="{{$reciepe->image}}"></td>
-                                    {{-- <td>{{ $reciepe->category->name }}</td> --}}
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->description }}</td>
+                                    <td>{{ $order->ingrediens}}</td>
+                                    <td><img src="{{$order->image}}"></td>
 
                                     <td>
-                                        <form action="{{ route('receipes.edit', $reciepe->id) }}" class="d-inline" method="POST">
+                                        <form action="{{ route('orders.edit', $order->id) }}" class="d-inline">
                                        @csrf
                                        @method("get")
-                                            <button class="btn btn-sm text-light btn-success"
+                                            <button class="btn btn-sm text-light btn-info"
                                            ><i class="las la-pen"></i></button>
 
                                         </form>
-                                        <form action="{{ route('receipes.destroy', $reciepe->id) }}" class="d-inline" method="POST">
+                                        <form action="{{ route('orders.destroy', $order->id) }}" class="d-inline" method="POST">
                                             @csrf
                                             @method("delete")
                                                  <button class="btn btn-sm text-light btn-danger"
@@ -89,19 +87,12 @@ Dinner Club
 
                                              </form>
 
-                                             <form action="{{ route('receipes.show', $reciepe->id) }}" class="d-inline" method="POST">
-                                                @csrf
-                                                @method("get")
-                                                     <button class="btn btn-sm text-light btn-danger"
-                                                    > <i class="fas fa-eye"></i>
 
-                                                 </form>
 
                                         </td>
 
 
                                 </tr>
-                            @endforeach
                         </tbody>
                     </table>
                 </div>

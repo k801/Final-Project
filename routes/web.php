@@ -6,6 +6,8 @@ use App\Http\Controllers\backend\reciep;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\backend\ReciepeController;
+use App\Http\Controllers\backend\OrderController;
+use App\Http\Controllers\backend\orderDetailsControlle;
 use App\Http\Controllers\backend\ReservationsController;
 use App\Mail\ContactResponseMail;
 use Illuminate\Support\Facades\Auth;
@@ -30,26 +32,33 @@ use App\Http\Controllers\frontent\UsController;
 */
 
 
+
 Auth::routes() ;
 Route::resource('categories',CategoryController::class);
 Route::resource('users',CategoryController::class);
 Route::resource('messages',MessageController::class);
 Route::resource('reciepes',ReciepeController::class);
+Route::resource('orders',OrderController::class);
+
+Route::resource('ordersDetails',orderDetailsControlle::class);
+Route::get('Print_order/{id}',[orderDetailsControlle::class,'Print_order'])->name('Print_order');
+
 Route::resource('reservations',ReservationsController::class);
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles','App\Http\Controllers\RoleController');
-    Route::resource('users','App\Http\Controllers\UserController');
+Route::resource('roles','App\Http\Controllers\RoleController');
+Route::resource('users','App\Http\Controllers\UserController');
     });
-
-    Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
-
-    Route::resource('homePage',indexController::class);
-    
-   
-
+Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
+Route::resource('/',indexController::class);
+Route::resource('homePage',indexController::class);
     Route::resource('rcps',RcpController::class);
     Route::resource('Cats', CatController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
+<<<<<<< HEAD
     route::get('section/{id}',[RcpController::class , 'showbycategory']) ;
     // ->Middleware("auth") =  
+=======
+    Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
+    // ->Middleware("auth") =
+>>>>>>> ea340f5c2e856a82f9a74e7724c17b2f9c44392d

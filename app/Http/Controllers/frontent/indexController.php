@@ -22,5 +22,6 @@ class indexController extends Controller
         return view("front.index" ,["rc_data"=>$recps]) ;
     }
     
+   
 
 }

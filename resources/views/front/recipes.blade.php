@@ -46,8 +46,12 @@
 <div class="container-fluid">
 	<div class="row">
 		@foreach($rc_data as $item)
+<<<<<<< HEAD
 		
 		<div class="col-sm-4  offset-4 card">
+=======
+		<div class="col-sm-4  ">
+>>>>>>> ea340f5c2e856a82f9a74e7724c17b2f9c44392d
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				    class="img-responsive rounded-circle" width="98%" height="200px"></a>
 			<div class="card-body">
@@ -91,6 +95,34 @@
 	</script>
 	@endsection
 @endsection
+
+@section('scripts')
+
+<script>
+	$(document).ready(function() {
+		$('select[name="section"]').on('change', function() {
+			var sectionId = $(this).val();
+			// console.log(sectionId);
+			if (sectionId) {
+				$.ajax({
+					url: "{{ URL::to('section') }}/" + sectionId,
+					type: "GET",
+					dataType: "json",
+					success: function(data) {
+                        console.log('data');
+					
+					},
+				});
+			} else {
+				console.log('AJAX load did not work');
+			}
+		});
+	});
+</script>
+
+
+@endsection
+
 
 
 

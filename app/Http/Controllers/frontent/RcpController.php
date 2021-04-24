@@ -7,6 +7,10 @@ use App\Models\Reciepe;
 use App\Models\Category ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
+=======
+use SebastianBergmann\Environment\Console;
+>>>>>>> ea340f5c2e856a82f9a74e7724c17b2f9c44392d
 
 class RcpController extends Controller
 {
@@ -39,9 +43,14 @@ class RcpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getRecipes($id)
     {
-        //
+        // $recipes=Reciepe::where('category_id','=',6);
+        // return json_encode($recipes);
+
+
+      $recipes=DB::table("receipes")->where("category_id",6)->pluck("name","description");
+        return json_encode($recipes);
     }
 
     /**
@@ -77,7 +86,7 @@ class RcpController extends Controller
      */
     public function edit(Reciepe $reciepe)
     {
-        
+
     }
 
     /**

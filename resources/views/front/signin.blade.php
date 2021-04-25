@@ -52,13 +52,13 @@
                         </div>
                         <div class="form-group  ">
                             <textarea name="address" class="form-control" 
-                            placeholder="Enter Your Address"style="width: 450px;"></textarea>
+                            placeholder="Enter Your Address" rows="4"></textarea>
                         </div>
 
 
                         <div class="form-group">
                             <input type="submit" class="btn" value="Sign in">
-                            <a class="btn" href="{{route('contact.create')}}"><button> Already Registered</button></a>
+                            <a class="btn" href="{{route('contact.create')}}"> Already Registered </a> 
                         </div>
                     </form>
                 </div>

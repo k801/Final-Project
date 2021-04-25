@@ -1,6 +1,8 @@
 .serve-form
 {
-    /* background-image: url(../images/portfolio-1.jpg); */
+    background-image: url(../images/bg51.jpg);
+    background-repeat: no-repeat;
+     background-size: cover;
 }
 
 
@@ -11,7 +13,7 @@ div.forms
 
 .form-group
 {
-    width: 90%;
+    width: 50%;
     padding-bottom: 15px;
 }
 
@@ -36,8 +38,14 @@ div.forms
     margin: -2px 45%;
     padding: 10px 20px ;
     color: rgb(235, 228, 228);
-    background-color: rgb(24, 99, 70); ;
+    background-color: rgb(24, 99, 70); 
+    
 }
 
+a.btn
+{
+    color: rgb(235, 228, 228);
+    background-color: rgb(24, 99, 70);
+} 
 
 

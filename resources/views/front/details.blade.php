@@ -43,14 +43,25 @@
       </div>
  </div>
       
+ <div class="container details2-section">
+      <div class="row">
+           <div class="col-sm-6">
+              <h5 class="alert alert-danger"> price Of This Recipe is : {{$rc_data->description}} &dollar; <h5>
+           </div>
 
-          <div class="container form">
+         <div class="col-sm-6">
+          <div class="form">
                <form method="POST" action="" class="orderform">
                     <label class="label"> <h5 class="lable-text">  How Many Recipes You Need ? </h5></label>
                     <input type="number" name="name" class="form-control" required/>
                     <input type="submit" value ="Enter" class="btn btn-danger"/> 
                <form>
           </div>
+           </div>
+      </div>
+ </div>
+
+          
      
           
           

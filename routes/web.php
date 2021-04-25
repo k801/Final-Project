@@ -18,6 +18,7 @@ use App\Http\Controllers\frontent\indexController;
 use App\Http\Controllers\frontent\RcpController;
 use App\Http\Controllers\frontent\Catcontroller;
 use App\Http\Controllers\frontent\ContactController;
+use App\Http\Controllers\frontent\ReservController;
 use App\Http\Controllers\frontent\UsController;
 
 /*
@@ -61,3 +62,6 @@ Route::resource('homePage',indexController::class);
 
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
     //  ->Middleware("auth") 
+
+    Route::resource('reservation', ReservController::class);
+

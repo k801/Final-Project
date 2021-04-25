@@ -51,6 +51,7 @@
                        <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
                        <li><a href="{{route('sign.create')}}">Signin</a></li>
                        <li><a href="{{route('contact.create')}}">CONTACT</a></li>
+                       <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
                    </ul>
                </div>
                

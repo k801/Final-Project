@@ -175,3 +175,7 @@ input.btn
     text-align: center;
 }
 
+h5.alert
+{
+    margin: 3px 2px;
+}

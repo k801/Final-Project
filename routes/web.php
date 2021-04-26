@@ -50,7 +50,7 @@ Route::resource('roles','App\Http\Controllers\RoleController');
 Route::resource('users','App\Http\Controllers\UserController');
     });
 Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
-Route::resource('/',indexController::class);
+
 Route::resource('homePage',indexController::class);
     Route::resource('rcps',RcpController::class);
     Route::resource('Cats', CatController::class);

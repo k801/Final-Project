@@ -84,20 +84,24 @@
 	</div>
 
 	<div class="row div_row2">
-        @if($item->id = 10)
-			<div class="col-sm-6">
+       
+		
+		@foreach($rc_data2 as $value)
+			 <div class="col-sm-6">
 				<div class="card2">
-						<img src="{{asset('images/15.jpg')}}" alt="Card image">
+						<img src="{{asset('images')}}/{{$value->image}}" alt="Card image">
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="card3">
-					<h2 class="rec_name">{{$item->name}}</h2> 
-					<p class="rec_desc">{{$item->description}}</p> 
-					<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+					<h2 class="rec_name">{{$value->name}}</h2> 
+					<p class="rec_desc">{{$value->description}}</p> 
+					<p class="text-center btn"><a href="{{route ('rcps.show',$value)}}"class="button">View More</a></p>
 				</div>
 			</div>
-		@endif 
+		@endforeach
+			
+		
 	</div>
 </div>
 </section>
@@ -106,33 +110,20 @@
 <section class="third-section">
 	<div class="container">
 		<div class="row text-center header">
-			<h3> All Favourite Recipes </h3>
+			<h3> The cheapest Recipes </h3>
 			<h3> ـــــــــــ O ـــــــــــ </h3>
 		</div>
 
 		<div class="row div_row4">
+			@foreach($rc_data3 as $item )
 				<div class="col-sm-6">
 					<div class="card4"> 
-							<img src="{{asset('images/nb.jpg')}}" alt="Card image">
+						<img src="{{asset('images')}}/{{$item->image}}" alt="Card image">
 					</div>
+				
 				</div>
-				<div class="col-sm-6">
-					<div class="card4"> 
-							<img src="{{asset('images/10.jpg')}}" alt="Card image">
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card4"> 
-							<img src="{{asset('images/2.jpg')}}" alt="Card image">
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card4"> 
-							<img src="{{asset('images/18.jpg')}}" alt="Card image">
-					</div>
-				</div>
+			@endforeach
 		</div>
-	</div>
 </section>
 
 @endsection

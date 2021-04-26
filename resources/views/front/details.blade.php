@@ -41,7 +41,7 @@
                </div>
 
                <div class="div_price">
-                    <h4>  Price is :  <span class="pp">{{$rc_data->price}} &dollar </span>  </h4>
+                    <h4>  Price is :  <span class="pp">{{$rc_data->price}} &dollar; </span>  </h4>
                </div>
            </div>
          <div class="col-sm-6">

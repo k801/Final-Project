@@ -291,6 +291,8 @@ padding: 15px 16px;
 #header .navbar {
  margin-bottom: 0px;
 }
+
+
 #footer {
  text-align: center;
 }
@@ -368,6 +370,20 @@ padding: 15px 16px;
 }
 }
 
+
+
 @media (min-width:1201px) and (max-width:1320px) {
 
+}
+
+.footer_main_1
+{
+  text-align: center;
+}
+.footer_main_1 p
+{
+  color:rgb(194, 20, 20);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 27px;
+  font-weight: bold ;
 }

@@ -22,6 +22,8 @@ class RcpController extends Controller
         $cat =Category::all() ;
         $recps = reciepe::all();
         // dump($recps) ;
+        // $recps = Reciepe::orderBy('name', 'asc')->get() ;
+
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 

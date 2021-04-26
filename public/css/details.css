@@ -139,22 +139,56 @@ div h3
     color: rgb(230, 70, 70);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
- div.div_descrip 
+
+
+
+ .div_descrip 
  {
-     background-color:rgba(245, 236, 236, 0.801);
-     padding: 5px;
-     margin-right: 10px;
-     height: 400px;
+    background-color:rgba(177, 153, 153, 0.801);
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 25%;
  }
 
- div.div_img, div.div_descrip 
+ .div_ingreds
+ {
+     background-color:rgba(245, 236, 236, 0.801);
+     padding: 10px;
+     margin-right: 10px;
+     margin-top: 20px;
+     height: 30%;
+ }
+
+ .div_price
+ {
+    background-color:rgba(138, 37, 37, 0.801);
+    padding: 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 17%;
+ }
+
+ .div_price h5
+ {
+     padding-top: 4px;
+     color: yellow;
+ }
+
+ .div_price span.pp
+ {
+     color: yellow;
+ }
+ div.row
  {
     margin-top: 20px;
  }
+
+
 div.div_img img
 {
     width:90% ;
-    height: 400px ;
+    height: 500px ;
 }
 
 
@@ -175,7 +209,3 @@ input.btn
     text-align: center;
 }
 
-h5.alert
-{
-    margin: 3px 2px;
-}

@@ -629,7 +629,7 @@
 }
 
 
-div.first-section
+.first-section
 {
   margin-top: 40px;
   /* border-bottom: #e22709 1px solid; */
@@ -643,7 +643,7 @@ div.first-section
 }
 div.card
 {
-  border: #e22709 2px solid;
+  border: #1b1d70 2px solid;
   margin:1% ;
   padding: 10px;
   
@@ -669,46 +669,69 @@ p.btn
   padding-bottom: 10px;
 }
 
-div.second-section
+.second-section
 {
   margin-top: 40px;
 }
 
-.second-sectiondiv.header
+.second-section
 {
-  margin-top: 40px;
+  border-top: rgb(44, 37, 150) 2px solid;
+  margin: 40px 0px;
+  padding: 10px 0px;
 }
 div.div_row2
 {
-  border: thistle 2px solid;
-  margin: 50px;
+  border: rgb(234, 240, 148) 2px solid;
+  margin: 20px 0px;
 }
 
 div.card2 img
 {
   height: 300px;
-  border-radius: 0%;
+  width: 100%;
 }
 div.card3
 {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: 0px;
 }
 
-
-div.third-section
+.div.card3 h2 ,.div.card3 h5,.div.card3 p
 {
-  background-color: rgb(253, 249, 253);
-  margin: 5px 0px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
+.rec_name
+{
+  margin-bottom: 10px;
+}
+
+.third-section
+{
+  background-color: rgb(211, 211, 199) ;
+  margin: 5px;
+}
+.third-section div.header
+{
+  margin: 10px 0px;
+}
+
+div.col-sm-6
+{
+  margin-bottom: 4px ;
+  padding-bottom: 3px;
+}
 div.card4 
 {
-  border: wheat 5px solid;
-
+  border: wheat 7px solid;
 }
+
 div.card4 img
 {
   height: 300px;
   border-radius: 0%;
+  width: 100%;
+
 }

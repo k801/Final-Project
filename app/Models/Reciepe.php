@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reciepe extends Model
 {
-    protected $table="receipes";
+    protected $table="reciepes";
     use HasFactory;
-
-
     protected $fillable=['name','ingrediens','description','image','category_id'];
+
+
+public function ordby()
+{
+    return $this->hasOne(Reciepe::class)->orderBy('price');
+}
 
 function category()
 {

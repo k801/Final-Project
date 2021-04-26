@@ -26,12 +26,23 @@
            <h3> The Recipe Story  </h3>
           <h3> ـــــــــــ O ـــــــــــ </h3>
       </div>
+      
       <div class="row">
            <div class="col-sm-6">
-               <h3> The Ingredient List  </h3>
+               <h3 class="text-center"> All Details </h3>
                 <div class="div_descrip">
-                     <p> {{$rc_data->ingrediens}} </p>
-                </div>
+                    <h2 class="text-center"> About Recipe : </h2>
+                    <p> {{$rc_data->description}} </p>
+               </div>
+               
+               <div class="div_ingreds">
+                    <h2 class="text-center"> The Ingredient List : </h2>
+                    <p> {{$rc_data->ingrediens}} </p>
+               </div>
+
+               <div class="div_price">
+                    <h4>  Price is :  <span class="pp">{{$rc_data->price}} &dollar </span>  </h4>
+               </div>
            </div>
          <div class="col-sm-6">
                <h3>  The Easy Steps </h3>
@@ -45,9 +56,7 @@
       
  <div class="container details2-section">
       <div class="row">
-           <div class="col-sm-6">
-              <h5 class="alert alert-danger"> price Of This Recipe is : {{$rc_data->description}} &dollar; <h5>
-           </div>
+           
 
          <div class="col-sm-6">
           <div class="form">

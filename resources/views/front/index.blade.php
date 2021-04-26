@@ -50,15 +50,15 @@
 	</div>
   </section>
   
-
-  <div class="container first-section">
+<section class="first-section">
+  <div class="container">
     <div class="text-center header">
-		<h3> Quick & Easy Recipes </h3>
+		<h3>  The Top Three Meals </h3>
         <h3> ـــــــــــ O ـــــــــــ </h3>
 	</div>
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-        @if($item->id <4)
+        {{-- @if($item->id <4) --}}
 		<div class="col-sm-4">
 			<div class="card">
 				<a> 
@@ -69,59 +69,71 @@
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
 			</div>
 		</div>
-        @endif
+        {{-- @endif --}}
 		@endforeach
 	</div>
 </div>
+</section>
  
 
-<div class="container-fluid second-section">
-    <div class="text-center header">
-		<h3> Quick &  Recipes </h3>
+<section class="second-section">
+<div class="container">
+    <div class=" row text-center header">
+		<h3> The Fastest Meal  </h3>
         <h3> ـــــــــــ O ـــــــــــ </h3>
 	</div>
+
 	<div class="row div_row2">
-        @if($rc_data->id =5 )
-		<div class="col-sm-6">
-			<div class="card2">
-				<a> 
-					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive rounded">
-				</a>
+        @if($item->id = 10)
+			<div class="col-sm-6">
+				<div class="card2">
+						<img src="{{asset('images/15.jpg')}}" alt="Card image">
+				</div>
 			</div>
-		</div>
-        <div class="col-sm-6">
-			<div class="card3">
-				<h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> 
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+			<div class="col-sm-6">
+				<div class="card3">
+					<h2 class="rec_name">{{$item->name}}</h2> 
+					<p class="rec_desc">{{$item->description}}</p> 
+					<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+				</div>
 			</div>
-		</div>
-        @endif
+		@endif 
 	</div>
 </div>
+</section>
     
 
-<div class="container third-section">
-    <div class="text-center header">
-		<h3> All FavouriteRecipes </h3>
-        <h3> ـــــــــــ O ـــــــــــ </h3>
-	</div>
-	<div class="row div_row4">
-        @if($rc_data->id =5 )
-		<div class="col-sm-6">
-			<div class="card4"> 
-					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive rounded">
-			</div>
+<section class="third-section">
+	<div class="container">
+		<div class="row text-center header">
+			<h3> All Favourite Recipes </h3>
+			<h3> ـــــــــــ O ـــــــــــ </h3>
 		</div>
-        <div class="col-sm-6">
-			<div class="card4"> 
-					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive rounded">
-			</div>
+
+		<div class="row div_row4">
+				<div class="col-sm-6">
+					<div class="card4"> 
+							<img src="{{asset('images/nb.jpg')}}" alt="Card image">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card4"> 
+							<img src="{{asset('images/10.jpg')}}" alt="Card image">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card4"> 
+							<img src="{{asset('images/2.jpg')}}" alt="Card image">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card4"> 
+							<img src="{{asset('images/18.jpg')}}" alt="Card image">
+					</div>
+				</div>
 		</div>
-        @endif
 	</div>
-</div>
+</section>
+
 @endsection
 

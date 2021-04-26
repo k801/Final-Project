@@ -130,11 +130,23 @@ div.details-section
     background-color: white;
 }
 
+
 div.details-section div.header
 {
     margin: 20px 0px;
 }
-div h3
+
+ div.row
+ {
+    margin-top: 20px;
+ }
+ 
+ .div_img , div.alldetails
+ {
+    height: 100% ;
+ }
+
+ div h3
 {
     color: rgb(230, 70, 70);
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -148,7 +160,7 @@ div h3
     padding: 10px;
     margin-right: 10px;
     margin-top: 5px;
-    height: 25%;
+    height: 32%;
  }
 
  .div_ingreds
@@ -157,7 +169,7 @@ div h3
      padding: 10px;
      margin-right: 10px;
      margin-top: 20px;
-     height: 30%;
+     height: 40%;
  }
 
  .div_price
@@ -166,7 +178,7 @@ div h3
     padding: 20px;
     margin-right: 10px;
     margin-top: 20px;
-    height: 17%;
+    height: 20%;
  }
 
  .div_price h5
@@ -179,16 +191,13 @@ div h3
  {
      color: yellow;
  }
- div.row
- {
-    margin-top: 20px;
- }
 
 
 div.div_img img
 {
+    margin-top: 8%;
     width:90% ;
-    height: 500px ;
+    height: 100% ;
 }
 
 

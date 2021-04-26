@@ -21,7 +21,9 @@ class UsController extends Controller
      */
     public function create()
     {
+        
         return view('front.signin') ;
+        
     } 
 
     /**

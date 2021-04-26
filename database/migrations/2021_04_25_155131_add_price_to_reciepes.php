@@ -15,7 +15,7 @@ class AddPriceToReciepes extends Migration
     {
         Schema::table('reciepes', function (Blueprint $table) 
         {
-            $table->unsignedDouble('price'); 
+            // $table->unsignedDouble('price'); 
         });
     }
 

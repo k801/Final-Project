@@ -1,6 +1,5 @@
 @extends('front.master')
-@section('style')
-@endsection
+@section('style') @endsection
 
 <link href="{{asset('css/index.css')}}" rel="stylesheet">
 
@@ -86,17 +85,17 @@
 	<div class="row div_row2">
        
 		
-		@foreach($rc_data2 as $value)
+		@foreach($rc_data2 as $item2)
 			 <div class="col-sm-6">
 				<div class="card2">
-						<img src="{{asset('images')}}/{{$value->image}}" alt="Card image">
+						<img src="{{asset('images')}}/{{$item2->image}}" alt="Card image">
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="card3">
-					<h2 class="rec_name">{{$value->name}}</h2> 
-					<p class="rec_desc">{{$value->description}}</p> 
-					<p class="text-center btn"><a href="{{route ('rcps.show',$value)}}"class="button">View More</a></p>
+					<h2 class="rec_name">{{$item2->name}}</h2> 
+					<p class="rec_desc">{{$item2->description}}</p> 
+					<p class="text-center btn"><a href="{{route ('rcps.show',$item2)}}"class="button">View More</a></p>
 				</div>
 			</div>
 		@endforeach
@@ -115,10 +114,11 @@
 		</div>
 
 		<div class="row div_row4">
-			@foreach($rc_data3 as $item )
+			@foreach($rc_data3 as $item3 )
 				<div class="col-sm-6">
 					<div class="card4"> 
-						<img src="{{asset('images')}}/{{$item->image}}" alt="Card image">
+						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
+						<p class="text-center btn button"><a href="{{route ('rcps.show',$item3)}}">View More</a></p>
 					</div>
 				
 				</div>

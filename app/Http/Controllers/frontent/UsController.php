@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\frontent;
 
 use App\Http\Controllers\Controller;
-use App\Models\user;
+use App\Models\User ;
 use Illuminate\Http\Request;
 
 class UsController extends Controller

@@ -9,7 +9,7 @@
 <section id="details_main">
     <div class="details_inner clearfix container">
       <div class="row">
-          <div class="details_main_1">
+          <div class="details_main_1 col-sm-12 col-md-6">
                <h1>Recipes Details</h1>
                <ul>
                     <li><a href="{{route('homePage.index')}}">Home</a></li>
@@ -29,25 +29,30 @@
           </div>
           
           <div class="row">
-               <div class="col-sm-6">
+               <div class="col-sm-12 col-md-6">
                     <div class="alldetails">
                          <h3 class="text-center"> All Details </h3>
+
+                         <div class="div_name">
+                              <h4 class=""><ins> Recipe Name </ins></h4>
+                              <p> {{$rc_data->name}} </p>
+                         </div>
                          <div class="div_descrip">
-                              <h2 class="text-center"> About Recipe : </h2>
+                              <h4 class=""><ins> About Recipe </ins></h4>
                               <p> {{$rc_data->description}} </p>
                          </div>
                          
                          <div class="div_ingreds">
-                              <h2 class="text-center"> The Ingredient List : </h2>
+                              <h4 class=""><ins> Ingredients List </ins></h4>
                               <p> {{$rc_data->ingrediens}} </p>
                          </div>
 
-                         <div class="div_price">
+                         {{-- <div class="div_price">
                               <h4>  Price is :  <span class="pp">{{$rc_data->price}} &dollar; </span>  </h4>
-                         </div>
+                         </div> --}}
                     </div>
                </div>
-               <div class="col-sm-6">
+               <div class="col-sm-12 col-md-6">
                     {{-- <h3>  The Easy Steps </h3> --}}
                     <div class="div_img">
                          <img src="{{asset('images')}}/{{$rc_data->image}}" alt="Card image" 
@@ -61,7 +66,7 @@
 <section class="details2-section">
      <div class="container">
           <div class="row">
-               <div class="col-sm-4">
+               <div class="col-sm-12 col-md-4">
                          <div class="form">
                               <form method="POST" action="" class="orderform">
                                    <label class="label"> <h5 class="lable-text">  How Many Recipes You Need ? </h5></label>

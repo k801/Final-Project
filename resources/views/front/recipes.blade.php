@@ -52,8 +52,10 @@
 					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				    class=" img-responsive rounded"  height="100px">
 				</a>
-				<h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> 
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+				{{-- <h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> --}}
+				<p class="text-center alert-danger price1"><s>{{$item->price+2.5}} </s></p>
+				<p class="text-center alert-success price2">{{$item->price}}</p>
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> More Details </a></p>
 			</div>
 		</div>
 		@endforeach

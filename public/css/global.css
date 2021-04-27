@@ -387,3 +387,10 @@ padding: 15px 16px;
   font-size: 27px;
   font-weight: bold ;
 }
+
+p.price1,p.price2
+{
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+}

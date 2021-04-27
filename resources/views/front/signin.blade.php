@@ -35,13 +35,13 @@
                         <div class="form-group ">
                             <input type="password" name="password" class="form-control" 
                                    value="{{old('password')}}"  placeholder="Enter Your PassWord" required autocomplete="new-password" />
-                            <label class="text-danger">{{$errors->first('email')}}</label>
+                            <label class="text-danger">{{$errors->first('password')}}</label>
                         </div>
 
                         <div class="form-group">
-                            <input type="number" name="phone number" class="form-control" value="{{old('phone')}}"
+                            <input type="number" name="phone" class="form-control" value="{{old('phone')}}"
                                    placeholder="Enter Your Phone Number" />
-                            <label class="text-danger">{{$errors->first('password')}}</label>
+                            <label class="error-lable">{{$errors->first('phone')}}</label>
                         </div>
                         
                         <div class="form-group">
@@ -51,8 +51,8 @@
 
 
                         <div class="form-group">
-                            <input type="submit" class="btn" value="Sign in">
-                            <a class="btn" href="{{route('contact.create')}}"> Already Registered </a> 
+                            <a><input type="submit" class="btn" value="Sign in"></a>
+                            <a class="btn" href="/login"> Already Registered </a> 
                         </div>
                     </form>
                 </div>

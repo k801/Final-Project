@@ -65,7 +65,7 @@
 				    class=" img-responsive rounded"  height="100px">
 				</a>
 				<h5 class="rec_name">  This Recipe Named  "{{$item->name}}"</h5> 
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> More Details </a></p>
 			</div>
 		</div>
         {{-- @endif --}}
@@ -95,7 +95,7 @@
 				<div class="card3">
 					<h2 class="rec_name">{{$item2->name}}</h2> 
 					<p class="rec_desc">{{$item2->description}}</p> 
-					<p class="text-center btn"><a href="{{route ('rcps.show',$item2)}}"class="button">View More</a></p>
+					<p class="text-center btn"><a href="{{route ('rcps.show',$item2)}}"class="button"> More Details </a></p>
 				</div>
 			</div>
 		@endforeach
@@ -118,7 +118,9 @@
 				<div class="col-sm-6">
 					<div class="card4"> 
 						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
-						<p class="text-center btn button"><a href="{{route ('rcps.show',$item3)}}">View More</a></p>
+						<p class="text-center alert-warning price1"><s>{{$item3->price+2.5}} </s></p>
+						<p class="text-center alert-success price2">{{$item3->price}}</p>
+						<p class="text-center btn"><a href="{{route ('rcps.show',$item3)}}"class="button"> More Details </a></p>
 					</div>
 				
 				</div>

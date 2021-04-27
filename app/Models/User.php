@@ -18,8 +18,9 @@ use HasRoles;
 *
 * @var array
 */
-protected $fillable = [
-'name', 'email', 'password','roles_name','Status'
+protected $fillable = 
+[
+'name', 'email', 'password','phone','address'
 ];
 
 function contact()

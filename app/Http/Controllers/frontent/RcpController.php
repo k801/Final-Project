@@ -8,7 +8,8 @@ use App\Models\Category ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\Environment\Console;
-
+use App\Models\Cart;
+use Illuminate\Support\Facades\Session;
 
 class RcpController extends Controller
 {
@@ -27,7 +28,7 @@ class RcpController extends Controller
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 
-   
+
     public function showbycategory($id)
     {
         // $recipes=Reciepe::where('category_id','=',6);
@@ -37,7 +38,7 @@ class RcpController extends Controller
         return json_encode($recipes);
         // return view ('front.recipes') ;
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -61,6 +62,28 @@ class RcpController extends Controller
         $reciepe = $reciepe->findorfail($id);
         // dump($reciepe) ;
         return view("front.details", ["rc_data"=> $reciepe]);
+    }
+    public function addTOCart(Request $request,$id){
+        $reciepe = new reciepe ;
+        $reciepe = $reciepe->findorfail($id);
+        $oldCart=Session::has('cart')?Session::get('cart'):null;
+        $cart=new Cart($oldCart);
+        $cart->add($reciepe,$reciepe->id);
+        $request->session()->put('cart',$cart);
+        // dd($request->session()->get('cart'));
+
+        return redirect()->route('rcps.index');
+
+
+    }
+    public function getCart(){
+        if(!Session::has('cart')){
+return view('front.shoppingCart');
+        }
+        $oldCart=Session::get('cart');
+        $cart=new Cart($oldCart);
+        return view('front.shoppingCart',['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+
     }
 
     /**

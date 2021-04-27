@@ -32,9 +32,6 @@ img.logo
 body{
 font-family: 'Josefin Sans', sans-serif;
   }
-a{ 
-
-}
 a:hover{
 text-decoration:none;
 }
@@ -78,35 +75,31 @@ padding:0;
 margin:0;
 list-style:none;	
 }
-b{ 
 
-}
-span{ 
 
-}
-br{ 
-
-}
-section{ 
-
-}
-.img_responsive{ 
+/* .img_responsive
+{ 
  width:100%
- }
-.button{ 
-font-size: 18px;
+} */
+
+.button
+{ 
+font-size: 25px;
+font-family:sans-serif;
 border: 1px solid #9b297e;
-padding: 13px 38px 13px 38px;
+padding: 10px 20px;
 border-radius: 10px;
-color: rgb(0 0 0);
+color:rgb(23, 41, 90) ;
 background: rgb(255 237 0);
 letter-spacing: 1px;
 }
-.button:hover{ 
+.button:hover
+{ 
 color: #ffffff;
 background: #a00d0d;
-border-color: #a00d0d;
+border-color: #961616;
 }
+
 .space_left{
 padding-left:0; 
 } 
@@ -155,7 +148,7 @@ padding: 15px 16px;
 .text_1{ 
  border-bottom: 1px solid #bf331c;
  }
-.ribbon {
+/* .ribbon {
  line-height: 0.7em;
  font-size: 1.1em;
  text-transform: uppercase;
@@ -190,7 +183,7 @@ padding: 15px 16px;
 }
 .ribbon.ribbon--red:after {
  border-top: 1.5rem solid #CCCCCC;
-}
+} */
 /********************* header_end ****************/
 /********************* footer ****************/
 #footer{ 
@@ -394,3 +387,4 @@ p.price1,p.price2
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 25px;
 }
+

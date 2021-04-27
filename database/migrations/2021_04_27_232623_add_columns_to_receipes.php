@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPriceToReciepes extends Migration
+class AddColumnsToReceipes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddPriceToReciepes extends Migration
      */
     public function up()
     {
-        Schema::table('reciepes', function (Blueprint $table) 
+        Schema::table('receipes', function (Blueprint $table) 
         {
-            // $table->unsignedDouble('price'); 
+            $table->integer('evaluation');
+            $table->unsignedDouble('price') ;
+            $table->time('prape_time') ;
         });
     }
 
@@ -26,9 +28,8 @@ class AddPriceToReciepes extends Migration
      */
     public function down()
     {
-        Schema::table('reciepes', function (Blueprint $table) 
-        {
-            $table->unsignedDouble('evalution') ;
+        Schema::table('receipes', function (Blueprint $table) {
+            //
         });
     }
 }

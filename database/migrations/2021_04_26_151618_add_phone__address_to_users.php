@@ -15,8 +15,8 @@ class AddPhoneAddressToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) 
         {
-            $table->bigInteger('phone number')->unique() ;
-            $table->text('address') ;
+            // $table->bigInteger('phone number')->unique() ;
+            // $table->text('address') ;
         });
     }
 

@@ -2,7 +2,9 @@
 @section('style')
 @endsection
 
+
 <link href="{{asset('css/details.css')}}" rel="stylesheet">
+
 
 @section('content')
 

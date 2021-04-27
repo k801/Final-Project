@@ -1,6 +1,7 @@
 @extends('front.master')
 @section('style')  @endsection
 
+
 <link href="{{asset('css/recipes.css')}}" rel="stylesheet">
 
 @section('content')

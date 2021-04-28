@@ -1,8 +1,8 @@
 .serve-form
 {
-    background-image: url(../images/bg51.jpg);
+    background-image: url(../images/18.jpg);
     background-repeat: no-repeat;
-     background-size: cover;
+    background-size: cover;
 }
 
 
@@ -13,17 +13,16 @@ div.forms
 
 .form-group
 {
-    width: 50%;
-    padding-bottom: 15px;
+    width: 70%;
+    padding-bottom: 7px;
 }
-
 
 .form-group h3
 {
     margin-top: 10px;
     text-align: center;
     color: #fff ;
-    background-color: rgb(24, 99, 70); 
+    background-color: rgb(74, 56, 155); 
 }
 
 .form-group input
@@ -38,14 +37,7 @@ div.forms
     margin: -2px 45%;
     padding: 10px 20px ;
     color: rgb(235, 228, 228);
-    background-color: rgb(24, 99, 70); 
-    
+    background-color: rgb(74, 56, 155);
 }
-
-a.btn
-{
-    color: rgb(235, 228, 228);
-    background-color: rgb(24, 99, 70);
-} 
 
 

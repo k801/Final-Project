@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
+    protected $table="reservations";
     protected $fillable=
-    ['name','email','date','table_number','time','guests_number','time','status'];
+    ['name','email','guests_number','attendance_date','attendance_time'];
     use HasFactory;
 }

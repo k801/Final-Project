@@ -9,9 +9,13 @@ class Reciepe extends Model
 {
     protected $table="receipes";
     use HasFactory;
-
-
     protected $fillable=['name','ingrediens','description','image','category_id'];
+
+
+public function ordby()
+{
+    return $this->hasOne(Reciepe::class)->orderBy('price');
+}
 
 function category()
 {

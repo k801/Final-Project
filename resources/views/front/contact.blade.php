@@ -30,11 +30,12 @@
 	 <div class="col-sm-8">
 	  <div class="col-sm-12 padding_left_1">
 	   <div class="contact_3">
-	   <h2>Lorem Ipsum Dolor Sit Amet:</h2>
+	   <h2> Send Your Feedback To Us  </h2>
 	   <div class=" content-top2">
-	   <h4 class="text-center">O</h4>
-	   </div>
-	   <p>Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh.</p></div>
+		<h4 class="text-center">O</h4>	
+	   </div> 
+	   <p></p>  
+	  </div>
 	  </div>
 <section id="f1">
 
@@ -42,20 +43,27 @@
 		@csrf
 
         <div class="form-group  mt-2">
-            <input type="text" name="name" class="form-control" placeholder="Enter Your Name"style="width: 450px;" />
+            <input type="text" name="name" class="form-control" 
+			       placeholder="Enter Your Name"style="width: 450px;" />
         </div>
 
         <div class="form-group mt-2">
-            <input type="text" name="email" class="form-control"  placeholder="Enter Your Email" style="width: 450px;"/>
+            <input type="text" name="email" class="form-control"  
+			       placeholder="Enter Your Email" style="width: 450px;"/>
         </div>
 
         <div class="form-group ">
-            <textarea name="message" class="form-control" placeholder="Enter Your Message"style="width: 450px;"></textarea>
+            <textarea name="message" class="form-control" 
+			          placeholder="Enter Your Message"style="width: 450px; height: 130px" >
+			</textarea>
         </div>
 	  <div class="col-sm-12">
 	   <div class="contact_6">
 	       <ul>
-	            <li><button class="button hvr-shutter-out-horizontal "  id="b1" name="submit"  type="submit" class="button">SEND</button></li>
+	            <li>
+					<button class="button hvr-shutter-out-horizontal "  
+					          id="b1" name="submit"  type="submit" class="button">SEND
+					</button></li>
 	      </ul>
 	   </div>
 	  </div>

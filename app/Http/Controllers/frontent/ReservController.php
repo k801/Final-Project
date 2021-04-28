@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\frontent;
 
 use App\Http\Controllers\Controller;
-use App\Models\User ;
+use App\Models\reservation;
 use Illuminate\Http\Request;
 
-class UsController extends Controller
+class ReservController extends Controller
 {
-   
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         //
@@ -21,10 +25,8 @@ class UsController extends Controller
      */
     public function create()
     {
-        
-        return view('front.signin') ;
-        
-    } 
+        return view ('front.reservation') ;
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,20 +40,18 @@ class UsController extends Controller
         ([
             'name'=>'required|min:3|max:30' , 
             'email'=>'required|email' ,
-            'password'=>'required|min:5' ,
-            'phone'=>'required|max:11|starts_with:012,011,010'  
          ]) ;
-        user::create ($request->all()) ;
-        return redirect()->route('contact.create') ;
+        reservation::create ($request->all()) ;
+        return redirect()->route('reservation.create') ;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(user $user)
+    public function show(reservation $reservation)
     {
         //
     }
@@ -59,10 +59,10 @@ class UsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit(reservation $reservation)
     {
         //
     }
@@ -71,10 +71,10 @@ class UsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, reservation $reservation)
     {
         //
     }
@@ -82,10 +82,10 @@ class UsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy(reservation $reservation)
     {
         //
     }

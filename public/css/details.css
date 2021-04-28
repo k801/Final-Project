@@ -1,18 +1,22 @@
-#details_main{ 
+#details_main
+{ 
     background-image: url(../images/bg50.jpg);
     background-repeat: no-repeat;
- background-size: cover;
+    background-size: cover;
+    margin: auto;
 }
 .details_inner{ 
  padding-top:170px;
  padding-bottom:150px;
  background-color: #000000ab;
 }
-.details_main_1{ 
+.details_main_1
+{ 
  text-align:center;
 }
 .details_main_1 h1{ 
  color:#fff;
+ text-align: center;
 }
 .details_main_1 ul{ 
  padding-top:10px;
@@ -81,21 +85,6 @@
 .well_1{ 
  font-size:18px;
 }
-li.well_2
-{
-
- margin: 10px 0px;
- padding: 10px;
- size: 80%;
- background-color: #a3a4c7;
-}
-
-.well_2 h5
-{
-    font-size: 20px;
-}
-/********************* details_end ****************/
-
 
 
 @media screen and (max-width : 767px){
@@ -124,22 +113,101 @@ li.well_2
 
 }
 
-.form-group 
+
+div.header
 {
-    width: 30%;
-}
-.orderform.label
-{
-    margin: 5px;
-}
-.label h5
-{
-    color: #000;
-    font-size: 25px;
+    margin: 20px 0px;
 }
 
-.orderform input
+.alldetails h4
+ {
+     font-family:cursive ;
+     color: rgba(196, 75, 38, 0.76);
+     margin-bottom: 20px;
+     text-align: center;
+     font-size: 35px;
+ }
+ 
+ .details-section p
+ {
+     color: rgb(11, 12, 100) ;
+     font-size: 25px;
+ }
+ .alldetails ,.div_img-price
+ {
+    margin: 10px 0px;
+    border: chartreuse 2px solid;
+    padding: 10px;
+ }
+ 
+
+ div h3
+{
+    color: rgb(230, 70, 70);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ .div_name
+ {
+    background-color:rgba(245, 236, 236, 0.801);
+    padding: 2px 8px;
+    border-radius: 5%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    height: 20%;
+ }
+
+ .div_descrip 
+ {
+    background-color:rgba(177, 153, 153, 0.801);
+    border: steelblue 1px solid ;
+    border-radius: 5%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 30%;
+ }
+
+ .div_ingreds
+ {
+     background-color:rgba(156, 177, 168, 0.801);
+     padding: 10px;
+     margin-right: 10px;
+     border-radius: 5%;
+     margin-top: 20px;
+     height: 40%;
+ }
+
+ .price1
+ {
+     margin-top: 10px;
+ }
+
+p.btn
+{
+    margin: 8% 40%;
+}
+
+
+
+
+
+
+/* 
+div.form 
+{
+    width: 40%;
+}
+
+.lable-text
+{
+    font-size: 35px;
+    color: rgb(0, 2, 128);
+}
+input.btn
 {
     margin: 5px;
-}
+    padding: 10px 30px ;
+    text-align: center;
+} */
 

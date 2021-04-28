@@ -1,10 +1,8 @@
 @extends('front.master')
-@section('style')
+@section('style')  @endsection
 
 
 <link href="{{asset('css/recipes.css')}}" rel="stylesheet">
-@endsection
-
 
 @section('content')
 
@@ -53,6 +51,7 @@
 </div>
 
 
+<<<<<<< HEAD
 <div class="container-fluid">
 	<div class="row div_row row">
 		@foreach($rc_data as $item)
@@ -62,6 +61,32 @@
 			<div class="card-body">
 				<h5 class="rec_name"> This Is  Form Best Brands {{$item->name}}</h5> 
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
+=======
+<div class="container">
+	<div class="row div_row">
+		@foreach($rc_data as $item)
+		<div class="col-sm-4">
+			<div class="card clearfix">
+				
+				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
+				class="img-responsive" style="height: 300px ;  width: 100% ">
+
+				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> Details </a></p>
+                <p class="bi bi-cart pull-right btn">
+					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+					class="button"> Buy
+					<svg xmlns="http://www.w3.org/2000/svg" 
+					width="16" height="16" 
+					fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
+							0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
+							1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
+							1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
+							1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg></a></p>
+>>>>>>> c4cb05f09f0197fe13d1591d4cdd385d2d15db15
 			</div>
 		</div>
 		@endforeach
@@ -70,11 +95,14 @@
 
 @endsection
 
-@section('scripts')
 
+@section('scripts')
 <script>
-	$(document).ready(function() {
-		$('select[name="section"]').on('change', function() {
+	$(document).ready(function()
+	{
+
+		$('select[name="section"]').on('change', function()
+		{
 			var sectionId = $(this).val();
 			// console.log(sectionId);
 			if (sectionId) {
@@ -83,8 +111,8 @@
 					type: "GET",
 					dataType: "json",
 					success: function(data) {
-                        console.log('data');
-					
+                        console.log(data);
+
 					},
 				});
 			} else {
@@ -92,8 +120,8 @@
 			}
 		});
 	});
-</script>
 
+</script>
 
 @endsection
 

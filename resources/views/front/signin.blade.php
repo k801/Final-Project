@@ -51,7 +51,7 @@
 
 
                         <div class="form-group">
-                            <a><input type="submit" class="btn" value="Sign in"></a>
+                            <a href="#"><input type="submit" class="btn" value="Sign in"></a>
                         </div>
                     </form>
                 </div>

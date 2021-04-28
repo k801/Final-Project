@@ -55,8 +55,12 @@
 
 @else
 
-<div class="row">
-    <strong class="alert alert-danger"> No Items In Cart</strong>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10" style="margin: 10% 0px">
+            <p class="alert alert-danger"> No Items In Cart</p>
+        </div>
+    </div>
 </div>
 @endif
 

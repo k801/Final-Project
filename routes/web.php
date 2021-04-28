@@ -19,6 +19,7 @@ use App\Http\Controllers\frontent\indexController;
 use App\Http\Controllers\frontent\RcpController;
 use App\Http\Controllers\frontent\Catcontroller;
 use App\Http\Controllers\frontent\ContactController;
+use App\Http\Controllers\frontent\ReservController;
 use App\Http\Controllers\frontent\UsController;
 
 /*
@@ -57,12 +58,11 @@ Route::resource('homePage',indexController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
+    Route::resource('reservation' , ReservController::class) ;
     // ->Middleware("auth") =
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 
-
-
-
-
-
-
+route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
+route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
+Route::resource('reservations',ReservationsController::class);

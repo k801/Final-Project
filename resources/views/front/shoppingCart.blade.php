@@ -18,6 +18,7 @@
       </div>
     </div>
 </section>
+
 @if(Session::has('cart'))
 
 <div class="container">

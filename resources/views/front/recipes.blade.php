@@ -41,28 +41,8 @@
 </section>
 
 
-<div class="card"  class="bg-danger">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
 
-
-<<<<<<< HEAD
-<div class="container-fluid">
-	<div class="row div_row row">
-		@foreach($rc_data as $item)
-		<div class="col-sm-4  offset-4 ">
-			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class=" img-responsive " width="50% card" height="0px"></a>
-			<div class="card-body">
-				<h5 class="rec_name"> This Is  Form Best Brands {{$item->name}}</h5> 
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
-=======
-<div class="container">
+	<div class="container">
 	<div class="row div_row">
 		@foreach($rc_data as $item)
 		<div class="col-sm-4">
@@ -86,7 +66,7 @@
 							1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
 							1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                   </svg></a></p>
->>>>>>> c4cb05f09f0197fe13d1591d4cdd385d2d15db15
+
 			</div>
 		</div>
 		@endforeach
@@ -96,7 +76,7 @@
 @endsection
 
 
-@section('scripts')
+{{-- @section('scripts')
 <script>
 	$(document).ready(function()
 	{
@@ -123,7 +103,7 @@
 
 </script>
 
-@endsection
+@endsection --}}
 
 
 

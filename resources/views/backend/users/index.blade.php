@@ -40,7 +40,7 @@
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">اضافة مستخدم</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}"> Add User </a>
                 </div>
             </div>
             <div class="card-body">

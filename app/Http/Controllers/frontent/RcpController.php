@@ -85,6 +85,17 @@ return view('front.shoppingCart');
         return view('front.shoppingCart',['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
 
     }
+    public function getCheckout()
+    {
+        if(!Session::has('cart')){
+            return view('front.shoppingCart');
+        }
+        $oldCart=Session::get('cart');
+        $cart=new Cart($oldCart);
+        $total=$cart->totalPrice;
+        return view ('front.checkout',['total'=>$total]);
+
+    }
 
     /**
      * Show the form for editing the specified resource.

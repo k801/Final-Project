@@ -1,6 +1,8 @@
 .serve-form
 {
-    background-image: url(../images/portfolio-1.jpg);
+    background-image: url(../images/18.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 

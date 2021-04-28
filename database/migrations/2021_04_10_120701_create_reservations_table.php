@@ -17,10 +17,10 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->dateTime('date');
+            $table->dateTime('attendance_date');
+            $table->time('attendance_time');
             $table->unsignedBigInteger('table_number');
             $table->unsignedBigInteger('guests_number');
-            $table->time('time');
             $table->enum('status',['penddind','confirmed','cancedled']);
             $table->timestamps();
         });

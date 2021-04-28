@@ -30,17 +30,27 @@
                                    value="{{old('email')}}"  placeholder="Enter Your Email" />
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
-
-                        <div class="form-group">
-                            <input type="number" name="table_number" class="form-control" value="{{old('table_number')}}"
-                                   placeholder="Enter table Number You Need" />
-                            <label class="text-danger">{{$errors->first('password')}}</label>
-                        </div>
                         
                         <div class="form-group  ">
                             <input type="number" name="guests_number" class="form-control" value="{{old('guests_number')}}"
                                    placeholder="Enter Count Guests" />
                             <label class="text-danger">{{$errors->first('password')}}</label>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="alert alert-danger text-info"> 
+                                Enter The Day You Will Coming on it Pleaze ! 
+                            </p>
+                            <input type="date" name="attendance_date" class="form-control" 
+                                   value="{{old('attendance_date')}}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="alert alert-danger text-info">
+                                 Enter The Time You Will Coming on it Pleaze ! 
+                            </p>
+                            <input type="time" name="attendance_time" class="form-control"  
+                             value="{{old('attendance_time')}}"/>
                         </div>
 
                         <div class="form-group">

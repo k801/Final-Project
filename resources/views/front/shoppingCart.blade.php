@@ -33,10 +33,10 @@
                   <span class="label label-success">{{$reciepe['item']['price']}}</span>
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}" alt="Card image"class=" img-responsive rounded"  height="100px">
                   <div class="btn-group">
-                      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                          <li ><a href="#">Reduce by 1</a></li>
-                          <li><a href="#"> Reduce All</a></li>
+                          <li ><a href="#">Remove by 1</a></li>
+                          <li><a href="#"> Remove by All</a></li>
                       </ul>
                   </div>
                   </li>
@@ -50,7 +50,7 @@
 
 <div class="row" style="text-align: center ; margin:20px 0px">
     <strong class="alert alert-success">Total Price :  {{$totalPrice}} &dollar;</strong>
-    <button class="btn btn-success" style="font-size: 25px">CheckOut</button>
+    <a href="{{route('rcps.checkout')}}" class="btn btn-success" style="font-size: 25px">CheckOut</a>
 </div>
 
 @else

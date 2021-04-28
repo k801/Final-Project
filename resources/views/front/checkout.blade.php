@@ -30,9 +30,9 @@
             {{-- <h4 class="alert alert-danger">CheckOut</h4> --}}
             <h4 class="alert alert-danger"> Total Price is :{{$total}} &dollar;</h4>
         </div>
-            
-        
-          <div class="col-sm-12 forms">            
+
+
+          <div class="col-sm-12 forms">
                     <form method="POST"  class="form" action="">
                         @csrf
 
@@ -40,31 +40,31 @@
                             <h3 class="alert"> Payment Form </h3>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" 
+                            <input type="text" name="name" class="form-control"
                                    value="{{old('name')}}"  placeholder="Enter Your Name"/>
                             <label class="text-danger">{{$errors->first('name')}}</label>
                         </div>
 
                         <div class="form-group ">
-                            <input type="text" name="email" class="form-control" 
+                            <input type="text" name="email" class="form-control"
                                    value="{{old('email')}}"  placeholder="Enter Your Email" />
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
-                       
-                       
+
+
 
                         {{-- <div class="form-group">
                             <input type="number" name="phone" class="form-control" value="{{old('phone')}}"
                                    placeholder="Enter Your Phone Number" />
                             <label class="error-lable">{{$errors->first('phone')}}</label>
                         </div>
-                        
+
                         <div class="form-group">
-                            <textarea name="address" class="form-control" 
+                            <textarea name="address" class="form-control"
                             placeholder="Enter Your Address" rows="4"></textarea>
                         </div> --}}
 
-                     
+
                         <div class="form-group">
                             <input type="text" name="card-name" class="form-control" placeholder="Enter Your card Holder Name" required/>
                         </div>
@@ -76,7 +76,7 @@
                             <p class="alert alert-danger">
                                 Expiration Date :
                             </p>
-                            <input name="expiration-date" class="form-control" 
+                            <input type="date" name="expiration-date" class="form-control"
                             placeholder="Enter Your Expiration Date" required />
                         </div>
 

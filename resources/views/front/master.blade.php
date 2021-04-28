@@ -40,7 +40,7 @@
                    </button>
                    <div class="navbar-brand navbar-brand-centered ">
                        <a href="{{route('homePage.index')}}">
-                            <img src="{{asset('images/Logo3.jpg')}}" class="logo rounded-circle">
+                            <img src="{{asset('images/final_logo.jpg')}}" class="logo rounded-circle">
                        </a>
                    </div>
                 </div>
@@ -50,7 +50,7 @@
                        <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
                        <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
                        <li><a href="{{route('sign.create')}}">Sign Up</a></li>
-                       <li><a href="{{route('contact.create')}}">CONTACT</a></li>
+                       {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
                        <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
                        <li><a href="{{route('rcps.shoppingCart')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
@@ -63,8 +63,8 @@
                             0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>Shop Cart
                        <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
-                       <li><a href="/login"> Log in </a></li>
-                       <li><a href="/register"> Sign Up </a></li>
+                       {{-- <li><a href="/login"> Log in </a></li>
+                       <li><a href="/register"> Sign Up </a></li> --}}
 
                    </ul>
                </div>

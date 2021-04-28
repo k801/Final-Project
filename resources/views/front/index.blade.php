@@ -14,7 +14,7 @@
                     <div class="carousel-caption kb_caption kb_caption_right">
                         <h1 data-animation="animated flipInX" class="">Dinner Club Restaurant</h1>
                         <p data-animation="animated flipInX" class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
-						<h4><a href="#"class="button hvr-shutter-out-horizontal">Read More</a></h4>
+						<h4><a href="{{route('contact.create')}}"class="button hvr-shutter-out-horizontal">Contact Us</a></h4>
                     </div>
                 </div>
                 <div class="item"> <!-- Second-Slide -->
@@ -23,7 +23,7 @@
                         <h1 data-animation="animated fadeInDown">We Provide Our best</h1>
                         <p data-animation="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 						Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
-						<h4><a href="#"class="button hvr-shutter-out-horizontal">Read More</a></h4>
+						<h4><a href="{{route('contact.create')}}" class="button hvr-shutter-out-horizontal">Contact Us</a></h4>
                     </div>
                 </div>
                 <div class="item"><!-- Third-Slide -->
@@ -31,7 +31,7 @@
                     <div class="carousel-caption kb_caption kb_caption_right">
                         <h1 data-animation="animated fadeInDown">Printing And Typesetting</h1>
                         <p data-animation="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
-						<h4><a href="#"class="button">Read More</a></h4>
+						<h4><a href="{{route('contact.create')}}"class="button">Contact Us</a></h4>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
 				class=" img-responsive"  style="height: 300px ;  width: 100% ">
 				
 				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
-				<p class="text-center alert-success price2">Our Price : {{$item->price}}</p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> More  </a></p>
 				<p class="bi bi-cart pull-right btn">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
@@ -145,7 +145,7 @@
 					<div class="card4"> 
 						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
 						<p class="text-center alert-warning price1">List Price : <s>{{$item3->price+2.5}} </s></p>
-						<p class="text-center alert-success price2">Our Price : {{$item3->price}}</p>
+						<p class="text-center alert-success price2">After Discount : {{$item3->price}}</p>
 						<p class="text-center btn">
 							<a href="{{route ('rcps.show',$item3)}}"class="button"> More  </a>
 						</p>

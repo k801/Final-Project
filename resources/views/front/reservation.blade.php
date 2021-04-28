@@ -13,10 +13,9 @@
         <div class="col-sm-12 forms">            
                     <form method="POST"  class="form" action="{{route('reservation.store')}}">
                         @csrf
-
-                      
+                        
                        <div class="form-group">
-                            <h3 class="alert"> Reservation Form </h3>
+                            <h3 class="alert"> Reservation Form  </h3>
                         </div>
 
                         <div class="form-group">
@@ -39,15 +38,15 @@
 
                         <div class="form-group">
                             <p class="alert alert-danger text-info"> 
-                                Enter The Day You Will Coming on it Pleaze ! 
+                                Any day you want this reservation ?
                             </p>
                             <input type="date" name="attendance_date" class="form-control" 
                                    value="{{old('attendance_date')}}"/>
                         </div>
 
                         <div class="form-group">
-                            <p class="alert alert-danger text-info">
-                                 Enter The Time You Will Coming on it Pleaze ! 
+                            <p class="alert alert-danger">
+                                At any hour of this day you want this reservation ?
                             </p>
                             <input type="time" name="attendance_time" class="form-control"  
                              value="{{old('attendance_time')}}"/>

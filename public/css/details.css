@@ -1,18 +1,22 @@
-#details_main{ 
+#details_main
+{ 
     background-image: url(../images/bg50.jpg);
     background-repeat: no-repeat;
- background-size: cover;
+    background-size: cover;
+    margin: auto;
 }
 .details_inner{ 
  padding-top:170px;
  padding-bottom:150px;
  background-color: #000000ab;
 }
-.details_main_1{ 
+.details_main_1
+{ 
  text-align:center;
 }
 .details_main_1 h1{ 
  color:#fff;
+ text-align: center;
 }
 .details_main_1 ul{ 
  padding-top:10px;
@@ -81,21 +85,6 @@
 .well_1{ 
  font-size:18px;
 }
-li.well_2
-{
-
- margin: 10px 0px;
- padding: 10px;
- size: 80%;
- background-color: #a3a4c7;
-}
-
-.well_2 h5
-{
-    font-size: 20px;
-}
-/********************* details_end ****************/
-
 
 
 @media screen and (max-width : 767px){
@@ -125,26 +114,32 @@ li.well_2
 }
 
 
-div.details-section
-{
-    background-color: white;
-}
-
-
-div.details-section div.header
+div.header
 {
     margin: 20px 0px;
 }
 
- div.row
+.alldetails h4
  {
-    margin-top: 20px;
+     font-family:cursive ;
+     color: rgba(196, 75, 38, 0.76);
+     margin-bottom: 20px;
+     text-align: center;
+     font-size: 35px;
  }
  
- .div_img , div.alldetails
+ .details-section p
  {
-    height: 100% ;
+     color: rgb(11, 12, 100) ;
+     font-size: 25px;
  }
+ .alldetails ,.div_img-price
+ {
+    margin: 10px 0px;
+    border: chartreuse 2px solid;
+    padding: 10px;
+ }
+ 
 
  div h3
 {
@@ -152,15 +147,25 @@ div.details-section div.header
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
+ .div_name
+ {
+    background-color:rgba(245, 236, 236, 0.801);
+    padding: 2px 8px;
+    border-radius: 5%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    height: 20%;
+ }
 
  .div_descrip 
  {
     background-color:rgba(177, 153, 153, 0.801);
+    border: steelblue 1px solid ;
+    border-radius: 5%;
     padding: 10px;
     margin-right: 10px;
     margin-top: 5px;
-    height: 32%;
+    height: 30%;
  }
 
  .div_ingreds
@@ -168,39 +173,27 @@ div.details-section div.header
      background-color:rgba(156, 177, 168, 0.801);
      padding: 10px;
      margin-right: 10px;
+     border-radius: 5%;
      margin-top: 20px;
      height: 40%;
  }
 
- .div_name
+ .price1
  {
-    background-color:rgba(245, 236, 236, 0.801);
-    padding: 20px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    height: 20%;
+     margin-top: 10px;
  }
 
- .div_price h5
- {
-     padding-top: 4px;
-     color: yellow;
- }
-
- .div_price span.pp
- {
-     color: yellow;
- }
-
-
-div.div_img img
+p.btn
 {
-    margin-top: 8%;
-    width:90% ;
-    height: 100% ;
+    margin: 8% 40%;
 }
 
 
+
+
+
+
+/* 
 div.form 
 {
     width: 40%;
@@ -216,13 +209,5 @@ input.btn
     margin: 5px;
     padding: 10px 30px ;
     text-align: center;
-}
+} */
 
-.alldetails h4
-{
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-    color: rgba(196, 38, 136, 0.76);
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 25px;
-}

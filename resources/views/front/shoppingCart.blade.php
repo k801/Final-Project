@@ -1,6 +1,5 @@
 @extends('front.master')
-@section('style')
-@endsection
+@section('style') @endsection
 
 <link href="{{asset('css/details.css')}}" rel="stylesheet">
 <link href="{{asset('css/recipes.css')}}" rel="stylesheet">
@@ -13,7 +12,7 @@
                <ul>
                     <li><a href="{{route('homePage.index')}}">Home</a></li>
                     <li><i class="fa fa-angle-double-right"></i></li>
-                    <li>Shpping Cart</li>
+                    <li> Shoping Cart </li>
                </ul>
           </div>
       </div>
@@ -48,23 +47,17 @@
 		@endforeach
 	</div>
 </div>
-<div class="row" style="text-align: center">
 
-<strong >Total:{{$totalPrice}}$</strong>
-
+<div class="row" style="text-align: center ; margin:20px 0px">
+    <strong class="alert alert-success">Total Price :  {{$totalPrice}} &dollar;</strong>
+    <button class="btn btn-success" style="font-size: 25px">CheckOut</button>
 </div>
-<div class="row" style="text-align: center">
 
-<button class="btn btn-success ">CheckOut</button>
-
-</div>
 @else
+
 <div class="row">
-
-        <strong>No Items In Cart</strong>
-
+    <strong class="alert alert-danger"> No Items In Cart</strong>
 </div>
-
 @endif
 
 

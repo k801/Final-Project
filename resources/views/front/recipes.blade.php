@@ -54,8 +54,8 @@
 				class="img-responsive" style="height: 300px ;  width: 100% ">
 
 				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
-				<p class="text-center alert-success price2">Our Price : {{$item->price}}</p>
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> More  </a></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
+				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> Details </a></p>
                 <p class="bi bi-cart pull-right btn">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 					class="button"> Buy

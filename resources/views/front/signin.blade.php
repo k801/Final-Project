@@ -18,7 +18,7 @@
                         @csrf
                         
                        <div class="form-group">
-                            <h3 class="alert"> Sign Up Form </h3>
+                            <h3 class="alert"> Registeration Form </h3>
                         </div>
 
                         <div class="form-group">
@@ -52,7 +52,6 @@
 
                         <div class="form-group">
                             <a><input type="submit" class="btn" value="Sign in"></a>
-                            <a class="btn" href="/login"> Already Registered </a> 
                         </div>
                     </form>
                 </div>

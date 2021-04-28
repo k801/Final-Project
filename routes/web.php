@@ -70,3 +70,5 @@ Route::resource('homePage',indexController::class);
     route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
 
     route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+    route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
+

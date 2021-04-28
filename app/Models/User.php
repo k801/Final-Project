@@ -28,6 +28,10 @@ function contact()
     return $this->hasOne(Contact::class);
 }
 
+function orders()
+{
+    return $this->hasMany(Order::class);
+}
 /**
  *
 * The attributes that should be hidden for arrays.

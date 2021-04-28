@@ -13,8 +13,8 @@ Dinner Club
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Categories</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                New Category</span>
+            <h4 class="content-title mb-0 my-auto">orders</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                New order</span>
         </div>
     </div>
 </div>
@@ -45,11 +45,11 @@ Dinner Club
             <div class="card-body">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-right">
-                        <a class="btn btn-primary btn-sm" href="{{ route('reciepes.index') }}">back</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('orders.index') }}">back</a>
                     </div>
                 </div><br>
                 <form class="parsley-style-1" id="selectForm2" autocomplete="off" name="selectForm2"
-                    action="{{route('reciepes.store')}}" method="post" enctype="multipart/form-data">
+                    action="{{route('orders.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     @method("post")
@@ -81,11 +81,7 @@ Dinner Club
 
 
 
-                        <div class="parsley-input col-md-6" id="fnWrapper">
-                            <label>image : <span class="tx-danger">*</span></label>
-                            <input class="form-control "
-                                data-parsley-class-handler="#lnWrapper" name="image" required="" type="file">
-                        </div>
+
 
                     </div>
                     <div class="row mg-b-20">

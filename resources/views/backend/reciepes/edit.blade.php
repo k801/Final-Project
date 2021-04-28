@@ -45,11 +45,11 @@ Dinner Club
             <div class="card-body">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-right">
-                        <a class="btn btn-primary btn-sm" href="{{ route('reciepes.index') }}">back</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('receipes.index') }}">back</a>
                     </div>
                 </div><br>
                 <form class="parsley-style-1" id="selectForm2" autocomplete="off" name="selectForm2"
-                    action="{{route('reciepes.update',$reciepe->id)}}" method="post" enctype="multipart/form-data">
+                    action="{{route('receipes.update',$receipe->id)}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     @method("PUT")
@@ -67,7 +67,7 @@ Dinner Club
                             <div class="parsley-input col-md-6" id="fnWrapper">
                                 <label>ingrediens : <span class="tx-danger">*</span></label>
                                 <textarea class="form-control form-control-sm mg-b-20"
-                                    data-parsley-class-handler="#lnWrapper" name="ingrediens" required="" type="text" >value="{{$reciepe->ingrediens}}"</textarea>
+                                    data-parsley-class-handler="#lnWrapper" name="ingrediens" required="" type="text" >value="{{$receipe->ingrediens}}"</textarea>
                             </div>
                         </div>
 

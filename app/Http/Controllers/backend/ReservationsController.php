@@ -4,7 +4,10 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ReservationResponseMail;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\AddReservation;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,7 +32,11 @@ class ReservationsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
+        $user = User::first();
+        Notification::send($user,new AddReservation);
+        return redirect()->route('reservations.index');
         return view('backend.reservations.create');
     }
 
@@ -43,6 +50,11 @@ class ReservationsController extends Controller
     {
         Reservation::create($request->all());
         session()->flash('success','reservation is inserted sucessfully');
+
+        $user = User::first();
+        // $reservation=Reservation::latest()->first();
+        // dd($reservation);
+        Notification::send($user,new AddReservation);
         return redirect()->route('reservations.index');
     }
 

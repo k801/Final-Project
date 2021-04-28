@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\backend\ReciepeController;
 use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\orderDetailsControlle;
+use App\Http\Controllers\backend\HomeController as homeController;
 use App\Http\Controllers\backend\ReservationsController;
 use App\Mail\ContactResponseMail;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,6 @@ use App\Http\Controllers\frontent\indexController;
 use App\Http\Controllers\frontent\RcpController;
 use App\Http\Controllers\frontent\Catcontroller;
 use App\Http\Controllers\frontent\ContactController;
-use App\Http\Controllers\frontent\ReservController;
 use App\Http\Controllers\frontent\UsController;
 
 /*
@@ -35,12 +35,12 @@ use App\Http\Controllers\frontent\UsController;
 
 
 Auth::routes() ;
+Route::get('dashbord',[homeController::class,'getDashbord'])->name('dashbord');
 Route::resource('categories',CategoryController::class);
 Route::resource('users',CategoryController::class);
 Route::resource('messages',MessageController::class);
-Route::resource('reciepes',ReciepeController::class);
+Route::resource('receipes',ReciepeController::class);
 Route::resource('orders',OrderController::class);
-
 Route::resource('ordersDetails',orderDetailsControlle::class);
 Route::get('Print_order/{id}',[orderDetailsControlle::class,'Print_order'])->name('Print_order');
 
@@ -50,25 +50,19 @@ Route::resource('roles','App\Http\Controllers\RoleController');
 Route::resource('users','App\Http\Controllers\UserController');
     });
 Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
-
+Route::resource('/',indexController::class);
 Route::resource('homePage',indexController::class);
     Route::resource('rcps',RcpController::class);
     Route::resource('Cats', CatController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
-
-    route::get('section/{id}',[RcpController::class , 'showbycategory']) ;
-    // ->Middleware("auth")
-
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
-    //  ->Middleware("auth")
+    // ->Middleware("auth") =
+Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 
-    Route::resource('reservation', ReservController::class);
 
-    //cart
 
-    route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
 
-    route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
-    route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
+
+
 

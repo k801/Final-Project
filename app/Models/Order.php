@@ -17,6 +17,10 @@ class Order extends Model
         return $this->belongsToMany(Reciepe::class);
     }
 
+    function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     function orderDetails()
     {

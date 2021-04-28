@@ -1,10 +1,15 @@
 <?php
-
 namespace App\Http\Controllers\backend;
-
+use App\Events\UserMessage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\AddOrder;
 use App\Models\Category;
+use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -27,8 +32,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        event(new UserMessage);
 
         return view('backend.categories.create');
+
     }
 
     /**
@@ -41,8 +48,18 @@ class CategoryController extends Controller
     {
         Category::create($request->all());
 
-     session()->flash('success','category creaed successfully');
+    $user = User::first();
+   $order=Category::latest()->first();
+// dd($order);
+   Notification::send($user,new AddOrder($order));
+// $user->notify(new \App\Notifications\AddOrder);
+//    $user->notify(new \App\Notifications\AddOrder($order));
+
+    //  session()->flash('success','category creaed successfully');
+
      return redirect()->route('categories.index');
+
+
     }
 
     /**
@@ -100,4 +117,25 @@ class CategoryController extends Controller
        session()->flash('success','category deleted successfully');
        return redirect()->route('categories.index');
     }
+
+
+function MarkAsRead_all()
+{
+$userUnreadNotifications=auth()->user()->unreadNotifications;
+if($userUnreadNotifications)
+{
+
+    $userUnreadNotifications->markAsRead();
+
+    return back();
+}
+
+}
+
+
+
+
+
+
+
 }

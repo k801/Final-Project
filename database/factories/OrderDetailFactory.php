@@ -26,10 +26,11 @@ class OrderDetailFactory extends Factory
         return [
 
             'total_price'=>$this->faker->numberBetween($min = 100, $max = 500)  ,
-            'meals_numbers'=>$this->faker->randomDigit,
+            // 'count'=>$this->faker->randomNumber,
+            'count'=>$this->faker->randomDigit,
             'status'=>$this->faker->randomElement(['pendding','cancelled','completed']),
-                 'order_id'=>Order::all(['id'])->random(),
-                 'user_id'=>User::all(['id'])->random(),
+            'order_id'=>Order::all(['id'])->random(),
+            'user_id'=>User::all(['id'])->random(),
                 ];
     }
 }

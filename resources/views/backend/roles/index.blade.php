@@ -27,7 +27,7 @@ Permission
     <script>
         window.onload = function() {
             notif({
-                msg: " تم اضافة الصلاحية بنجاح",
+                msg: " Permaission Added Successfully ",
                 type: "success"
             });
         }
@@ -64,7 +64,7 @@ Permission
                 <div class="d-flex justify-content-between">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-right">
-                                <a class="btn btn-primary btn-sm" href="{{ route('roles.create') }}">اضافة</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('roles.create') }}">New</a>
                         </div>
                     </div>
                     <br>
@@ -88,15 +88,15 @@ Permission
                                     <td>{{ $role->name }}</td>
                                     <td>
                                             <a class="btn btn-success btn-sm"
-                                                href="{{ route('roles.show', $role->id) }}">عرض</a>
+                                                href="{{ route('roles.show', $role->id) }}">show</a>
 
                                             <a class="btn btn-primary btn-sm"
-                                                href="{{ route('roles.edit', $role->id) }}">تعديل</a>
+                                                href="{{ route('roles.edit', $role->id) }}">Edit</a>
 
                                         @if ($role->name !== 'owner')
                                                 {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy',
                                                 $role->id], 'style' => 'display:inline']) !!}
-                                                {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
+                                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                                                 {!! Form::close() !!}
                                         @endif
 

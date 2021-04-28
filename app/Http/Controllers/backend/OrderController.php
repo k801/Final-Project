@@ -5,6 +5,10 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\User;
+use App\Notifications\AddReservation;
+
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -28,6 +32,8 @@ class OrderController extends Controller
     {
 
         $data['categories']=Order::all();
+        // $user = User::first();
+        // Notification::send($user,new AddOrder);
         return view('backend.orders.create')->with($data);
     }
 
@@ -61,7 +67,12 @@ class OrderController extends Controller
 
             ]);
 
+            //notification
 
+//             $user=Auth::get();
+//             $order=Order::latest()->first();
+
+//  $user->notify(new \App\Notifications\AddOrder($order));
         session()->flash('success','Reciepe is inserted sucessfully');
         return redirect()->route('reciepes.index');
     }
@@ -114,7 +125,7 @@ class OrderController extends Controller
 
             ]);
 
-        session()->flash('success','Reciepe is inserted sucessfully');
+        session()->flash('success','Reciepe is updated sucessfully');
         return redirect()->route('orders.index');    }
 
     /**

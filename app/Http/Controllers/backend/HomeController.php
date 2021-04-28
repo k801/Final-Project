@@ -4,23 +4,20 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\OrderRecipe;
-use App\Models\Order;
-use App\Models\OrderDetail;
-use App\Models\about;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 
-class orderDetailsControlle extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getDashbord()
     {
-        //
+
+        return view('backend.home.home');
+
+
     }
 
     /**
@@ -52,21 +49,7 @@ class orderDetailsControlle extends Controller
      */
     public function show($id)
     {
-        $data['orderDetails']=OrderDetail::where('order_id','=',$id)->get();
-        // dd($data);
-        $data['sum']=DB::table("orders_receipes")->get()->sum("price");
-        return view('backend.ordersDetails.show')->with($data);
-
-    }
-
-    public function Print_order($id)
-    {
-        $data['orderDetails']=OrderRecipe::where('order_id','=',$id)->get();
-        $data['order']=Order::findOrFail($id);
-        $data['user']=Auth::user();
-        $data['about']=About::first();
-        // dd($data);
-        return view('backend.ordersDetails.print_reseet')->with($data);
+        //
     }
 
     /**

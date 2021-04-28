@@ -34,7 +34,6 @@
 	 <div class="col-sm-4">
 	 <div class="cooking_2">
 	    <select class="input-text" name="section">
-
 			@foreach($cat_data as $item)
 			<option value="{{$item->id}}"> {{$item->name}} </option>
 			@endforeach
@@ -44,16 +43,24 @@
 </section>
 
 
+<div class="card"  class="bg-danger">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 
 
 <div class="container-fluid">
-	<div class="row div_row">
+	<div class="row div_row row">
 		@foreach($rc_data as $item)
-		<div class="col-sm-4  ">
+		<div class="col-sm-4  offset-4 ">
 			<a> <img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
-				    class="img-responsive rounded" width="98%" height="200px"></a>
+				    class=" img-responsive " width="50% card" height="0px"></a>
 			<div class="card-body">
-				<h5 class="rec_name"> This Recipe Named  {{$item->name}}</h5> 
+				<h5 class="rec_name"> This Is  Form Best Brands {{$item->name}}</h5> 
 				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button">View More</a></p>
 			</div>
 		</div>

@@ -21,7 +21,7 @@ class CreateReservationsTable extends Migration
             $table->unsignedBigInteger('table_number');
             $table->unsignedBigInteger('guests_number');
             $table->time('time');
-            $table->enum('status',['penddind','confirmed','cancedled']);
+            $table->enum('status',['pendding','confirmed','cancelled']);
             $table->timestamps();
         });
     }

@@ -105,7 +105,7 @@ Dinner Club
                             <label> status: <span class="tx-danger">*</span></label>
 
                             <select class="form-control  nice-select  custom-select" required="" data-parsley-class-handler="#lnWrapper"
-                                name="description"  >
+                                name="status"  >
 
                                 <option value="" class="disabled br-readonly">select status</option>
                                 <option>Pennding</option>

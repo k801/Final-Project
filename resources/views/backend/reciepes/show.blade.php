@@ -44,7 +44,7 @@ Dinner Club
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn" href="{{ route('reciepes.create') }}"> New</a>
+                        <a class="btn btn-primary btn" href="{{ route('receipes.create') }}"> New</a>
                 </div>
             </div>
             <div class="card-body">
@@ -73,14 +73,14 @@ Dinner Club
                                     {{-- <td>{{ $reciepe->category->name }}</td> --}}
 
                                     <td>
-                                        <form action="{{ route('categories.edit', $reciepe->id) }}" class="d-inline">
+                                        <form action="{{ route('receipes.edit', $reciepe->id) }}" class="d-inline">
                                        @csrf
                                        @method("get")
                                             <button class="btn btn-sm text-light btn-info"
                                            ><i class="las la-pen"></i></button>
 
                                         </form>
-                                        <form action="{{ route('categories.destroy', $reciepe->id) }}" class="d-inline" method="POST">
+                                        <form action="{{ route('receipes.destroy', $reciepe->id) }}" class="d-inline" method="POST">
                                             @csrf
                                             @method("delete")
                                                  <button class="btn btn-sm text-light btn-danger"

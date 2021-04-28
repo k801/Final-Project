@@ -53,11 +53,11 @@ Dinner Club
                             <tr>
                                 <th class="wd-10p border-bottom-0"> id</th>
                                 <th class="wd-10p border-bottom-0"> order id</th>
-                                <th class="wd-10p border-bottom-0"> meals_numbers</th>
                                 <th class="wd-10p border-bottom-0">status</th>
-                                <th class="wd-10p border-bottom-0"> total price</th>
-                                <th class="wd-15p border-bottom-0"> total price</th>
+                                <th class="wd-10p border-bottom-0">  price</th>
+                                <th class="wd-15p border-bottom-0"> count </th>
                                 <th class="wd-15p border-bottom-0">  user</th>
+                                <th class="wd-15p border-bottom-0">  total</th>
                                 {{-- <th class="wd-20p border-bottom-0"> count</th>
                                 <th class="wd-20p border-bottom-0"> Tatal</th> --}}
 
@@ -71,12 +71,13 @@ Dinner Club
                                     {{-- <td>{{ ++$i }}</td> --}}
                                     <td>{{ $orderDetail->id }}</td>
                                     <td>{{ $orderDetail->order_id }}</td>
-                                    <td>{{ $orderDetail->meals_numbers }}</td>
                                     <td>{{ $orderDetail->status}}</td>
-                                      <td>{{ $orderDetail->total_price }}</td>
 
-                                    <td>{{ $orderDetail->order->order_time}}</td>
-                                    <td>{{ $orderDetail->order->user_id}}</td>
+                                    <td>{{ $orderDetail->total_price}}</td>
+                                    <td>{{ $orderDetail->count}}</td>
+                                   <td>{{ $orderDetail->total_price* $orderDetail->count}}</td>
+
+                                    <td>{{ $orderDetail->order->user->email}}</td>
                                     {{-- <td> --}}
                                         {{-- @foreach ($orderDetail->roles as $role) {
                                             echo $role->pivot->created_at;
@@ -104,13 +105,17 @@ Dinner Club
 </tr>
 <tr>
 
-<td>
-<a href="{{route('Print_order',$orderDetail->order_id)}}">print</a>
-</td>
 </tr>
                         </tbody>
                     </table>
+           
                 </div>
+               <hr class="mg-b-40">
+
+
+                        <a class="btn btn-danger  float-left mt-3 mr-2"  href="{{route('Print_order',$orderDetail->order_id)}} id="print_Button" onclick="printDiv()"> <i
+                                class="mdi mdi-printer ml-1"></i>Print</a>
+                    </div>
             </div>
         </div>
     </div>

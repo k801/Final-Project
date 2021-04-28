@@ -16,7 +16,7 @@ class CreateOrdersDetailsTable extends Migration
         Schema::create('orders_details', function (Blueprint $table) {
             $table->id();
             $table->integer('total_price');
-            $table->integer('meals_numbers');
+            $table->integer('count');
 
             $table->enum('status',['completed','cancelled','pendding']);
              $table->unsignedBigInteger('order_id');

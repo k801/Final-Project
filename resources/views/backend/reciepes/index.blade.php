@@ -44,7 +44,7 @@ Dinner Club
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn" href="{{ route('reciepes.create') }}"> New</a>
+                        <a class="btn btn-primary btn" href="{{ route('receipes.create') }}"> New</a>
                 </div>
             </div>
             <div class="card-body">

@@ -16,8 +16,8 @@ class ReciepeController extends Controller
      */
     public function index()
     {
-        $data['receipes']=Reciepe::all();
-        return view('backend.receipes.index')->with($data);
+        $data['reciepes']=Reciepe::all();
+        return view('backend.reciepes.index')->with($data);
     }
 
     /**
@@ -29,7 +29,7 @@ class ReciepeController extends Controller
     {
 
         $data['categories']=Category::all();
-        return view('backend.receipes.create')->with($data);
+        return view('backend.reciepes.create')->with($data);
     }
 
     /**
@@ -64,7 +64,7 @@ class ReciepeController extends Controller
 
 
         session()->flash('success','Reciepe is inserted sucessfully');
-        return redirect()->route('receipes.index');
+        return redirect()->route('reciepes.index');
     }
 
     /**
@@ -76,8 +76,8 @@ class ReciepeController extends Controller
     public function show(Reciepe $reciepe)
     {
 
-        $data['receipes']=$reciepe;
-        return view('backend.receipes.show')->with($data);
+        $data['reciepe']=$reciepe;
+        return view('backend.reciepes.show')->with($data);
 
 
     }
@@ -90,9 +90,9 @@ class ReciepeController extends Controller
      */
     public function edit(Reciepe $reciepe)
     {
-        $data['receipes']=$reciepe;
+        $data['receipe']=$reciepe;
         $data['categories']=Category::all();
-        return view('backend.receipes.edit')->with($data);
+        return view('backend.reciepes.edit')->with($data);
     }
 
     /**
@@ -116,7 +116,7 @@ class ReciepeController extends Controller
             ]);
 
         session()->flash('success','Reciepe is inserted sucessfully');
-        return redirect()->route('receipes.index');    }
+        return redirect()->route('reciepes.index');    }
 
     /**
      * Remove the specified resource from storage.

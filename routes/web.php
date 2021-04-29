@@ -61,8 +61,12 @@ Route::resource('homePage',indexController::class);
     Route::resource('reservation' , ReservController::class) ;
     // ->Middleware("auth") =
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
-
-route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
-route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
-route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 Route::resource('reservations',ReservationsController::class);
+//cart
+
+route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
+route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
+route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
+route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
+

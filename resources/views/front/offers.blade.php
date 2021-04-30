@@ -2,7 +2,7 @@
 @section('style')  @endsection
 
 
-<link href="{{asset('css/recipes.css')}}" rel="stylesheet">
+<link href="{{asset('css/offers.css')}}" rel="stylesheet">
 
 @section('content')
 
@@ -15,7 +15,7 @@
 	<ul>
 	     <li><a href="{{route('homePage.index')}}">Home</a></li>
 		 <li><i class="fa fa-angle-double-right"></i></li>
-		 <li>Recipes</li>
+		 <li> Offers </li>
 	</ul>
    </div>
   </div>
@@ -24,35 +24,24 @@
 </section>
 
 
-
-<section id="cooking">
- <div class="container">
-  <div class="row">
-   <div class="cooking_1 clearfix">
-	 <div class="col-sm-4">
-	 <div class="cooking_2">
-	    <select class="input-text" name="section">
-			@foreach($cat_data as $item) 
-			<option value="{{$item->id}}"> {{$item->name}} </option>
-			@endforeach
-		 </select>
-	  </div>
-	 </div>
-</section>
-
-
-
 	<div class="container">
+		<div class="row text-center header">
+			<h3> Offers Day  </h3>
+			<h3> ـــــــــــ O ـــــــــــ </h3>
+		</div>
 	<div class="row div_row">
+		<div>
+			<h3 class=""> Take Two Meals YOu will Take The Third Free </h3>
+		</div>
 		@foreach($rc_data as $item)
-		<div class="col-sm-4">
+		<div class="col-sm-12 col-md-6">
 			<div class="card clearfix">
 				
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
 				class="img-responsive" style="height: 300px ;  width: 100% ">
 
-				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
-				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
+				<p class="text-center alert-danger price1">List Price : <s>{{$item->price}}</s></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price-($item->price*0.1)}}</p>
 				<p class="text-center btn"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details </a></p>
                 <p class="bi bi-cart pull-right btn">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
@@ -75,35 +64,6 @@
 
 @endsection
 
-
-@section('scripts')
-<script>
-	$(document).ready(function()
-	{
-
-		$('select[name="section"]').on('change', function()
-		{
-			var sectionId = $(this).val();
-			// console.log(sectionId);
-			if (sectionId) {
-				$.ajax({
-					url: "{{ URL::to('section') }}/" + sectionId,
-					type: "GET",
-					dataType: "json",
-					success: function(data) {
-                        console.log(data);
-
-					},
-				});
-			} else {
-				console.log('AJAX load did not work');
-			}
-		});
-	});
-
-</script>
-
-@endsection 
 
 
 

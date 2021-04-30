@@ -28,7 +28,13 @@ class RcpController extends Controller
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 
-
+    public function offers()
+    {
+        $recps = reciepe::all();
+        // dump($recps) ;
+        $recps = Reciepe::orderBy('name', 'asc')->Limit(6)->get() ;
+        return view("front.offers" ,["rc_data"=>$recps]) ;
+    }
     public function showbycategory($id)
     {
         // $recipes=Reciepe::where('category_id','=',6);
@@ -72,7 +78,7 @@ class RcpController extends Controller
         $request->session()->put('cart',$cart);
         // dd($request->session()->get('cart'));
 
-        return redirect()->route('rcps.index');
+        return redirect()->route('reciepes.index');
 
 
     }

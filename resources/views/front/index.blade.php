@@ -63,11 +63,11 @@
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
 				class=" img-responsive"  style="height: 300px ;  width: 100% ">
 				
-				<p class="text-center alert-danger price1">List Price : <s>{{$item->price-($item->price*0.1)}}</s></p>
-				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
+				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 				<p class="text-center btn"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 				<p class="bi bi-cart pull-right btn">
-					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+					<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
 					   class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
 					width="40" height="16" 
@@ -106,11 +106,13 @@
 				<div class="card3">
 					<h2 class="rec_name">{{$item2->name}}</h2> 
 					<p class="rec_desc">{{$item2->description}}</p> 
+					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 					<p class="text-center btn">
 						<a href="{{route ('reciepes.show',$item2)}}" class="button"> Details </a>
 					</p>
 					<p class="bi bi-cart pull-right btn">
-						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+						<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
 						class="button"> Buy
 						<svg xmlns="http://www.w3.org/2000/svg" 
 						width="16" height="16" 
@@ -144,13 +146,13 @@
 				<div class="col-sm-6">
 					<div class="card4"> 
 						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
-						<p class="text-center alert-warning price1">List Price : <s>{{$item->price-($item->price*0.1)}}</s></p>
-						<p class="text-center alert-success price2">After Discount : {{$item3->price}}</p>
+						<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+						<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 						<p class="text-center btn">
 							<a href="{{route ('reciepes.show',$item3)}}"class="button"> Details  </a>
 						</p>
 						<p class="bi bi-cart pull-right btn">
-							<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+							<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
 							class="button"> Buy
 							<svg xmlns="http://www.w3.org/2000/svg" 
 							width="16" height="16" 

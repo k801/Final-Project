@@ -29,8 +29,8 @@
 			<ul class="list-group">
 
                   <li class="lis-group-item">
-                  <span class="badge text-center ">{{$reciepe['qty']}}</span>
-                  <h5 class="rec_name">{{$reciepe['item']['name']}}</h5>
+                  <h5>Number Of Meals : <span class="badge text-center ">{{$reciepe['qty']}}</span></h5>
+                  <h5 class="rec_name"> Meals Name : {{$reciepe['item']['name']}}</h5>
                   <h5 style="margin-bottom: 10px "><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}" 
                        alt="Card image"class=""  height="40%" width="100%">

@@ -189,7 +189,8 @@ padding: 15px 16px;
 #footer{ 
  padding-top:30px;
  padding-bottom:30px;
- background-color: #EAC984;
+ background-color: #e2cb98;
+ /* background-image: url(../images/Concat.png); */
 }
 .footer_2 h4{ 
  color: #e42929;

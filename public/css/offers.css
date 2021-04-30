@@ -1,0 +1,82 @@
+
+#recipes_main{ 
+    background-image: url(../images/indian-food-25189724.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+   .recipes_inner{ 
+    padding-top:170px;
+    padding-bottom:150px;
+    background-color: #000000ab;
+   }
+
+   .recipes_main_1{ 
+    text-align:center;
+   }
+   .recipes_main_1 h1{ 
+    color:#fff;
+   }
+   .recipes_main_1 ul{ 
+    padding-top:10px;
+   }
+   .recipes_main_1 li{ 
+    display:inline;
+    padding-right:5px;
+    color: #fff;
+    font-size: 25px;
+   }
+   .recipes_main_1 li a{ 
+    color: #ffed00;
+   }
+      
+   @media screen and (max-width : 767px)
+   {
+   .recipes_inner 
+   {
+    padding-bottom: 70px;
+    padding-top: 110px;
+   }
+  }
+   
+   @media (min-width:470px) and (max-width:767px) 
+   { 
+   
+   }
+     
+  
+
+div.header
+{
+  margin: 2%  auto;
+  background: rgb(59, 76, 173);
+  padding: 1%;
+}
+div h3
+{
+    color: rgb(211, 192, 192);
+    font-family:cursive ;
+}
+   
+div.card
+{
+  border: #524d029c 2px solid;
+  margin:1% ;
+  padding: 10px;
+  
+}   
+
+p.btn
+{
+  text-align:center;
+  padding:3% ;
+  margin-top: 5%;
+}
+.bi a.button
+{
+  background-color:rgb(42, 167, 30);
+}
+.img-responsive
+{
+  border-radius: 10%;
+  padding-bottom: 10px;
+}

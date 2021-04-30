@@ -59,10 +59,15 @@ Route::resource('homePage',indexController::class);
     Route::resource('contact',ContactController::class)->Middleware("auth") ;
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
     Route::resource('reservation' , ReservController::class) ;
+    Route::resource('reservations',ReservationsController::class);
     
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 
 route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
 route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
 route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
-Route::resource('reservations',ReservationsController::class);
+
+Route::get('offers_pgae',[RcpController::class,'offers']) ;
+
+
+

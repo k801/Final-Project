@@ -55,8 +55,8 @@
                               class="" height="65%" width="100%">
                          </div>
                          <div class="div_price">
-                              <p class="text-center alert-danger price1">List Price : <s>{{$rc_data->price+2.5}} </s></p>
-                              <p class="text-center alert-success price2">After Discount : {{$rc_data->price}}</p>
+                              <p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+                              <p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
                          </div>
 
                          <div class="cart">

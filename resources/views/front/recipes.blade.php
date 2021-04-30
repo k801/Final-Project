@@ -32,7 +32,7 @@
 	 <div class="col-sm-4">
 	 <div class="cooking_2">
 	    <select class="input-text" name="section">
-			@foreach($cat_data as $item)
+			@foreach($cat_data as $item) 
 			<option value="{{$item->id}}"> {{$item->name}} </option>
 			@endforeach
 		 </select>
@@ -51,9 +51,9 @@
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
 				class="img-responsive" style="height: 300px ;  width: 100% ">
 
-				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
-				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> Details </a></p>
+				<p class="text-center alert-danger price1">List Price : <s>{{$item->price}}</s></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price-($item->price*0.1)}}</p>
+				<p class="text-center btn"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details </a></p>
                 <p class="bi bi-cart pull-right btn">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 					class="button"> Buy

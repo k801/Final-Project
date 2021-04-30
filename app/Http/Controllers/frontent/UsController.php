@@ -5,13 +5,16 @@ namespace App\Http\Controllers\frontent;
 use App\Http\Controllers\Controller;
 use App\Models\User ;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash ;
+use Symfony\Component\Console\Input\Input;
 
 class UsController extends Controller
 {
    
     public function index()
     {
-        //
+        $users = User::all() ;
+        return view('front.signin' , ["data" => $users]) ;
     }
 
     /**
@@ -37,11 +40,20 @@ class UsController extends Controller
         $request->validate 
         ([
             'name'=>'required|min:3|max:30' , 
-            'email'=>'required|email' ,
+            'email'=>'unique:users| required|email' ,
             'password'=>'required|min:5' ,
             'phone'=>'required|max:11|starts_with:012,011,010'  
          ]) ;
-        user::create ($request->all()) ;
+        $user = new User ;
+        $hashed = Hash::make($request->password) ;
+        $user->name = request("name");
+        $user->email = request("email");
+        $user->password = $hashed ;
+        $user->address = request("address");
+        $user->phone= request("phone");
+        $user->save();
+        
+        // user::create ($request->all()) ;
         return redirect()->route('contact.create') ;
     }
 

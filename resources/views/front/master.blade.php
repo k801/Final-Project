@@ -48,7 +48,7 @@
                <div>
                    <ul class="nav navbar-nav navbar">
                        <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
-                       <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
+                       <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
                        <li><a href="{{route('sign.create')}}">Sign Up</a></li>
                        {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
                        <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
@@ -63,12 +63,9 @@
                             0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>Shop Cart
                        <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
-                       {{-- <li><a href="/login"> Log in </a></li>
-                       <li><a href="/register"> Sign Up </a></li> --}}
 
                    </ul>
                </div>
-
            </div>
        </nav>
 </section>

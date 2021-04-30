@@ -13,8 +13,8 @@ div.forms
 
 .form-group
 {
-    width: 50%;
-    padding-bottom: 15px;
+    /* width: 50%; */
+    /* padding-bottom: 2px; */
 }
 
 
@@ -35,7 +35,7 @@ div.forms
 .form-group input.btn
 {
     font-size: 20px;
-    margin: -2px 45%;
+    margin: 0px 7%;
     padding: 10px 20px ;
     color: rgb(235, 228, 228);
     background-color: rgb(24, 99, 70); 
@@ -47,5 +47,15 @@ a.btn
     color: rgb(235, 228, 228);
     background-color: rgb(24, 99, 70);
 } 
+
+a.btn-login
+{
+    margin-top: 10%;
+    padding: 3%;
+    color: rgb(235, 228, 228);
+    background-color: rgb(29, 24, 99);
+    font-size: 20px;
+    border-radius: 6%;
+}
 
 

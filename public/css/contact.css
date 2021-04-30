@@ -32,6 +32,8 @@
    #contact{
     padding-top:30px;
     padding-bottom:30px;
+    margin: 10px;
+    border: tomato 2px solid ;
     }
    .contact_1 p {
     text-align: center;
@@ -209,11 +211,4 @@
    .form-group{
        padding-bottom: 25px;
    }
-   #b1{
-       text-align: center;
-       /* padding-left: 50px; */
-   }
-
-   #f1{
-       /* background-color: rgb(0,68,82); */
-   }
+  

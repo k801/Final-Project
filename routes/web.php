@@ -53,13 +53,13 @@ Route::resource('users','App\Http\Controllers\UserController');
 Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
 Route::resource('/',indexController::class);
 Route::resource('homePage',indexController::class);
-    Route::resource('rcps',RcpController::class);
-    Route::resource('Cats', CatController::class);
+    Route::resource('reciepes',RcpController::class);
+    Route::resource('Categorys', CatController::class);
     Route::resource('sign', UsController::class);
-    Route::resource('contact',ContactController::class) ;
+    Route::resource('contact',ContactController::class)->Middleware("auth") ;
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
     Route::resource('reservation' , ReservController::class) ;
-    // ->Middleware("auth") =
+    
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 
 route::get('section/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;

@@ -24,7 +24,7 @@
 
 
 <section id="contact">
- <div class="container-fluid">
+ <div class="container">
   <div class="row">
    <div class="col-sm-12">
 	 <div class="col-sm-8">
@@ -39,7 +39,7 @@
 	  </div>
 <section id="f1">
 
-    <form method="post"  action="{{route('contact.store')}}">
+    <form method="POST"  action="{{route('contact.store')}}">
 		@csrf
 
         <div class="form-group  mt-2">
@@ -54,7 +54,7 @@
 
         <div class="form-group ">
             <textarea name="message" class="form-control" 
-			          placeholder="Enter Your Message"style="width: 450px; height: 130px" >
+			          placeholder="Enter Your Message" style="width: 450px; height: 130px" >
 			</textarea>
         </div>
 	  <div class="col-sm-12">

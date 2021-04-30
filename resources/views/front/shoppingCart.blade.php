@@ -1,8 +1,8 @@
 @extends('front.master')
 @section('style') @endsection
 
-<link href="{{asset('css/details.css')}}" rel="stylesheet">
-<link href="{{asset('css/recipes.css')}}" rel="stylesheet">
+<link href="{{asset('css/shoping-cart.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('css/recipes.css')}}" rel="stylesheet"> --}}
 @section('content')
 <section id="details_main">
     <div class="details_inner clearfix container">
@@ -21,6 +21,10 @@
 
 @if(Session::has('cart'))
 
+<section class="items">
+    <div class="title">
+		<h2 class="text-center"> All Recieps You Orderd its </h2>
+	</div>
 <div class="container">
 	<div class="row div_row">
         @foreach($reciepe as $reciepe)
@@ -33,7 +37,7 @@
                   <h5 class="rec_name"> Meals Name : {{$reciepe['item']['name']}}</h5>
                   <h5 style="margin-bottom: 10px "><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}" 
-                       alt="Card image"class=""  height="40%" width="100%">
+                       alt="Card image"class="img-responsive" style="height: 300px ;  width: 100% ">
                   <div class="btn-group">
                       <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="caret"></span></button>
                       <ul class="dropdown-menu" style="margin: 10px" >
@@ -65,8 +69,6 @@
     </div>
 </div>
 @endif
-
-
-
+</section>
 
 @endsection

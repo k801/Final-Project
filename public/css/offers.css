@@ -43,28 +43,50 @@
    
    }
      
-  
-
+ 
 div.header
 {
-  margin: 2%  auto;
-  background: rgb(59, 76, 173);
+  margin:auto;
+  background: rgb(153, 158, 189);
   padding: 1%;
 }
 div h3
 {
-    color: rgb(211, 192, 192);
+    color: rgb(59, 50, 50);
     font-family:cursive ;
+}
+
+.offer_1
+{
+  border-top: rgb(53, 22, 37) 3px solid;
+  margin: 2% 0%;
+}  
+
+div.title , div.title2
+{
+  margin-bottom: 2%;
+  background-color: #ffed00; 
+  padding: 2%;
+}
+div.title h2 , div.title2 h2
+{
+  font-size: 30px;
+  color:rgb(110, 92, 92) ;
+  font-family: cursive;
 }
    
 div.card
 {
-  border: #524d029c 2px solid;
+  border: #0702529c 2px solid;
   margin:1% ;
-  padding: 10px;
+  padding: 5px;
   
 }   
 
+.price1,.price2
+{
+  margin: 0%;
+}
 p.btn
 {
   text-align:center;
@@ -79,4 +101,20 @@ p.btn
 {
   border-radius: 10%;
   padding-bottom: 10px;
+}
+
+.offer2
+{
+  border-top: rgb(19, 22, 20) 3px solid;
+  background-color: rgb(228, 112, 92);
+  margin: 2% 0%;
+}  
+
+div.title2 
+{
+ background-color: #447575;
+}
+div.title2 h2
+{
+  color: rgb(25, 27, 22);
 }

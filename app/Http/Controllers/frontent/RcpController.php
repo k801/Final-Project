@@ -32,8 +32,9 @@ class RcpController extends Controller
     {
         $recps = reciepe::all();
         // dump($recps) ;
-        $recps = Reciepe::orderBy('name', 'asc')->Limit(6)->get() ;
-        return view("front.offers" ,["rc_data"=>$recps]) ;
+        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(4)->get() ;
+        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(6)->get() ;
+        return view("front.offers" ,["rc_data1"=>$recps1,"rc_data2"=>$recps2]) ;
     }
     public function showbycategory($id)
     {
@@ -42,7 +43,7 @@ class RcpController extends Controller
 
         $recipes=DB::table("receipes")->where("category_id",$id)->pluck("name","image");
         return json_encode($recipes);
-        // return view ('front.recipes') ;
+        return view ('front.recipes') ;
     }
 
     /**
@@ -82,14 +83,17 @@ class RcpController extends Controller
 
 
     }
-    public function getCart(){
-        if(!Session::has('cart')){
-return view('front.shoppingCart');
+
+    public function getCart()
+    {
+        if(!Session::has('cart'))
+        {
+            return view('front.shoppingCart');
         }
+        
         $oldCart=Session::get('cart');
         $cart=new Cart($oldCart);
         return view('front.shoppingCart',['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
-
     }
     public function getCheckout()
     {

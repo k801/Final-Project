@@ -67,7 +67,7 @@
 				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 				<p class="text-center btn"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 				<p class="bi bi-cart pull-right btn">
-					<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
+					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 					   class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
 					width="40" height="16" 
@@ -112,7 +112,7 @@
 						<a href="{{route ('reciepes.show',$item2)}}" class="button"> Details </a>
 					</p>
 					<p class="bi bi-cart pull-right btn">
-						<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
+						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 						class="button"> Buy
 						<svg xmlns="http://www.w3.org/2000/svg" 
 						width="16" height="16" 
@@ -152,7 +152,7 @@
 							<a href="{{route ('reciepes.show',$item3)}}"class="button"> Details  </a>
 						</p>
 						<p class="bi bi-cart pull-right btn">
-							<a href="{{route ('reciepes.addToCart',['id'=>$item->id])}}"
+							<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 							class="button"> Buy
 							<svg xmlns="http://www.w3.org/2000/svg" 
 							width="16" height="16" 

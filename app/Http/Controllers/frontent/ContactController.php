@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\contact;
 use app\Models\User ;
+use Facade\Ignition\DumpRecorder\Dump;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -38,25 +39,26 @@ class ContactController extends Controller
         $request->validate 
         ([
             'name'=>'required|min:3|max:30' , 
-            'mail'=>'required|email'  
+            'email'=>'required|email'  
          ]) ;
          
+        $id = Auth::user()->id;
+        // $name = Auth::user()->name ;
+        $email= Auth::user()->email ;
 
+        dd($id) ;
+        // dd($name) ;
+        // dd($email) ;
 
-         $id = Auth::user()->id;
-         $currentuser = User::find($id);
-
-        //  $name= Auth::user()->name ;
-        //  $email= Auth::user()->email ;
         $contact = new contact ;
-        $contact->name = request('name');
-        $contact->mail = request("email"); 
+        $contact->name = request('name') ;
+        $contact->mail = $email ;
         $contact->message = request("message");
-        // $contact->user_id= $currentuser ;
+        $contact->user_id= $id ;
         $contact->save() ;
     
         // contact::create($request->all());
-        return redirect()->route('front.home') ;
+        // return redirect()->route('front.home') ;
     }
 
     /**

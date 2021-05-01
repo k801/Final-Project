@@ -189,7 +189,8 @@ padding: 15px 16px;
 #footer{ 
  padding-top:30px;
  padding-bottom:30px;
- background-color: #e2cb98;
+ /* background-color:rgb(223, 240, 237) ; */
+ background: linear-gradient(to top, #c3bac4, #c2c2ba);
  /* background-image: url(../images/Concat.png); */
 }
 .footer_2 h4{ 
@@ -230,7 +231,7 @@ padding: 15px 16px;
 /********************* footer_end ****************/
 /********************* footer_main ****************/
 #footer_main{ 
- background-color: #FDF8B9;
+ background-color: #9c9b8c;
  padding-top:17px;
  padding-bottom:10px; 
 }
@@ -389,3 +390,10 @@ p.price1,p.price2
   font-size: 25px;
 }
 
+
+/* .badge
+{
+  position: relative;
+  left:-110px;
+  top: -10px;
+} */

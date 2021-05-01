@@ -39,7 +39,9 @@
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}" 
                        alt="Card image"class="img-responsive" style="height: 300px ;  width: 100% ">
                   <div class="btn-group">
-                      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="caret"></span></button>
+                      <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">Remove
+                          <span class="caret"></span>
+                      </button>
                       <ul class="dropdown-menu" style="margin: 10px" >
                           <li ><a href="#">Remove by 1</a></li>
                           <li><a href="#"> Remove by All</a></li>

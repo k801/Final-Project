@@ -18,7 +18,7 @@
                         @csrf
                         
                        <div class="form-group">
-                            <h3 class="alert"> Registeration Form </h3>
+                            <h4 class="alert"> Registeration Form </h4>
                         </div>
 
                         <div class="form-group">
@@ -54,8 +54,8 @@
 
 
                         <div class="form-group">
-                            <a href="#"><input type="submit" class="btn" value="Sign in"></a>
-                            <a href="/login"  class="btn-login"> Already Register ? <a>
+                            <a href="#"><input type="submit" class="btn bg-danger" value="Sign Up"></a>
+                            <a href="/login"  class="btn-login">Login in <a>
                         </div>
                     </form>
                 </div>

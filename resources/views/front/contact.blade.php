@@ -42,17 +42,18 @@
     <form method="POST"  action="{{route('contact.store')}}">
 		@csrf
 
-        <div class="form-group  mt-2">
+         <div class="form-group  mt-2">
             <input type="text" name="name" class="form-control" 
 			       placeholder="Enter Your Name"style="width: 450px;" />
         </div>
 
-        <div class="form-group mt-2">
+       {{-- <div class="form-group mt-2">
             <input type="text" name="email" class="form-control"  
 			       placeholder="Enter Your Email" style="width: 450px;"/>
-        </div>
+      </div> --}}
 
         <div class="form-group ">
+			<label> Enter Your Message: </label>
             <textarea name="message" class="form-control" 
 			          placeholder="Enter Your Message" style="width: 450px; height: 130px" >
 			</textarea>

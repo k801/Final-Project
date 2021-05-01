@@ -4,13 +4,15 @@ namespace App\Http\Controllers\frontent;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reciepe;
+use App\Models\Order;
 use App\Models\Category ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\Environment\Console;
 use App\Models\Cart;
+use App\Models\OrderDetail;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Auth;
 class RcpController extends Controller
 {
     /**
@@ -83,12 +85,30 @@ class RcpController extends Controller
 
 
     }
+<<<<<<< HEAD
 
     public function getCart()
     {
         if(!Session::has('cart'))
         {
             return view('front.shoppingCart');
+=======
+public function getReduceByOne($id){
+    // $reciepe = new reciepe ;
+    // $reciepe = $reciepe->findorfail($id);
+    $oldCart=Session::has('cart')?Session::get('cart'):null;
+    $cart=new Cart($oldCart);
+    $cart->reduceByOne($id);
+    Session::put('cart',$cart);
+    return redirect()->route('rcps.shoppingCart');
+
+}
+
+
+    public function getCart(){
+        if(!Session::has('cart')){
+return view('front.shoppingCart');
+>>>>>>> eb0f4dea43152af2f4a9b967ea99224568d3d00c
         }
         
         $oldCart=Session::get('cart');
@@ -106,6 +126,22 @@ class RcpController extends Controller
         return view ('front.checkout',['total'=>$total]);
 
     }
+
+    // save orders to DB
+    public function getCash(Request $request){
+        // if(!Session::has('cart')){
+        //     return view('front.shoppingCart');
+        // }
+        // $oldCart=Session::get('cart');
+        // $cart=new Cart($oldCart);
+        // $order=new OrderDetail;
+        // $order->cart=serialize($cart);
+        // // $order->address=$request->input('address');
+        // // Auth::user()->orders->save($order);
+        // Auth::user()->order->save($order);
+        return redirect()->route('rcps.index');
+    }
+
 
     /**
      * Show the form for editing the specified resource.

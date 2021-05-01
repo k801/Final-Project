@@ -12,15 +12,21 @@ class OrderDetail extends Model
     protected $table="orders_details";
 
 
-
+function user(){
+    return $this->belongsTo(User::class);
+}
 
 
 function order()
 {
 
       return $this->belongsTo(Order::class);
-  
 
+
+}
+
+function orders(){
+    return $this->hasMany(Order::class);
 }
 
 }

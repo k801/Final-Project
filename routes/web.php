@@ -69,13 +69,9 @@ Route::resource('reservations',ReservationsController::class);
 route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
 route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
 route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
-<<<<<<< HEAD
-
 Route::get('offers_pgae',[RcpController::class,'offers']) ;
 
-
-=======
 route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
 route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
->>>>>>> eb0f4dea43152af2f4a9b967ea99224568d3d00c
+
 

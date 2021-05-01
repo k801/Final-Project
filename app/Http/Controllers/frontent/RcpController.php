@@ -85,15 +85,11 @@ class RcpController extends Controller
 
 
     }
-<<<<<<< HEAD
 
-    public function getCart()
+
+  
+    public function getReduceByOne($id) 
     {
-        if(!Session::has('cart'))
-        {
-            return view('front.shoppingCart');
-=======
-public function getReduceByOne($id){
     // $reciepe = new reciepe ;
     // $reciepe = $reciepe->findorfail($id);
     $oldCart=Session::has('cart')?Session::get('cart'):null;
@@ -101,14 +97,13 @@ public function getReduceByOne($id){
     $cart->reduceByOne($id);
     Session::put('cart',$cart);
     return redirect()->route('rcps.shoppingCart');
+    }
 
-}
-
-
-    public function getCart(){
-        if(!Session::has('cart')){
-return view('front.shoppingCart');
->>>>>>> eb0f4dea43152af2f4a9b967ea99224568d3d00c
+    public function getCart()
+    {
+        if(!Session::has('cart'))
+        {
+            return view('front.shoppingCart');
         }
         
         $oldCart=Session::get('cart');
@@ -129,16 +124,16 @@ return view('front.shoppingCart');
 
     // save orders to DB
     public function getCash(Request $request){
-        // if(!Session::has('cart')){
-        //     return view('front.shoppingCart');
-        // }
-        // $oldCart=Session::get('cart');
-        // $cart=new Cart($oldCart);
-        // $order=new OrderDetail;
-        // $order->cart=serialize($cart);
-        // // $order->address=$request->input('address');
-        // // Auth::user()->orders->save($order);
-        // Auth::user()->order->save($order);
+        if(!Session::has('cart')){
+            return view('front.shoppingCart');
+        }
+        $oldCart=Session::get('cart');
+        $cart=new Cart($oldCart);
+        $order=new OrderDetail;
+        $order->cart=serialize($cart);
+        // $order->address=$request->input('address');
+        // Auth::user()->orders->save($order);
+        Auth::user()->order->save($order);
         return redirect()->route('rcps.index');
     }
 

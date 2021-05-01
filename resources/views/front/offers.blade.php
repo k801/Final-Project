@@ -35,11 +35,6 @@
 	</div>
 <div class="container">
 	<div class="row div_row">
-		{{-- <div class="col-sm-12">
-			<div class="title">
-				<h2 class="text-center"> Take Two Of Any Meals In This Section You will Take The Third Free </h2>
-			</div>
-		</div> --}}
 		@foreach($rc_data1 as $item)
 		<div class="col-sm-12 col-md-6">
 			<div class="card clearfix">

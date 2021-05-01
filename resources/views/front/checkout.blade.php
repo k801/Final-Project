@@ -66,10 +66,12 @@
 
 
                         <div class="form-group">
-                            <input type="text" name="card-name" class="form-control" placeholder="Enter Your card Holder Name" required/>
+                            <input type="text" name="card-name" class="form-control" 
+                                   placeholder="Enter Your card Holder Name" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="credit-number" class="form-control" placeholder="Enter Your credit card number" required />
+                            <input type="text" name="credit-number" class="form-control" 
+                                   placeholder="Enter Your credit card number" required />
                         </div>
 
                         <div class="form-group">
@@ -81,7 +83,8 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="CVC" class="form-control" placeholder="Enter Your CVC"  required />
+                            <input type="text" name="CVC" class="form-control" 
+                                   placeholder="Enter Your CVC"  required />
                         </div>
 
                         {{csrf_field()}}

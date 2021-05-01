@@ -61,7 +61,7 @@ Route::resource('homePage',indexController::class);
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
     Route::resource('reservation' , ReservController::class) ;
     Route::resource('reservations',ReservationsController::class);
-    
+
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 Route::resource('reservations',ReservationsController::class);
 //cart
@@ -73,5 +73,5 @@ Route::get('offers_pgae',[RcpController::class,'offers']) ;
 
 route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
 route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
-
+route::get('remove/{id}',[RcpController::class , 'getRemoveItem'])->name('rcps.RemoveAll') ;
 

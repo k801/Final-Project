@@ -87,16 +87,32 @@ class RcpController extends Controller
     }
 
 
-  
-    public function getReduceByOne($id) 
+
+    public function getReduceByOne($id)
     {
     // $reciepe = new reciepe ;
     // $reciepe = $reciepe->findorfail($id);
     $oldCart=Session::has('cart')?Session::get('cart'):null;
     $cart=new Cart($oldCart);
     $cart->reduceByOne($id);
-    Session::put('cart',$cart);
+    if(count($cart->items)>0){
+        Session::put('cart',$cart);
+    }else{
+        Session::forget('cart');
+    }
     return redirect()->route('rcps.shoppingCart');
+    }
+    public function getRemoveItem($id){
+        $oldCart=Session::has('cart')?Session::get('cart'):null;
+        $cart=new Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items)>0){
+            Session::put('cart',$cart);
+        }else{
+            Session::forget('cart');
+        }
+
+        return redirect()->route('rcps.shoppingCart');
     }
 
     public function getCart()
@@ -105,7 +121,7 @@ class RcpController extends Controller
         {
             return view('front.shoppingCart');
         }
-        
+
         $oldCart=Session::get('cart');
         $cart=new Cart($oldCart);
         return view('front.shoppingCart',['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice]);

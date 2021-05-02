@@ -36,8 +36,8 @@
                   <h5>Number Of Meals : <span class="badge text-center ">{{$reciepe['qty']}}</span></h5>
                   <h5 class="rec_name"> Meals Name : {{$reciepe['item']['name']}}</h5>
                   <h5 style="margin-bottom: 10px "><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
-                  
-                  <img src="{{asset('images')}}/{{$reciepe['item']['image']}}" 
+
+                  <img src="{{asset('images')}}/{{$reciepe['item']['image']}}"
                        alt="Card image"class="img-responsive" style="height: 300px ;  width: 100% ">
 
                   <div class="btn-group">
@@ -46,7 +46,7 @@
                       </button>
                       <ul class="dropdown-menu" style="margin: 10px" >
                           <li ><a href="{{route('rcps.reduceByOne',['id'=>$reciepe['item']['id']])}}">Remove by 1</a></li>
-                          <li><a href="#"> Remove by All</a></li>
+                          <li><a href="{{route('rcps.RemoveAll',['id'=>$reciepe['item']['id']])}}"> Remove  All</a></li>
                       </ul>
                   </div>
                   </li>

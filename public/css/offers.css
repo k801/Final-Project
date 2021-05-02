@@ -29,21 +29,7 @@
     color: #ffed00;
    }
       
-   @media screen and (max-width : 767px)
-   {
-   .recipes_inner 
-   {
-    padding-bottom: 70px;
-    padding-top: 110px;
-   }
-  }
-   
-   @media (min-width:470px) and (max-width:767px) 
-   { 
-   
-   }
-     
- 
+
 div.header
 {
   margin:auto;
@@ -70,11 +56,12 @@ div.title , div.title2
 }
 div.title h2 , div.title2 h2
 {
-  font-size: 30px;
+  font-size: 20px ;
   color:rgb(110, 92, 92) ;
-  font-family: cursive;
+  font-family: cursive ;
 }
    
+
 div.card
 {
   border: #0702529c 2px solid;
@@ -83,10 +70,6 @@ div.card
   
 }   
 
-.price1,.price2
-{
-  margin: 0%;
-}
 p.btn
 {
   text-align:center;
@@ -116,5 +99,19 @@ div.title2
 }
 div.title2 h2
 {
-  color: rgb(25, 27, 22);
+  color: rgb(227, 236, 213);
+}
+
+a.button
+{
+  margin-left: -10px;
+  font-size: 20px;
+}
+
+@media screen and (max-width : 767px)
+{
+    div.title h2 , div.title2 h2
+    {
+        font-size: 20px;
+    }
 }

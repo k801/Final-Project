@@ -1,42 +1,54 @@
-@media screen and (max-width : 767px){
-#event .ih-item.square {
+@media screen and (max-width : 767px)
+{
+#event .ih-item.square 
+{
  width: 100%;
  height: 100%;
 }
-#event .ih-item.square.effect14 .info h3 {
+#event .ih-item.square.effect14 .info h3 
+{
  margin: 10px 0 0 0;
  font-size: 13px;
 }
-#event .ih-item.square.effect14 .info p {
+#event .ih-item.square.effect14 .info p 
+{
  padding: 1px 20px 20px;
  font-size: 8px;
 }
-#center .carousel-caption {
+#center .carousel-caption 
+{
  position: static;
 }
-#center .kb_caption {
+#center .kb_caption 
+{
  width: 100%;
  padding-bottom:60px;
 }
-#center .kb_caption h1 {
+#center .kb_caption h1 
+{
  padding-top: 50px;
 }
-#center .kb_control_left, .kb_control_right {
+#center .kb_control_left, .kb_control_right 
+{
  top: 59%;
 }
-#center .kb_control_right, .kb_control_left {
+#center .kb_control_right, .kb_control_left 
+{
  top: 59%;
 }
-#middle {
+#middle 
+{
  text-align: center;
 }
-.middle_3 {
+.middle_3 
+{
  margin-bottom: 10px;
 }
 
 }
  
-@media (min-width:961px) and (max-width:1200px) {
+@media (min-width:961px) and (max-width:1200px) 
+{
 #center .kb_caption h1 {
  padding-top: 20px;
  font-size: 34px;

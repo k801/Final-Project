@@ -113,7 +113,11 @@ div.card
   padding: 10px;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
   overflow: hidden;
-  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+div.card:hover
+{
+  transition: transform 8s ease-in-out , -webkit-transform 9s ease-in-out ;
 }
 
 p.btn

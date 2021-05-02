@@ -77,7 +77,7 @@
     <div class="container">
      <div class="row">
       <div class="footer_1 clearfix">
-       <div class="col-sm-12 col-md-2">
+       <div class="col-sm-6 col-md-2">
         <div class="footer_2">
          <h4>Home</h4>
          <ul>
@@ -88,18 +88,19 @@
          </ul>
         </div>
        </div>
-       <div class="col-sm-12 col-md-2">
+       <div class="col-sm-6 col-md-2">
         <div class="footer_2">
          <h4>Favourites</h4>
          <ul>
               <li><a href="#">Chicken Recipes</a></li>
               <li><a href="#">Aloo Recipes</a></li>
               <li><a href="#">MAGGI Noodle Recipes</a></li>
+              <li><a href="#">MAGGI Noodle Recipes</a></li>
 
          </ul>
         </div>
        </div>
-       <div class="col-sm-12 col-md-2">
+       <div class="col-sm-6 col-md-2">
         <div class="footer_2">
          <h4>Recipes</h4>
          <ul>
@@ -109,13 +110,14 @@
          </ul>
         </div>
        </div>
-       <div class="col-sm-12 col-md-3">
+       <div class="col-sm-6 col-md-3">
         <div class="footer_2">
          <h4>Talk To Us</h4>
          <ul>
               <li><a href="#">Copyright</a></li>
               <li><a href="#">About Nestlé</a></li>
               <li><a href="#">Creating Shared Value at Nestlé</a></li>
+              
          </ul>
         </div>
        </div>

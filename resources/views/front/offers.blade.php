@@ -36,7 +36,7 @@
 <div class="container">
 	<div class="row div_row">
 		@foreach($rc_data1 as $item)
-		<div class="col-sm-12 col-md-6">
+		<div class="col-sm-6 col-md-3">
 			<div class="card clearfix">
 				
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
@@ -68,17 +68,12 @@
 
 <section class="offer2">
 	<div class="title2">
-		<h2 class="text-center"><span style="font-size: 40px ;color:rgb(255, 223, 196) ">LOOOOOOOOk </span><br> The Discount Of Any Meals In This Section Reach at 35% </h2>
+		<h2 class="text-center"><span style="font-size: 30px">LOOOOOOOOk </span><br> The Discount Of Any Meals In This Section Reach at 35% </h2>
 	</div>
 	<div class="container offer_2">
 		<div class="row div_row">
-			{{-- <div class="col-sm-12">
-				<div class="title2">
-					<h2 class="text-center"> LOOOOOOOOk !! The Discount Of Any Meals In This Section Reach at 35% </h2>
-				</div>
-			</div> --}}
 			@foreach($rc_data2 as $item)
-			<div class="col-sm-12 col-md-4">
+			<div class="col-sm-6 col-md-4">
 				<div class="card clearfix">
 					
 					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"

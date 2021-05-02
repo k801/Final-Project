@@ -40,7 +40,7 @@
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">اضافة مستخدم</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">Add New </a>
                 </div>
             </div>
             <div class="card-body">
@@ -65,11 +65,11 @@
                                     <td>
                                         @if ($user->Status == 'Active')
                                             <span class="label text-success d-flex">
-                                                <div class="dot-label bg-success ml-1"></div>{{ $user->Status }}
+                                                <div class="dot-label bg-success mx-4"></div>{{ $user->Status }}
                                             </span>
                                         @else
                                             <span class="label text-danger d-flex">
-                                                <div class="dot-label bg-danger ml-1"></div>{{ $user->Status }}
+                                                <div class="dot-label bg-danger mx-4"></div>{{ $user->Status }}
                                             </span>
                                         @endif
                                     </td>

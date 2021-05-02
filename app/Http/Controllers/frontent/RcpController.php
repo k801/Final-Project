@@ -9,10 +9,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\Environment\Console;
 use App\Models\Cart;
+use App\Models\Rating;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class RcpController extends Controller
 {
+
+
+
+    public $module_view_folder;
+
+    public function __construct()
+    {
+        $this->module_view_folder = 'front.shoppingCart';
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +33,10 @@ class RcpController extends Controller
     {
         $cat =Category::all() ;
         $recps = reciepe::all();
-        // dump($recps) ;
+
+        $reciepe = new reciepe ;
+        // $reciepe = $reciepe->findorfail();
+        // $rating=$reciepe->averageRating;
         // $recps = Reciepe::orderBy('name', 'asc')->get() ;
 
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
@@ -60,9 +74,45 @@ class RcpController extends Controller
     {
         $reciepe = new reciepe ;
         $reciepe = $reciepe->findorfail($id);
+        $rating=$reciepe->averageRating;
+        // dd($rating) ;
         // dump($reciepe) ;
-        return view("front.details", ["rc_data"=> $reciepe]);
+        return view("front.details", ["rc_data"=> $reciepe,'rating'=>$rating]);
     }
+
+    public function getRecipesDetails($id)
+    {
+        $reciepe = new reciepe ;
+        $reciepe = $reciepe->findorfail($id);
+        $rating=$reciepe->averageRating;
+        // dd($rating) ;
+        // dump($reciepe) ;
+        return view("front.details", ["rc_data"=> $reciepe,'rating'=>$rating]);
+    }
+
+    function get_rate(Request $request)
+    {
+    // id of recipe
+        $id= $request->id;
+// value rate
+        $rating=$request->rating;
+        $user_id=Auth::id();
+        $reciepe = Reciepe::findOrFail($id);
+        $count=Rating::where('user_id',$user_id)->where('rateable_id',$id)->get()->count();
+
+      if($count==0)
+      {
+        $reciepe->rate($rating);
+
+      }else{
+
+        $reciepe->rateOnce($rating);
+      }
+
+        return $count;
+    }
+
+
     public function addTOCart(Request $request,$id){
         $reciepe = new reciepe ;
         $reciepe = $reciepe->findorfail($id);
@@ -76,13 +126,66 @@ class RcpController extends Controller
 
 
     }
-    public function getCart(){
-        if(!Session::has('cart')){
-return view('front.shoppingCart');
-        }
+    public function getCart()
+    {
+
         $oldCart=Session::get('cart');
         $cart=new Cart($oldCart);
+
+        if (request('id') && request('resourcePath'))
+        {
+            $payment_status = $this->getPaymentStatus(request('id'), request('resourcePath'));
+
+            if (isset($payment_status['id']))
+             {
+                 $showSuccessPaymentMessage = true;
+
+                 session()->flash('success','successfull payment');
+                }else{
+                    $cart=new Cart($oldCart);
+                    $showFailPaymentMessage = true;
+                    session()->flash('fail','fail payment');
+
+                }
+
+                return view($this->module_view_folder)-> with(['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice,'reciepe'=>$cart->items,]);
+
+            }
+
+
+        // if(!Session::has('cart'))
+        // {
+
+        //    return view('front.shoppingCart');
+        // }
+        // $oldCart=Session::get('cart');
         return view('front.shoppingCart',['reciepe'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+
+    }
+
+
+
+
+
+private function getPaymentStatus($id, $resourcepath)
+    {
+        $url = config('payment.hyperpay.url');
+        $url .= $resourcepath;
+        $url .= "?entityId=" . config('payment.hyperpay.entity_id');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Authorization:Bearer ' . config('payment.hyperpay.auth_key')));
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, config('payment.hyperpay.production'));// this should be set to true in production
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $responseData = curl_exec($ch);
+        if (curl_errno($ch)) {
+            return curl_error($ch);
+        }
+        curl_close($ch);
+        return json_decode($responseData, true);
 
     }
     public function getCheckout()
@@ -96,6 +199,21 @@ return view('front.shoppingCart');
         return view ('front.checkout',['total'=>$total]);
 
     }
+
+public function get_recipes($category_id)
+{
+
+   $allRecipes=Reciepe::where('category_id',$category_id)->get();
+// $allRecipes=$allRecipes->ratings->id;
+
+
+//    $rates= Rating::where('rateable_id',$allRecipes->id)->get();
+
+// $rating=$allRecipes->averageRating;
+   return json_decode($allRecipes);
+
+
+}
 
     /**
      * Show the form for editing the specified resource.

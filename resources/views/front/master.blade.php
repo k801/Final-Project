@@ -7,72 +7,72 @@
     <title> Final Version </title>
 
 
-
-
-
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/global.css')}}" rel="stylesheet">
-    <link href="{{asset('fonts/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/ken-burns.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}" />
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
           rel="stylesheet">
+          <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
           @yield('style')
           @yield('title')
   </head>
 
   <body>
-    <section id="header">
-        <nav class="navbar navbar-default navbar-fixed-top bg-info">
-               <div class="navbar-header page-scroll">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse"
-                           data-target="#bs-example-navbar-collapse-1">
-                       <span class="sr-only">Toggle navigation</span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                       <span class="icon-bar"></span>
-                   </button>
-                   <div class="navbar-brand navbar-brand-centered ">
-                       <a href="{{route('homePage.index')}}">
-                            <img src="{{asset('images/final_logo.jpg')}}" class="logo rounded-circle">
-                       </a>
-                   </div>
-                </div>
-               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <div>
-                   <ul class="nav navbar-nav navbar">
-                       <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
-                       <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
-                       <li><a href="{{route('sign.create')}}">Sign Up</a></li>
-                       {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
-                       <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
-                       <li><a href="{{route('rcps.shoppingCart')}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
-                            fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 
-                            3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 
-                            0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 
-                            4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 
-                            0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 
-                            0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                        </svg>Shop Cart
-                       <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
-                       {{-- <li><a href="/login"> Log in </a></li>
-                       <li><a href="/register"> Sign Up </a></li> --}}
+      @section('navbar')
+     <section id="header">
+          <nav class="navbar navbar-default navbar-fixed-top">
+                 <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse"
+                             data-target="#bs-example-navbar-collapse-1">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button>
+                     <div class="navbar-brand navbar-brand-centered ">
+                         <a href="{{route('homePage.index')}}">
+                              <img src="{{asset('images/final_logo.jpg')}}" class="logo rounded-circle">
+                         </a>
+                     </div>
+                  </div>
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <div>
+                     <ul class="nav navbar-nav navbar">
+                         <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
+                         <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
+                         <li><a href="{{route('sign.create')}}">Sign Up</a></li>
+                         {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
+                         <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
+                         <li><a href="{{route('rcps.shoppingCart')}}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                              fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89
+                              3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0
+                              0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102
+                              4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7
+                              0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7
+                              0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                          </svg>Shop Cart
+                         <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
+                         {{-- <li><a href="/login"> Log in </a></li>
+                         <li><a href="/register"> Sign Up </a></li> --}}
 
-                   </ul>
-               </div>
+                     </ul>
+                 </div>
 
-           </div>
-       </nav>
-</section>
-
+             </div>
+         </nav>
+        </section>
+@show
 @yield('content')
 
 <section id="footer">
@@ -143,9 +143,10 @@
      </div>
    </section>
 
-<script src="./js/jquery-2.1.1.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/custom.js"></script>
+   <script src="{{asset('js/jquery-2.1.1.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap.min.js')}}"></script>
+   <script src="{{asset('js/custom.js')}}"></script>
+
 
 @yield('scripts')
 

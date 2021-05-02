@@ -218,7 +218,7 @@ padding: 15px 16px;
  width: 46px;
  height: 47px;
  font-size: 20px;
- background-color:red;
+ background-color:white;
  line-height: 46px;
  color: #261253;
 }
@@ -388,3 +388,45 @@ p.price1,p.price2
   font-size: 25px;
 }
 
+
+.nav-recipe{
+    color:red !important;
+    font-size:20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+    'Lucida Grande', 'Lucida Sans Unicode', 
+    'Geneva, Verdana, sans-serif';
+    color: rgba(255,255,255,1);
+    background: rgb(92, 42, 42);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: green !important;
+    text-align: left;
+
+
+}
+#header .nav-recipe a{
+
+    color:#fff;
+}
+#header .nav-recipe a{
+
+    font-size:17px;
+    color: #fff !important;
+    /* background-color: #32074e; */
+    position: relative;
+    display: block;
+    padding: 15px 16px !important;
+
+}
+
+.nav-recipe a:hover{
+
+    background-color: #B0A94B !important;
+
+}
+.active{
+    background-color: #32074e !important;
+
+color:red !important;
+}

@@ -1,4 +1,4 @@
-@media screen and (max-width : 290px)
+@media screen and (max-width : 769px)
 {
     .form-group
     {
@@ -6,7 +6,7 @@
     }
     .form-group h4 
     {
-        font-size: 20px;
+        font-size: 10px;
         margin-top: 20px;
     }
 

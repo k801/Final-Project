@@ -77,10 +77,6 @@ list-style:none;
 }
 
 
-/* .img_responsive
-{ 
- width:100%
-} */
 
 .button
 { 
@@ -180,7 +176,7 @@ padding: 15px 16px;
 .footer_3 li a i{ 
  border-radius: 50%;
  text-align: center;
- width: 46px;
+ width: 40px;
  height: 47px;
  font-size: 20px;
  background-color:rgb(83, 32, 32);
@@ -205,7 +201,7 @@ padding: 15px 16px;
 .footer_main_1 p{ 
  padding:0px;
  font-family: Georgia, 'Times New Roman', Times, serif;
- font-size: 27px;
+ font-size:30;
  font-weight: bold ;margin:0px;
  color:rgb(228, 220, 220);
 }
@@ -334,4 +330,47 @@ p.price1,p.price2
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 25px;
+}
+
+
+@media screen and (max-width : 769px)
+{
+
+  .footer_main_1 p
+  { 
+    font-size: 22px;
+   }
+   ul{
+    margin-bottom:15px;	
+    }
+ 
+    .footer_3 li a i
+    { 
+      width: 40px;
+      height: 60px;
+      font-size: 23px;
+      line-height: 60px;
+     }
+}
+
+
+@media screen and (max-width : 281px)
+{
+  .footer_main_1 p
+  { 
+    font-size: 8px;
+   }
+
+   ul{
+    padding:5px 20px;
+    margin-bottom:10px;
+    list-style:none;	
+    }
+    .footer_3 li a i
+    { 
+      width: 27px;
+      height: 35px;
+      font-size: 15px;
+      line-height: 35px;
+     }
 }

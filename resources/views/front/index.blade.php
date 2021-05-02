@@ -57,7 +57,7 @@
 	</div>
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-		<div class="col-sm-12 col-md-4">
+		<div class="col-xs-12 col-sm-4  col-md-4">
 			<div class="card">
 				
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 

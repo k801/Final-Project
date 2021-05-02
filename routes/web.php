@@ -66,8 +66,8 @@ Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name(
 Route::resource('reservations',ReservationsController::class);
 //cart
 
-route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
-route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart')->Middleware("auth") ;
+route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; ;
 route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 Route::get('offers_pgae',[RcpController::class,'offers']) ;
 

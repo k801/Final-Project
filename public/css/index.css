@@ -92,7 +92,6 @@ div.card
   margin:1% ;
   padding: 10px;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
-  overflow: hidden;
 }   
 
 .img-responsive
@@ -124,6 +123,7 @@ div.card3
 {
   margin-top: 30px;
   margin-left: 0px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
 }
 
 .rec_name
@@ -151,8 +151,9 @@ div.card3
 
 div.card4 
 {
-  border: rgb(172, 133, 60) 3px solid;
-  margin-bottom: 2%;
+  border: rgb(172, 133, 60) 3px solid ;
+  margin-bottom: 2% ;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
 }
 
 div.card4 img

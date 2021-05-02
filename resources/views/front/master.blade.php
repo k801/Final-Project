@@ -63,7 +63,7 @@
                             0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 
                             0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>Shop Cart
-                       <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
+                       <span class="badge" style=" font-size: 15px;">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
 
                    </ul>
                </div>

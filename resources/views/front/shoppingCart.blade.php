@@ -8,11 +8,11 @@
     <div class="details_inner clearfix container">
       <div class="row">
           <div class="details_main_1">
-               <h1>Shpping Cart</h1>
+               <h1>Shopping Cart</h1>
                <ul>
                     <li><a href="{{route('homePage.index')}}">Home</a></li>
                     <li><i class="fa fa-angle-double-right"></i></li>
-                    <li> Shoping Cart </li>
+                    <li> Shopping Cart </li>
                </ul>
           </div>
       </div>
@@ -66,13 +66,15 @@
 
 @else
 
+<section style="background-color:rgb(112, 198, 204)">
 <div class="container">
-    <div class="row">
-        <div class="col-sm-10" style="margin: 10% 0px">
-            <p class="alert alert-danger"> No Items In Cart</p>
+    <div class="row>
+        <div class="col-sm-12" style="margin: 2% 0px">
+            <p class="alert alert-danger"> No Items In Cart yet</p>
         </div>
     </div>
 </div>
+</section>
 @endif
 </section>
 

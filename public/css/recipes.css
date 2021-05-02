@@ -112,7 +112,6 @@ div.card
   margin:1% ;
   padding: 10px;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
-  overflow: hidden;
 }
 
 div.card:hover

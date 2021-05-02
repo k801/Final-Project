@@ -31,7 +31,7 @@
 	
 <section class="offer_1">
 	<div class="title">
-		<h2 class="text-center"> Take Two Of Any Meal In This Section Then Take The Third Free </h2>
+		<h2 class="text-center"> Take Two Of Any Meal In This Section Will Take The Third Free </h2>
 	</div>
 <div class="container">
 	<div class="row div_row">
@@ -40,7 +40,7 @@
 			<div class="card clearfix">
 				
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
-				class="img-responsive" style="height: 300px ;  width: 100% ">
+				class="img-responsive" style="height: 220px ;  width: 100% ">
 
 				{{-- <p class="text-center alert-danger price1">List Price : <s>{{$item->price}}</s></p> --}}
 	-			<p class="text-center alert-success price2">price : {{$item->price-($item->price*0.1)}}</p>
@@ -68,7 +68,7 @@
 
 <section class="offer2">
 	<div class="title2">
-		<h2 class="text-center"><span style="font-size: 30px">LOOOOOOOOk </span><br> The Discount Of Any Meals In This Section Reach at 35% </h2>
+		<h2 class="text-center"><span style="font-size: 30px">LOOOk ! The Discount Of Any Meals In This Section Reach at 35%  </span></h2>
 	</div>
 	<div class="container offer_2">
 		<div class="row div_row">
@@ -77,7 +77,7 @@
 				<div class="card clearfix">
 					
 					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
-					class="img-responsive" style="height: 300px ;  width: 100% ">
+					class="img-responsive" style="height: 250px ;  width: 100% ">
 	
 					<p class="text-center alert-danger price1">List Price : <s>{{$item->price}}</s></p>
 		-			<p class="text-center alert-success price2">After Discount : {{$item->price-($item->price*0.3)}}</p>

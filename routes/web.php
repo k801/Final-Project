@@ -75,3 +75,9 @@ route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
 route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
 route::get('remove/{id}',[RcpController::class , 'getRemoveItem'])->name('rcps.RemoveAll') ;
 
+Route::get('login-user', function () 
+{
+    return view('front.login') ;
+    
+});
+

@@ -15,7 +15,7 @@ Dinner Club
 				<div class="breadcrumb-header justify-content-between">
 					<div class="left-content">
 						<div>
-						  <h4 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">Hi,{{Auth::user()->name}} <br> welcome back!</h4>
+						  <h4 class="main-content-title tx-24 mg-b-1 mg-b-lg-1 alert alert-info">Hi,{{Auth::user()->name}} <br> welcome back!</h4>
 						</div>
 					</div>
 
@@ -73,7 +73,7 @@ Dinner Club
 						<div class="card overflow-hidden sales-card bg-success-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">unpaid Invoices </h6>
+									<h6 class="mb-3 tx-12 text-white"> Empleded Orders </h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">

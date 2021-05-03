@@ -1,6 +1,6 @@
 
 #recipes_main{ 
-    background-image: url(../images/bg45.jpg);
+    background-image: url(../images/35.jpg);
     background-repeat: no-repeat;
     background-size: cover;
    }
@@ -9,13 +9,7 @@
     padding-bottom:150px;
     background-color: #000000ab;
    }
-   .well_18 a {
-       background: #FB641B;
-       padding: 20px 70px 20px 70px;
-       color: #fff;
-       font-size: 15px;
-       font-weight: bold;
-   }
+   
    .recipes_main_1{ 
     text-align:center;
    }
@@ -56,24 +50,7 @@
     background-color: #fff;
    }
    /********************* cooking_end ****************/
-   /********************* recipes ****************/
-   .recipes_1{ 
-    margin-bottom:10px;
-   }
-   .recipes_2{ 
-    text-align:center;
-    padding-bottom: 25px;
-    box-shadow: 0px 0 1px 1px #f1e006;
-    margin-bottom: 20px;
-   }
-   .recipes_2 h4{ 
-    padding-top:10px;
-    color: #e22709;
-   }
-   /********************* recipes_end ****************/
-   
-   
-   
+ 
    @media screen and (max-width : 767px){
    .recipes_inner {
     padding-bottom: 70px;
@@ -118,9 +95,13 @@
     padding-bottom: 15px;
    }
    }
-   
-   @media (min-width:1201px) and (max-width:1320px) {
-   
+
+   @media screen and (min-width : 655px)
+   {
+     p
+     {
+       font-size: 1px ;
+     }
    }
 
 
@@ -130,8 +111,13 @@ div.card
   border: #524d029c 2px solid;
   margin:1% ;
   padding: 10px;
-  
-}   
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 9%), 0 2px 12px 0 rgb(0 0 0 / 5%);
+}
+
+div.card:hover
+{
+  transition: transform 8s ease-in-out , -webkit-transform 9s ease-in-out ;
+}
 
 p.btn
 {

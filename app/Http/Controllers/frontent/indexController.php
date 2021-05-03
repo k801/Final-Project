@@ -27,5 +27,5 @@ class indexController extends Controller
         $recps3 = Reciepe::orderBy('price', 'asc')->Limit(4)->get();
         return view("front.index" ,["rc_data"=>$recps1,"rc_data2"=>$recps2 , "rc_data3"=>$recps3]) ;
     }
-   
+
 }

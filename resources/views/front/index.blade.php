@@ -48,7 +48,7 @@
         </div>
 	</div>
   </section>
-  
+
 <section class="first-section">
   <div class="container">
     <div class="text-center header">
@@ -57,25 +57,25 @@
 	</div>
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-		<div class="col-sm-4">
+		<div class="col-xs-12 col-sm-4  col-md-4">
 			<div class="card">
-				
-				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
+
+				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
 				class=" img-responsive"  style="height: 300px ;  width: 100% ">
-				
-				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
-				<p class="text-center alert-success price2">After Discount : {{$item->price}}</p>
-				<p class="text-center btn"><a href="{{route ('rcps.show',$item)}}"class="button"> More  </a></p>
-				<p class="bi bi-cart pull-right btn">
+
+				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
+				<p class="text-center btn"><a href="url('getRecipesDetails/{{$item->id}}')" class="button"> Details  </a></p>
+                <p class="bi bi-cart pull-right btn">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 					   class="button"> Buy
-					<svg xmlns="http://www.w3.org/2000/svg" 
-					width="16" height="16" 
+					<svg xmlns="http://www.w3.org/2000/svg"
+					width="40" height="16"
 					fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
-					<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
-							0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
-							1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
-							1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
+					<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+							0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607
+							1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0
+							1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2
 							1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 					  </svg></a>
 				</p>
@@ -85,7 +85,7 @@
 	</div>
 </div>
 </section>
- 
+
 
 <section class="second-section">
 <div class="container">
@@ -98,39 +98,41 @@
 		@foreach($rc_data2 as $item2)
 			 <div class="col-sm-6">
 				<div class="card2">
-					<img src="{{asset('images')}}/{{$item2->image}}" alt="Card image" 
+					<img src="{{asset('images')}}/{{$item2->image}}" alt="Card image"
 					     height="350px" width="100%" >
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="card3">
-					<h2 class="rec_name">{{$item2->name}}</h2> 
-					<p class="rec_desc">{{$item2->description}}</p> 
+					<h2 class="rec_name">{{$item2->name}}</h2>
+					<p class="rec_desc">{{$item2->description}}</p>
+					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 					<p class="text-center btn">
-						<a href="{{route ('rcps.show',$item2)}}" class="button"> Details </a>
+						<a href="{{route ('reciepes.show',$item2)}}" class="button"> Details </a>
 					</p>
 					<p class="bi bi-cart pull-right btn">
 						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 						class="button"> Buy
-						<svg xmlns="http://www.w3.org/2000/svg" 
-						width="16" height="16" 
+						<svg xmlns="http://www.w3.org/2000/svg"
+						width="16" height="16"
 						fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
-						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
-								0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
-								1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
-								1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
+						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+								0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607
+								1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0
+								1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2
 								1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 					  	</svg></a>
 					</p>
 				</div>
 			</div>
 		@endforeach
-			
-		
+
+
 	</div>
 </div>
 </section>
-    
+
 
 <section class="third-section">
 	<div class="container">
@@ -142,27 +144,27 @@
 		<div class="row div_row4">
 			@foreach($rc_data3 as $item3 )
 				<div class="col-sm-6">
-					<div class="card4"> 
+					<div class="card4">
 						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
-						<p class="text-center alert-warning price1">List Price : <s>{{$item3->price+2.5}} </s></p>
-						<p class="text-center alert-success price2">After Discount : {{$item3->price}}</p>
+						<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
+						<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 						<p class="text-center btn">
-							<a href="{{route ('rcps.show',$item3)}}"class="button"> More  </a>
+							<a href="{{route ('reciepes.show',$item3)}}"class="button"> Details  </a>
 						</p>
 						<p class="bi bi-cart pull-right btn">
 							<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 							class="button"> Buy
-							<svg xmlns="http://www.w3.org/2000/svg" 
-							width="16" height="16" 
+							<svg xmlns="http://www.w3.org/2000/svg"
+							width="16" height="16"
 							fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
-							<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
-									0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
-									1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
-									1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
+							<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+									0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607
+									1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0
+									1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2
 									1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 						  </svg></a></p>
 					</div>
-				
+
 				</div>
 			@endforeach
 		</div>

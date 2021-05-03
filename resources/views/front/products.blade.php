@@ -176,7 +176,8 @@ include('./incs/header.php')
 </section>
 <section id="footer_main" class="clearfix">
   <div class="footer_main_1">
-   <p class="text-center">© 2013 Your Website Name. All Rights Reserved. Design by<a href="http://www.TemplateOnWeb.com"> Template On Web</a> </p>
+   <p class="text-center">© 2013 Your Website Name. All Rights Reserved. Design by
+	   <a href="http://www.TemplateOnWeb.com"> Template On Web</a> </p>
   </div>
 </section>
 </body>

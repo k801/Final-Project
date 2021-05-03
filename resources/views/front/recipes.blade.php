@@ -148,7 +148,6 @@
                         $('#div_row').empty();
 
         jQuery.each(data, function(index, item) {
-            console.log(item);
 
 		var cartoona =`<div class="col-sm-4">
                           <div class="card clearfix" >
@@ -157,28 +156,14 @@
 				<p> description:${item.description}</p>
                 <p class="text-center alert-danger price1">List Price : <s>{{$item->price+2.5}} </s></p>
                 <p class="text-center alert-success price2" >After Discount : ${item.price}</p>
-				<p class="text-center btn"><a href="{{url('getRecipesDetails/${item.id}')}}"class="button"> Details </a></p>
-
-                <p class="bi bi-cart pull-right btn">
-
-					<a href="{{url('rcps.addToCart/${item.id}')}}"class="button"> Buy
-					<svg xmlns="http://www.w3.org/2000/svg"
-					width="16" height="16"
-					fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
-							0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607
-							1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0
-							1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2
-							1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg></a></p>
-
-
-
-                  </div>`;
+				<a class="btn btn-info m-auto" href="{{url('getRecipesDetails/${item.id}')}}" style="margin-left:9rem">details</a>
+				<a class="btn btn-success" href="{{url('rcps.addToCart/${item.id}')}}">Add to cart</a>
+                </div>`;
+                
                 $('#div_row').append(cartoona);
 
         });
-        console.log(cartoona);
+        // console.log(cartoona);
 
 
 	},

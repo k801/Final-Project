@@ -18,7 +18,7 @@
         </button>
         <div class="navbar-brand navbar-brand-centered ">
             <a href="{{route('homePage.index')}}">
-                 <img src="{{asset('images/final_logo.jpg')}}" class="logo rounded-circle">
+                 <img src="{{asset('images/final_logo.jpg')}}" class="logo">
             </a>
         </div>
      </div>
@@ -26,12 +26,12 @@
     <div>
         <ul class="nav  w-50 ml-auto nav-recipe">
             <li class="active" ><a href="{{route('homePage.index')}}"class="text-danger">HOME</a></li>
-            <li><a href="{{route('rcps.index')}}">RECIPES</a></li>
+            <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
             <li><a href="{{route('sign.create')}}">Sign Up</a></li>
             {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
             <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
             <li><a href="{{route('rcps.shoppingCart')}}">
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
                  fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89
                  3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0
@@ -39,8 +39,8 @@
                  4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7
                  0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7
                  0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-             </svg>Shop Cart
-            <span class="badge text-warning">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
+             </svg>
+            <span class="badge text-warning cart_count">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
             {{-- <li><a href="/login"> Log in </a></li>
             <li><a href="/register"> Sign Up </a></li> --}}
 
@@ -114,9 +114,8 @@
                               class="" height="65%" width="100%">
                          </div>
                          <div class="div_price">
-                             <span id="item_id" class="">{{$rc_data->id}}</span>
-                              <p class="text-center alert-danger price1">List Price : {{$rc_data->price+2.5}} </p>
-                              <p class="text-center alert-success price2">After Discount :<span id="price"> {{$rc_data->price}}</span></p>
+                              <p class="text-center alert-danger price1">List Price : <s>{{$rc_data->price+($rc_data->price*0.2)}}</s></p>
+                              <p class="text-center alert-success price2">After Discount : {{$rc_data->price}} </p>
                          </div>
 
                          {{-- <div id="show-rting" style="text-align:center"> --}}

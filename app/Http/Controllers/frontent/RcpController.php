@@ -90,6 +90,8 @@ class RcpController extends Controller
         return view("front.details", ["rc_data"=> $reciepe,'rating'=>$rating]);
     }
 
+  
+
     function get_rate(Request $request)
     {
     // id of recipe
@@ -112,6 +114,14 @@ class RcpController extends Controller
         return $count;
     }
 
+    public function offers()
+    {
+        $recps = reciepe::all();
+        // dump($recps) ;
+        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(4)->get() ;
+        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(6)->get() ;
+        return view("front.offers" ,["rc_data1"=>$recps1,"rc_data2"=>$recps2]) ;
+    }
 
     public function addTOCart(Request $request,$id){
         $reciepe = new reciepe ;
@@ -122,7 +132,7 @@ class RcpController extends Controller
         $request->session()->put('cart',$cart);
         // dd($request->session()->get('cart'));
 
-        return redirect()->route('rcps.index');
+        return redirect()->route('reciepes.index');
 
 
     }
@@ -204,10 +214,8 @@ public function get_recipes($category_id)
 {
 
    $allRecipes=Reciepe::where('category_id',$category_id)->get();
-// $allRecipes=$allRecipes->ratings->id;
 
-
-//    $rates= Rating::where('rateable_id',$allRecipes->id)->get();
+//    $rates= Rating::whe('rateable_id','=',$allRecipes)->get();
 
 // $rating=$allRecipes->averageRating;
    return json_decode($allRecipes);

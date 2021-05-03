@@ -20,6 +20,7 @@ use App\Http\Controllers\frontent\indexController;
 use App\Http\Controllers\frontent\RcpController;
 use App\Http\Controllers\frontent\Catcontroller;
 use App\Http\Controllers\frontent\ContactController;
+use App\Http\Controllers\frontent\ReservController;
 use App\Http\Controllers\frontent\UsController;
 use App\Http\Controllers\frontent\Ratecontroller;
 
@@ -55,15 +56,16 @@ Route::resource('users','App\Http\Controllers\UserController');
 Route::post('contactResponse/{contact}',[MessageController::class,'response'])->name('contactResponse');
 Route::resource('/',indexController::class);
 Route::resource('homePage',indexController::class);
-    Route::resource('rcps',RcpController::class);
-    Route::resource('Cats', CatController::class);
+    Route::resource('reciepes',RcpController::class);
+    Route::resource('Categorys', CatController::class);
     Route::resource('sign', UsController::class);
     Route::resource('contact',ContactController::class) ;
+    // ->Middleware("auth") ;
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
     // ->Middleware("auth") =
   Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
-  route::get('rcps.addToCart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart');
-  route::get('getRecipesDetails/{id}',[RcpController::class , 'getRecipesDetails']);
+  route::get('rcps.addToCart/{id}',[RcpController::class , 'addTOCart']);
+//   route::get('getRecipes/{id}',[RcpController::class , 'get_recipes']);
 
   route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
   route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
@@ -76,10 +78,29 @@ Route::resource('homePage',indexController::class);
 
 Route::get('get-checkout-id',[paymentProviderController::class,'getChechOutId'])->name("offers-checkout");
 Route::get('get-stars',[RcpController::class,'getStars'])->name("stars-checkout");
+    Route::resource('reservation' , ReservController::class) ;
+    Route::resource('reservations',ReservationsController::class);
 
+Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
+Route::resource('reservations',ReservationsController::class);
+//cart
+
+route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart')->Middleware("auth") ;
+route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; ;
+route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
+Route::get('offers_pgae',[RcpController::class,'offers']) ;
+
+route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
+route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
+route::get('remove/{id}',[RcpController::class , 'getRemoveItem'])->name('rcps.RemoveAll') ;
 
 // rating
 // Route::get('rating',[paymentProviderController::class,'getRating'])->name("rating-sars");
+Route::get('login-user', function ()
+{
+    return view('front.login') ;
+
+});
 
 
 
@@ -89,3 +110,6 @@ Route::get('get_rate_value',[RcpController::class,'get_rate'])->name("store-star
 
 // get all recipes by Ajax
 Route::get('getRecipes/{id}',[RcpController::class,'get_recipes']);
+// get details
+
+Route::get('getRecipesDetails/{id}',[RcpController::class,'getRecipesDetails']);

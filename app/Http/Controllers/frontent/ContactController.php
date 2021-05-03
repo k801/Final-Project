@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\frontent;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\contact;
+use app\Models\User ;
+use Facade\Ignition\DumpRecorder\Dump;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -38,8 +41,24 @@ class ContactController extends Controller
             'name'=>'required|min:3|max:30' , 
             'email'=>'required|email'  
          ]) ;
-        contact::create($request->all());
-        return redirect()->route('front.home') ;
+         
+        $id = Auth::user()->id;
+        // $name = Auth::user()->name ;
+        $email= Auth::user()->email ;
+
+        dd($id) ;
+        // dd($name) ;
+        // dd($email) ;
+
+        $contact = new contact ;
+        $contact->name = request('name') ;
+        $contact->mail = $email ;
+        $contact->message = request("message");
+        $contact->user_id= $id ;
+        $contact->save() ;
+    
+        // contact::create($request->all());
+        // return redirect()->route('front.home') ;
     }
 
     /**

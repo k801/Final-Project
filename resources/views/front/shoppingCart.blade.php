@@ -50,7 +50,7 @@
                       <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="cart"></span></button>
                       <ul class="dropdown-menu">
                           <li ><a href="{{route('rcps.reduceByOne',$reciepe['item']['id'])}}">Remove by 1</a></li>
-                          <li><a href="#"> Remove by All</a></li>
+                          <li><a href="{{route('rcps.RemoveAll',$reciepe['item']['id'])}}"> Remove by All</a></li>
                       </ul>
                   </div>
                   </li>

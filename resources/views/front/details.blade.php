@@ -1,8 +1,8 @@
 @extends('front.master')
-@section('style')
+@section('style') @endsection
 
 <link href="{{asset('css/details.css')}}" rel="stylesheet">
-@endsection
+
 
 @section('navbar')
 <section id="header">
@@ -41,8 +41,6 @@
                  0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
              </svg>
             <span class="badge text-warning cart_count">{{Session::has('cart')?Session::get('cart')->totalQty:''}}</span></a></li>
-            {{-- <li><a href="/login"> Log in </a></li>
-            <li><a href="/register"> Sign Up </a></li> --}}
 
         </ul>
     </div>
@@ -107,7 +105,6 @@
                </div>
 
                <div class="col-sm-12 col-md-6">
-                    {{-- <h3>  The Easy Steps </h3> --}}
                <div class="div_img-price">
                          <div class="div_img">
                               <img src="{{asset('images')}}/{{$rc_data->image}}" alt="Card image"
@@ -125,7 +122,7 @@
 
                        <div class="cart">
                               <p class="bi bi-cart pull-right btn">
-                                        <a href="url('rcps.addToCart/{{$rc_data->id}}')" class="button"> Buy
+                                        <a href="{{route ('rcps.addToCart',['id'=>$rc_data->id])}}" class="button"> Buy
                                    <svg xmlns="http://www.w3.org/2000/svg"
                                    width="16" height="16"
                                    fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
@@ -152,24 +149,24 @@
 
 
 <script>
-     //    $(document).on('click', '#dstar', function (e) {
-     //        console.log("data");
-     //          e.preventDefault();
-     //         $.ajax({
-     //            type: 'get',
-     //            url: "{{route('stars-checkout')}}",
-     //            data: {
-     //                // price: $('#price').text(),
-     //            },
-     //            success: function (data) {
-     //                // console.log(data);
+        $(document).on('click', '#dstar', function (e) {
+            console.log("data");
+              e.preventDefault();
+             $.ajax({
+                type: 'get',
+                url: "{{route('stars-checkout')}}",
+                data: {
+                    // price: $('#price').text(),
+                },
+                success: function (data) {
+                    // console.log(data);
 
-     //                    $('#show-rating').html(data);
+                        $('#show-rating').html(data);
 
-     //            }, error: function (reject) {
-     //            }
-     //        });
-     //    });
+                }, error: function (reject) {
+                }
+            });
+        });
      </script>
 
 @endsection

@@ -60,7 +60,7 @@
 				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 				<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 				<p class="bi bi-cart">
-					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+					<a href="{{route ('rcps.addToCart',$item->id)}}"
 					   class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
 					width="50" height="16" 
@@ -88,25 +88,24 @@
 	</div>
 
 	<div class="row div_row2">
-		@foreach($rc_data2 as $item2)
+		@foreach($rc_data2 as $item)
 			 <div class="col-sm-6">
 				<div class="card2">
-					<img src="{{asset('images')}}/{{$item2->image}}" alt="Card image"
+					<img src="{{asset('images')}}/{{$item->image}}" alt="Card image"
 					     height="350px" width="100%" >
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="card3">
-					<h2 class="rec_name">{{$item2->name}}</h2>
-					<p class="rec_desc">{{$item2->description}}</p>
+					<h2 class="rec_name">{{$item->name}}</h2>
+					<p class="rec_desc">{{$item->description}}</p>
 					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 					<p class="detls">
 						<a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a>
 					</p>
 					<p class="bi bi-cart">
-						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
-						   class="button"> Buy
+						<a href="{{route ('rcps.addToCart',$item->id)}}" class="button"> Buy
 						<svg xmlns="http://www.w3.org/2000/svg" 
 						width="40" height="16" 
 						fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
@@ -135,16 +134,15 @@
 		</div>
 
 		<div class="row div_row4">
-			@foreach($rc_data3 as $item3 )
+			@foreach($rc_data3 as $item)
 				<div class="col-sm-6">
 					<div class="card4">
-						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
+						<img src="{{asset('images')}}/{{$item->image}}" alt="Card image">
 						<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 						<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 						<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 						<p class="bi bi-cart">
-							<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
-							   class="button"> Buy
+							<a href="{{route ('rcps.addToCart',$item->id)}}" class="button"> Buy
 							<svg xmlns="http://www.w3.org/2000/svg" 
 							width="40" height="16" 
 							fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">

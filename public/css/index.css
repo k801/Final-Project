@@ -48,6 +48,32 @@
 }
 }
 
+@media screen and (max-width : 769px)
+
+{
+  #center .carousel-caption 
+  {
+    height: 95%;
+    margin-top: -20px;
+  }
+  #center .kb_caption h1
+  {
+    font-size: 35px;
+    padding-top: 10px;
+  }
+  #center .kb_caption p {
+    letter-spacing: 0px;
+    font-size: 14px;
+  }
+
+  p.btn
+  {
+    font-size: 10px;
+  }
+}
+
+
+
 
 .first-section
 {
@@ -135,39 +161,33 @@ div.card4 img
 
 }
 
-p.btn
+p.detls
 {
-  text-align:center;
-  padding:2% ;
-  margin-top: 2%;
+  margin-top: 7%;
+  font-size: 15px;
+  margin-left: 30px;
 }
 
-.bi a.button
+p.bi
 {
-  background-color:rgb(42, 167, 30);
+  margin-top: -55px ;
+  margin-left: 170px;
 }
 
+p.bi>a.button
+{
+  text-align: center;
+  color: #fff;
+  background-color:#6f5f88 ;
+}
+
+p.bi>a.button:hover
+{
+  color: #000;
+  background-color:rgb(194, 168, 209);
+}
 
 @media screen and (max-width : 769px)
-
-{
-  #center .carousel-caption 
-  {
-    height: 95%;
-    margin-top: -20px;
-  }
-  #center .kb_caption h1
-  {
-    font-size: 35px;
-    padding-top: 10px;
-  }
-  #center .kb_caption p {
-    letter-spacing: 0px;
-    font-size: 14px;
-}
-}
-
-@media screen and (max-width : 781px)
 
 {
   #center .carousel-caption 
@@ -184,4 +204,45 @@ p.btn
     letter-spacing: 0px;
     font-size: 14px;
 }
+  p.detls
+  {
+    margin-top: 7%;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  p.bi
+  {
+    margin-top: -55px ;
+    margin-left: 160px;
+  }
+
+}
+
+@media screen and (max-width : 281px)
+{
+    p.bi
+  {
+    margin-top: -50px ;
+    margin-left: 100px;
+  }
+
+  p.detls a , p.bi a
+  {
+    font-size: 22px;
+    padding-left: 4%;
+    padding-right: 2%;
+  }
+  p.detls
+  {
+    margin-top: 8%;
+    font-size: 15px;
+    margin-left: 5px;
+  }
+
+  p.bi
+  {
+    margin-top: -50px ;
+    margin-left: 100px;
+  }
 }

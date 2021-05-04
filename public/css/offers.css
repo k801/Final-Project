@@ -70,16 +70,33 @@ div.card
   
 }   
 
-p.btn
+p.detls
 {
-  text-align:center;
-  padding:3% ;
-  margin-top: 5%;
+  margin-top: 7%;
+  font-size: 15px;
+  margin-left: 5%;
 }
-.bi a.button
+
+p.bi
 {
-  background-color:rgb(42, 167, 30);
+  margin-top: -55px ;
+  margin-left: 140px;
+  text-align: center;
 }
+
+p.bi>a.button
+{
+  text-align: center;
+  color: #fff;
+  background-color:#6f5f88 ;
+}
+
+p.bi>a.button:hover
+{
+  color: #000;
+  background-color:rgb(194, 168, 209);
+}
+
 .img-responsive
 {
   border-radius: 10%;
@@ -102,16 +119,53 @@ div.title2 h2
   color: rgb(227, 236, 213);
 }
 
-a.button
+
+@media screen and (max-width : 769px)
 {
-  margin-left: -10px;
-  font-size: 20px;
+  .recipes_main_1 h1
+  { 
+    font-size: 40px;
+  }
+  .recipes_main_1 li
+  { 
+    font-size: 25px;
+  }
+  div.title h2 , div.title2 h2
+  {
+      font-size: 40px;
+  }
 }
 
-@media screen and (max-width : 767px)
+@media screen and (max-width : 281px)
 {
-    div.title h2 , div.title2 h2
-    {
-        font-size: 20px;
-    }
+  .recipes_main_1 h1
+  { 
+    font-size: 25px;
+  }
+  .recipes_main_1 li
+  { 
+    font-size: 20px;
+  }
+  div.title h2 , div.title2 h2
+  {
+      font-size: 16px;
+  }
+
+  p.price2
+  {
+    font-size: 5px;
+  }
+
+    p.bi
+  {
+    margin-top: -50px ;
+    margin-left: 100px;
+  }
+
+  p.detls a , p.bi a
+  {
+    font-size: 22px;
+    padding-left: 4%;
+    padding-right: 2%;
+  }
 }

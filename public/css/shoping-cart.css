@@ -31,14 +31,42 @@
  color: #ffed00;
 }
 
-@media screen and (max-width : 767px){
-.details_inner {
- padding-top: 110px;
- padding-bottom: 50px;
+@media screen and (max-width : 769px)
+{
+  .details_main_1 h1
+  { 
+    font-size: 40px;
+  }
+  .details_main_1 li
+  { 
+    font-size: 20px;
+  }
+  span.label 
+  {
+      left: 220px;
+      font-size: 15px;
+  }
+
+  div.title h2
+  {
+      font-size: 20px;
+  }
 }
-#details {
- text-align: center;
-}
+
+@media screen  and(max-width: 281px)
+{
+  .details_main_1 h1
+  { 
+    font-size: 3px;
+  }
+  .details_main_1 li
+  { 
+    font-size: 2px;
+  }
+  div.title h2
+  {
+      font-size: 20px;
+  }
 }
 
 
@@ -85,9 +113,9 @@ span.badge
 span.label 
 {
     position: relative;
-    left: 255px;
-    top: 50px;
-    font-size: 25px;
+    left: 265px;
+    top: 30px;
+    font-size: 20px;
 }
 
 .btn-group button

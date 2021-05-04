@@ -34,8 +34,8 @@ class RcpController extends Controller
     {
         $recps = reciepe::all();
         // dump($recps) ;
-        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(4)->get() ;
-        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(6)->get() ;
+        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(6)->get() ;
+        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(9)->get() ;
         return view("front.offers" ,["rc_data1"=>$recps1,"rc_data2"=>$recps2]) ;
     }
     public function showbycategory($id)

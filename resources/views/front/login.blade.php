@@ -10,12 +10,12 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-xs-10  col-md-8">
             <div class="card">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="form-group row">
+                        <div class="form-group head row">
                             <div class="col-md-8">
                                 <h4 class="alert"> Login Form </h4>
                             </div>
@@ -59,7 +59,7 @@
                                     {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                       <h2 class="text-danger"> {{ __('Remember Me') }}<h2>
+                                       <h2 class="alert alert-info"> {{ __('Remember Me') }}<h2>
                                     </label>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn">
                                     {{ __('Login') }}
                                 </button>
 

@@ -1,4 +1,8 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+@extends('front.master')
+@section('style') @endsection
+
+<link href="{{asset('css/login.css')}}" rel="stylesheet">
 
 @section('content')
 <div class="container">

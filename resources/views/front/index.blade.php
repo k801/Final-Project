@@ -57,7 +57,7 @@
 	</div>
 	<div class="row div_row">
 		@foreach($rc_data as $item)
-		<div class="col-xs-12 col-sm-4  col-md-4">
+		<div class="col-xs-12  col-sm-6 col-md-4">
 			<div class="card">
 				
 				<img src="{{asset('images')}}/{{$item->image}}" alt="Card image" 
@@ -65,13 +65,13 @@
 				
 				<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 				<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
-				<p class="text-center btn"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
-				<p class="bi bi-cart pull-right btn">
+				<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
+				<p class="bi bi-cart">
 					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
 					   class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
-					width="40" height="16" 
-					fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
+					width="50" height="16" 
+					fill="currentColor" class="bi bi-cart " viewBox="0 0 50 16">
 					<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
 							0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
 							1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
@@ -108,21 +108,21 @@
 					<p class="rec_desc">{{$item2->description}}</p> 
 					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
-					<p class="text-center btn">
-						<a href="{{route ('reciepes.show',$item2)}}" class="button"> Details </a>
+					<p class="detls">
+						<a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a>
 					</p>
-					<p class="bi bi-cart pull-right btn">
+					<p class="bi bi-cart">
 						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
-						class="button"> Buy
+						   class="button"> Buy
 						<svg xmlns="http://www.w3.org/2000/svg" 
-						width="16" height="16" 
+						width="40" height="16" 
 						fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
 						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
 								0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
 								1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
 								1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
 								1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-					  	</svg></a>
+						  </svg></a>
 					</p>
 				</div>
 			</div>
@@ -137,7 +137,7 @@
 <section class="third-section">
 	<div class="container">
 		<div class="row text-center header">
-			<h3> The cheapest Recipes </h3>
+			<h3> The cheapest Meals </h3>
 			<h3> ـــــــــــ O ـــــــــــ </h3>
 		</div>
 
@@ -148,21 +148,20 @@
 						<img src="{{asset('images')}}/{{$item3->image}}" alt="Card image">
 						<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 						<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
-						<p class="text-center btn">
-							<a href="{{route ('reciepes.show',$item3)}}"class="button"> Details  </a>
-						</p>
-						<p class="bi bi-cart pull-right btn">
+						<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
+						<p class="bi bi-cart">
 							<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
-							class="button"> Buy
+							   class="button"> Buy
 							<svg xmlns="http://www.w3.org/2000/svg" 
-							width="16" height="16" 
+							width="40" height="16" 
 							fill="currentColor" class="bi bi-cart " viewBox="0 0 16 16">
 							<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 
 									0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 
 									1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 
 									1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 
 									1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-						  </svg></a></p>
+							  </svg></a>
+						</p>
 					</div>
 				
 				</div>

@@ -54,7 +54,7 @@ class UsController extends Controller
         $user->save();
         
         // user::create ($request->all()) ;
-        return redirect()->route('contact.create') ;
+        return view('front.login') ;
     }
 
     /**

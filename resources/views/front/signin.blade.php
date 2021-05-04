@@ -17,7 +17,7 @@
                     <form method="POST"  class="form" action="{{route('sign.store')}}">
                         @csrf
                         
-                       <div class="form-group">
+                       <div class="form-group head">
                             <h4 class="alert"> Registeration Form </h4>
                         </div>
 

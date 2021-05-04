@@ -1,3 +1,17 @@
+@media screen and (max-width : 281px)
+{
+   
+    .form-group h3
+    {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+    .form-group p.alert
+    {
+        font-size: 12px;
+    }
+}
+
 .serve-form
 {
     background-image: url(../images/18.jpg);
@@ -9,12 +23,6 @@
 div.forms
 {
     margin-top: 50px;
-}
-
-.form-group
-{
-    /* width: 50%; */
-    /* padding-bottom: 2px; */
 }
 
 .form-group h3
@@ -30,11 +38,10 @@ div.forms
     padding: 27px ;
 }
 
-
 .form-group input.btn
 {
     font-size: 20px;
-    margin: -2px 45%;
+    margin: -1% 40%;
     padding: 10px 20px ;
     color: rgb(235, 228, 228);
     background-color: rgb(74, 56, 155);

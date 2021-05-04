@@ -38,9 +38,10 @@
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                    </button>
-                   <div class="navbar-brand navbar-brand-centered ">
+                   <div class="navbar-brand navbar-brand-centered div-logo">
                        <a href="{{route('homePage.index')}}">
-                            <img src="{{asset('images/final_logo.jpg')}}" class="logo rounded-circle">
+                            <img src="{{asset('images/final_logo.jpg')}}" 
+                            class="logo">
                        </a>
                    </div>
                 </div>
@@ -82,19 +83,18 @@
          <h4>Home</h4>
          <ul>
               <li><a href="#">Our Range</a></li>
-              <li><a href="#">From our kitchen</a></li>
+              {{-- <li><a href="#">From our kitchen</a></li> --}}
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Use</a></li>
          </ul>
         </div>
        </div>
-       <div class="col-sm-4 col-md-2">
+       <div class="col-sm-4 col-md-3">
         <div class="footer_2">
          <h4>Favourites</h4>
          <ul>
               <li><a href="#">Chicken Recipes</a></li>
               <li><a href="#">Aloo Recipes</a></li>
-              <li><a href="#">MAGGI Noodle Recipes</a></li>
               <li><a href="#">MAGGI Noodle Recipes</a></li>
 
          </ul>
@@ -104,19 +104,19 @@
         <div class="footer_2">
          <h4>Recipes</h4>
          <ul>
-              <li><a href="#">Palak  Recipe</a></li>
-              <li><a href="#">Matar  Recipe</a></li>
-              <li><a href="#">Chicken  Recipe</a></li>
+              <li><a href="#">Palak Recipe</a></li>
+              <li><a href="#">Matar Recipe</a></li>
+              <li><a href="#">Chicken Recipe</a></li>
          </ul>
         </div>
        </div>
-       <div class="col-sm-6 col-md-3">
+       <div class="col-sm-6 col-md-2">
         <div class="footer_2">
          <h4>Talk To Us</h4>
          <ul>
               <li><a href="#">Copyright</a></li>
               <li><a href="#">About Nestlé</a></li>
-              <li><a href="#">Creating Shared Value at Nestlé</a></li>
+              <li><a href="#">Creating at Nestlé</a></li>
               
          </ul>
         </div>
@@ -139,7 +139,7 @@
    </section>
    <section id="footer_main" class="clearfix">
      <div class="footer_main_1">
-         <p> © 2021 Dinner Club . All Rights Reserved . Design by M.Alrays </p>
+         <p> © 2021 Dinner Club . All Rights Reserved . Design by Us  </p>
      </div>
    </section>
 

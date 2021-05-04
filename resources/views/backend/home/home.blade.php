@@ -9,13 +9,16 @@ Dinner Club
 <link href="{{URL::asset('assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
 <!-- Maps css -->
 <link href="{{URL::asset('assets/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
+
 @endsection
 @section('page-header')
 				<!-- breadcrumb -->
-				<div class="breadcrumb-header justify-content-between">
-					<div class="left-content">
+				<div class="breadcrumb-header justify-content-between alert alert-success">
+					<div class="left-content text-center">
 						<div>
-						  <h4 class="main-content-title tx-24 mg-b-1 mg-b-lg-1 alert alert-info">Hi,{{Auth::user()->name}} <br> welcome back!</h4>
+						  <h4 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">
+							  Hi,{{Auth::user()->name}}    welcome back !
+						  </h4>
 						</div>
 					</div>
 

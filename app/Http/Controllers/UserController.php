@@ -115,8 +115,5 @@ public function create()
     ->with('success','User deleted successfully');
     }
 
-
-
-
 }
 

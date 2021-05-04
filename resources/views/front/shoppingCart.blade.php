@@ -25,20 +25,22 @@
     <div class="title">
 		<h2 class="text-center"> All Recieps You Orderd its </h2>
 	</div>
+    
 <div class="container">
 	<div class="row div_row">
         @foreach($reciepe as $reciepe)
-		<div class="col-sm-4">
+		<div class="col-xs-10 col-sm-6 col-md-4">
 			<div class="card clearfix">
 			<ul class="list-group">
 
                   <li class="lis-group-item">
                   <h5>Number Of Meals : <span class="badge text-center ">{{$reciepe['qty']}}</span></h5>
                   <h5 class="rec_name"> Meals Name : {{$reciepe['item']['name']}}</h5>
-                  <h5 style="margin-bottom: 10px "><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
+                  <h5><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
 
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}"
-                       alt="Card image"class="img-responsive" style="height: 300px ;  width: 100% ">
+                       alt="Card image"class="img-responsive" 
+                       style="height: 200px ;  width: 100% ">
 
                   <div class="btn-group">
                       <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">Remove
@@ -68,8 +70,8 @@
 
 <section style="background-color:rgb(112, 198, 204)">
 <div class="container">
-    <div class="row>
-        <div class="col-sm-12" style="margin: 2% 0px">
+    <div class="row">
+        <div class="col-xs-10" style="margin: 2% 0px">
             <p class="alert alert-danger"> No Items In Cart yet</p>
         </div>
     </div>

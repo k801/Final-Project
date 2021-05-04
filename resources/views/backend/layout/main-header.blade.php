@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="main-header-right">
-            <ul class="nav">
+            {{-- <ul class="nav">
                 <li class="">
                     <div class="dropdown  nav-itemd-none d-md-flex">
                         <a href="#" class="d-flex  nav-item nav-link pl-0 country-flag1" data-toggle="dropdown"
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> --}}
             <div class="nav nav-item  navbar-nav-right ml-auto">
                 <div class="nav-link" id="bs-example-navbar-collapse-1">
                     <form class="navbar-form" role="search">
@@ -93,7 +93,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="dropdown nav-item main-header-message ">
+                {{-- <div class="dropdown nav-item main-header-message ">
                     <a class="new nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
@@ -182,11 +182,11 @@
                             <a href="text-center">VIEW ALL</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                     <div class="dropdown nav-item main-header-notification">
                         <a class="new nav-link" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
                                 class="feather feather-bell">
                                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>

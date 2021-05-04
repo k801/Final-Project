@@ -35,8 +35,8 @@ class ReservationsController extends Controller
 
     {
         $user = User::first();
-        Notification::send($user,new AddReservation);
-        return redirect()->route('reservations.index');
+        // Notification::send($user,new AddReservation);
+        // return redirect()->route('reservations.index');
         return view('backend.reservations.create');
     }
 
@@ -52,8 +52,6 @@ class ReservationsController extends Controller
         session()->flash('success','reservation is inserted sucessfully');
 
         $user = User::first();
-        // $reservation=Reservation::latest()->first();
-        // dd($reservation);
         Notification::send($user,new AddReservation);
         return redirect()->route('reservations.index');
     }

@@ -42,7 +42,7 @@ class ReservController extends Controller
             'email'=>'required|email' ,
          ]) ;
         reservation::create ($request->all()) ;
-        return redirect()->route('reservation.create') ;
+        return redirect()->route('reserve.create') ;
     }
 
     /**

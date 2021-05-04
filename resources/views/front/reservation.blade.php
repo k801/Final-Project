@@ -11,7 +11,7 @@
         <div class="row">
         
         <div class="col-sm-10  col-md-6 forms">            
-                    <form method="POST"  class="form" action="{{route('reservation.store')}}">
+                    <form method="POST"  class="form" action="{{route('reserve.store')}}">
                         @csrf
                         
                        <div class="form-group">

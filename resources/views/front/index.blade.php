@@ -17,23 +17,16 @@
 						<h4><a href="{{route('contact.create')}}"class="button hvr-shutter-out-horizontal">Contact Us</a></h4>
                     </div>
                 </div>
-                <div class="item"> <!-- Second-Slide -->
-                    <img src="{{asset('images/8.jpg')}}" alt="" class="img-responsive">
-                    <div class="carousel-caption kb_caption kb_caption_right">
-                        <h1 data-animation="animated fadeInDown">We Provide Our best</h1>
-                        <p data-animation="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
-						<h4><a href="{{route('contact.create')}}" class="button hvr-shutter-out-horizontal">Contact Us</a></h4>
-                    </div>
-                </div>
+              @foreach($posts as $post)
                 <div class="item"><!-- Third-Slide -->
                     <img src="{{asset('images/bg51.jpg')}}" alt="" class="img-responsive">
                     <div class="carousel-caption kb_caption kb_caption_right">
-                        <h1 data-animation="animated fadeInDown">Printing And Typesetting</h1>
-                        <p data-animation="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the when an unknown printer took a galley of type and scrambled [...]</p>
+                        <h1 data-animation="animated fadeInDown">{{$post->title}}</h1>
+                        <p data-animation="animated fadeInUp">{{$post->body}}</p>
 						<h4><a href="{{route('contact.create')}}"class="button">Contact Us</a></h4>
                     </div>
                 </div>
+			  @endforeach
             </div>
             <!-- Left-Button -->
             <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
@@ -109,7 +102,7 @@
 					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
 					<p class="text-center btn">
-						<a href="{{route ('reciepes.show',$item2)}}" class="button"> Details </a>
+						<a href="{{route ('receipes.show',$item2)}}" class="button"> Details </a>
 					</p>
 					<p class="bi bi-cart pull-right btn">
 						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"

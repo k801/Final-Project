@@ -34,9 +34,6 @@ use App\Http\Controllers\frontent\Ratecontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 Auth::routes() ;
 Route::get('dashbord',[homeController::class,'getDashbord'])->name('dashbord');
 Route::resource('categories',CategoryController::class);
@@ -62,6 +59,7 @@ Route::resource('homePage',indexController::class);
     Route::resource('contact',ContactController::class) ;
     // ->Middleware("auth") ;
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
+
     // ->Middleware("auth") =
   Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
   route::get('rcps.addToCart/{id}',[RcpController::class , 'addTOCart']);
@@ -79,14 +77,13 @@ Route::resource('homePage',indexController::class);
 Route::get('get-checkout-id',[paymentProviderController::class,'getChechOutId'])->name("offers-checkout");
 Route::get('get-stars',[RcpController::class,'getStars'])->name("stars-checkout");
     Route::resource('reservation' , ReservController::class) ;
+    Route::resource('reserve' , ReservController::class) ;
     Route::resource('reservations',ReservationsController::class);
-
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 Route::resource('reservations',ReservationsController::class);
 //cart
-
-route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart')->Middleware("auth") ;
-route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; ;
+route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
+route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
 route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 Route::get('offers_pgae',[RcpController::class,'offers']) ;
 

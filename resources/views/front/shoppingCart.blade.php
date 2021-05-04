@@ -54,8 +54,8 @@
 
     <div class="col-md-4" style="margin-top:20px">
         <div id="showPayForm" >
-        <script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=38CF45B689EEFAA922F39BB7C3C05B7D.uat01-vm-tx04"></script>
-            <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+        {{-- <script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=38CF45B689EEFAA922F39BB7C3C05B7D.uat01-vm-tx04"></script> --}}
+            {{-- <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form> --}}
         </div>
     </div>
             <a  id="checkout" href="{{route('offers-checkout',$reciepe['qty'])}}" class="btn btn-success" style="font-size: 25px">CheckOut</a>

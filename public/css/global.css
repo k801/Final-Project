@@ -1,24 +1,24 @@
-::-webkit-scrollbar 
+::-webkit-scrollbar
 {
   width: 15px;
 }
 
 /* Track */
-::-webkit-scrollbar-track 
+::-webkit-scrollbar-track
 {
-  box-shadow: inset 0 0 5px rgb(34, 6, 87); 
+  box-shadow: inset 0 0 5px rgb(34, 6, 87);
   border-radius: 2px;
 }
- 
+
 /* Handle */
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb
 {
-  background: linear-gradient(red,#5e0956); 
+  background: linear-gradient(red,#5e0956);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#582353 ,red); ; 
+  background: linear-gradient(#582353 ,red); ;
 }
 
 
@@ -71,20 +71,20 @@ h5{
 font-size: 22px;
 color:#000;
 }
-h6{ 
+h6{
 font-size: 15px;
 color:#000;
-} 
+}
 ul{
 padding:0;
 margin:0;
-list-style:none;	
+list-style:none;
 }
 
 
 
 .button
-{ 
+{
 font-size: 25px;
 font-family:sans-serif;
 border: 1px solid #9b297e;
@@ -95,21 +95,21 @@ background: rgb(226, 226, 74) ;
 letter-spacing: 1px;
 }
 .button:hover
-{ 
+{
 color: #3b2e2e;
 background: rgb(255, 255, 83);
 /* border-color: #ad2e2e; */
 }
 
 .space_left{
-padding-left:0; 
-} 
+padding-left:0;
+}
 .space_right{
-padding-right:0; 
-} 
+padding-right:0;
+}
 .space_all{
-padding:0; 
-} 
+padding:0;
+}
 
 /********************* header ****************/
 #header .navbar-default .navbar-nav>li>a:hover{
@@ -146,49 +146,49 @@ position: relative;
 display: block;
 padding: 15px 16px;
 }
-.text_1{ 
+.text_1{
  border-bottom: 1px solid #bf331c;
  }
 
-#footer{ 
+#footer{
  padding-top:30px;
  padding-bottom:30px;
  /* background-color:rgb(223, 240, 237) ; */
  background: linear-gradient(#ebece1, #dac5c5);
  /* background-image: url(../images/Concat.png); */
 }
-.footer_2 h4{ 
+.footer_2 h4{
  color: #e42929;
  font-weight:bold;
  padding-bottom:10px;
 }
-.footer_3 h4{ 
+.footer_3 h4{
  color: #e42929;
  font-weight:bold;
  padding-bottom:10px;
 }
-.footer_2 li a{ 
+.footer_2 li a{
  line-height: 25px;
  font-size: 18px;
 }
-.footer_2 li a:hover{ 
+.footer_2 li a:hover{
  color: #e42929;
 }
-.footer_3 li{ 
+.footer_3 li{
  display:inline;
  padding-right:10px;
 }
-.footer_3 li a i{ 
+.footer_3 li a i{
  border-radius: 50%;
  text-align: center;
  width: 40px;
  height: 47px;
  font-size: 20px;
- background-color:rgb(83, 32, 32);
+ background-color:white;
  line-height: 46px;
  color: #f3f3f5;
 }
-.footer_3 li a i:hover{ 
+.footer_3 li a i:hover{
  background-color:#e42929;
  color: white;
 }
@@ -196,14 +196,17 @@ padding: 15px 16px;
 /********************* footer_main ****************/
 #footer_main{ 
  background: linear-gradient(#866eac, #393664);
+}
+#footer_main{
+ background: linear-gradient(#6939b6, #2c295a);
  padding-top:17px;
- padding-bottom:10px; 
+ padding-bottom:10px;
 }
 .footer_main_1
 {
   text-align: center;
 }
-.footer_main_1 p{ 
+.footer_main_1 p{
  padding:0px;
  font-family: Georgia, 'Times New Roman', Times, serif;
  font-size:30;
@@ -263,11 +266,11 @@ padding: 15px 16px;
 }
 }
 
-@media (min-width:470px) and (max-width:767px) { 
+@media (min-width:470px) and (max-width:767px) {
 
 }
- 
-@media (min-width:768px) and (max-width:960px) { 
+
+@media (min-width:768px) and (max-width:960px) {
 #header .navbar-brand {
  padding-left: 10px;
 }
@@ -296,8 +299,8 @@ padding: 15px 16px;
  line-height: 20px;
  font-size: 15px;
 }
-} 
- 
+}
+
 @media (min-width:961px) and (max-width:1200px) {
 #header .navbar-brand {
  padding-left: 10px;
@@ -337,20 +340,66 @@ p.price1,p.price2
   font-size: 25px;
 }
 
+.nav-recipe{
+    color:red !important;
+    font-size:20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode',
+    'Geneva, Verdana, sans-serif';
+    color: rgba(255,255,255,1);
+    /* background: rgb(92, 42, 42); */
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: green !important;
+    text-align: left;
+
+
+}
+#header .nav-recipe a{
+
+    color:#fff;
+}
+#header .nav-recipe a{
+
+    font-size:17px;
+    color: #fff !important;
+    /* background-color: #32074e; */
+    position: relative;
+    display: block;
+    padding: 15px 16px !important;
+
+}
+
+.nav-recipe a:hover{
+
+    background-color: #B0A94B !important;
+
+}
+.active{
+    background-color: #32074e !important;
+
+color:red !important;
+}
+.cart_count{
+  position:absolute;
+      top: 5px;
+    left: 35px;
+}
 
 @media screen and (max-width : 769px)
 {
 
   .footer_main_1 p
-  { 
+  {
     font-size: 22px;
    }
    ul{
-    margin-bottom:15px;	
+    margin-bottom:15px;
     }
- 
+
     .footer_3 li a i
-    { 
+    {
       width: 40px;
       height: 60px;
       font-size: 23px;
@@ -362,17 +411,17 @@ p.price1,p.price2
 @media screen and (max-width : 281px)
 {
   .footer_main_1 p
-  { 
+  {
     font-size: 8px;
    }
 
    ul{
     padding:5px 20px;
     margin-bottom:10px;
-    list-style:none;	
+    list-style:none;
     }
     .footer_3 li a i
-    { 
+    {
       width: 27px;
       height: 35px;
       font-size: 15px;
@@ -392,3 +441,4 @@ p.bi>a.button:hover
   color: #000;
   background-color:rgb(194, 168, 209);
 }
+

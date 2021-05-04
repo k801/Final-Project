@@ -13,6 +13,11 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    @if (session('success'))
+    <div class="Message alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
 
     <!-- Main content -->
@@ -52,6 +57,14 @@
                                             <a href="{{route('messages.show',$message->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fas fa-eye"></i>
                                             </a>
+                                            <form action="{{ route('messages.destroy', $message->id) }}" class="d-inline" method="POST">
+                                                @csrf
+                                                @method("delete")
+                                                     <button class="btn btn-sm text-light btn-danger"
+                                                    ><i class="las la-trash"></i></button>
+    
+                                                 </form>
+                                        
                                         </td>
                                     </tr>
 

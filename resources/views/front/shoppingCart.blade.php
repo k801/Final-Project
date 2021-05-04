@@ -1,8 +1,9 @@
 @extends('front.master')
 @section('style') @endsection
 
-<link href="{{asset('css/shoping-cart.css')}}" rel="stylesheet">
-{{-- <link href="{{asset('css/recipes.css')}}" rel="stylesheet"> --}}
+<link href="{{asset('css/details.css')}}" rel="stylesheet">
+<link href="{{asset('css/shoping.css')}}" rel="stylesheet">
+
 @section('content')
 <section id="details_main">
     <div class="details_inner clearfix container">
@@ -28,8 +29,11 @@
     
 <div class="container">
 	<div class="row div_row">
+<div class="container bg-danger">
+	<div class="row div_row col-md-8">
+
         @foreach($reciepe as $reciepe)
-		<div class="col-xs-10 col-sm-6 col-md-4">
+		<div class="col-xs-10 col-sm-6 col-md-6">
 			<div class="card clearfix">
 			<ul class="list-group">
 
@@ -43,41 +47,85 @@
                        style="height: 200px ;  width: 100% ">
 
                   <div class="btn-group">
-                      <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">Remove
-                          <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" style="margin: 10px" >
-                          <li ><a href="{{route('rcps.reduceByOne',['id'=>$reciepe['item']['id']])}}">Remove by 1</a></li>
-                          <li><a href="{{route('rcps.RemoveAll',['id'=>$reciepe['item']['id']])}}"> Remove  All</a></li>
+                      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="cart"></span></button>
+                      <ul class="dropdown-menu">
+                          <li ><a href="{{route('rcps.reduceByOne',$reciepe['item']['id'])}}">Remove by 1</a></li>
+                          <li><a href="#"> Remove by All</a></li>
                       </ul>
                   </div>
                   </li>
 
             </ul>
+
+            <div class="row" style="text-align: center ; margin:20px 0px">
+
+            </div>
 			</div>
+
 		</div>
 		@endforeach
+
 	</div>
+
+    <div class="col-md-4" style="margin-top:20px">
+        <div id="showPayForm" >
+           <script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=38CF45B689EEFAA922F39BB7C3C05B7D.uat01-vm-tx04"></script>
+           <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form> 
+        </div>
+    </div>
+            <a  id="checkout" href="{{route('offers-checkout',$reciepe['qty'])}}" class="btn btn-success" style="font-size: 25px">CheckOut</a>
+            <a  id="price" class="btn btn-success" style="font-size: 25px">Total Price:{{$totalPrice}}</a>
+
+        </div>
+
+    </div>
 </div>
 
 
-<div class="row" style="text-align: center ; margin:20px 0px">
-    <strong class="alert alert-success">Total Price :  {{$totalPrice}} &dollar;</strong>
-    <a href="{{route('rcps.cash')}}" class="btn btn-primary" style="font-size: 25px">Pay cash</a>
-</div>
-
-@else
-
-<section style="background-color:rgb(112, 198, 204)">
-<div class="container">
+    @else
     <div class="row">
         <div class="col-xs-10" style="margin: 2% 0px">
             <p class="alert alert-danger"> No Items In Cart yet</p>
         </div>
     </div>
 </div>
-</section>
 @endif
-</section>
 
+
+@if(session('fail'))
+<div class="alert alert-danger text-center">
+ Payment Fieled
+</div>
+@endif
 @endsection
+
+@section('scripts')
+
+    <script>
+        $(document).on('click', '#checkout', function (e) {
+              e.preventDefault();
+             $.ajax({
+                type: 'get',
+                url: "{{route('offers-checkout')}}",
+                data: {
+                    price: $('#price').text(),
+                },
+                success: function (data) {
+                    console.log(data.content);
+                    if (data.status == true) {
+
+                        $('showPayForm').html('data.content');
+
+                    } else {
+                        $('#showPayForm').html('fail');
+
+                     }
+                }, error: function (reject) {
+                }
+            });
+        });
+    // </script>
+
+
+@stop
+

@@ -99,8 +99,11 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
-        //
+        
+        $contact->delete();
+       session()->flash('success','category deleted successfully');
+       return redirect()->route('messages.index');
     }
 }

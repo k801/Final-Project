@@ -108,7 +108,7 @@
                <div class="div_img-price">
                          <div class="div_img">
                               <img src="{{asset('images')}}/{{$rc_data->image}}" alt="Card image"
-                              class="" height="65%" width="100%">
+                              class="" height="35%" width="100%">
                          </div>
                          <div class="div_price">
                               <p class="text-center alert-danger price1">List Price : <s>{{$rc_data->price+($rc_data->price*0.2)}}</s></p>

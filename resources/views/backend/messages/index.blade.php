@@ -50,7 +50,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $message->name }}</td>
-                                        <td>{{ $message->user->email }}</td>
+                                        <td>{{ $message->email }}</td>
                                         <td>{{ $message->name }}</td>
 
                                         <td>

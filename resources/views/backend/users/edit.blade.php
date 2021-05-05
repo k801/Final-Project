@@ -10,7 +10,7 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">المستخدمين</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ edit user
+            <h4 class="content-title mb-0 my-auto"> Users </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ edit user
                 </span>
         </div>
     </div>
@@ -27,7 +27,7 @@
             <button aria-label="Close" class="close" data-dismiss="alert" type="button">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <strong>خطا</strong>
+            <strong> Error </strong>
             <ul>
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -40,7 +40,7 @@
             <div class="card-body">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-right">
-                        <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">رجوع</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> Back </a>
                     </div>
                 </div><br>
 
@@ -49,12 +49,12 @@
 
                     <div class="row mg-b-20">
                         <div class="parsley-input col-md-6" id="fnWrapper">
-                            <label>اسم المستخدم: <span class="tx-danger">*</span></label>
+                            <label>UserName: <span class="tx-danger">*</span></label>
                             {!! Form::text('name', null, array('class' => 'form-control','required')) !!}
                         </div>
 
                         <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
-                            <label>البريد الالكتروني: <span class="tx-danger">*</span></label>
+                            <label> Email:  <span class="tx-danger">*</span></label>
                             {!! Form::text('email', null, array('class' => 'form-control','required')) !!}
                         </div>
                     </div>
@@ -63,23 +63,23 @@
 
                 <div class="row mg-b-20">
                     <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
-                        <label>كلمة المرور: <span class="tx-danger">*</span></label>
+                        <label> PassWord: <span class="tx-danger">*</span></label>
                         {!! Form::password('password', array('class' => 'form-control','required')) !!}
                     </div>
 
                     <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
-                        <label> تاكيد كلمة المرور: <span class="tx-danger">*</span></label>
+                        <label> Confirmed PassWord: <span class="tx-danger">*</span></label>
                         {!! Form::password('confirm-password', array('class' => 'form-control','required')) !!}
                     </div>
                 </div>
 
                 <div class="row row-sm mg-b-20">
                     <div class="col-lg-6">
-                        <label class="form-label">حالة المستخدم</label>
+                        <label class="form-label"> User Status </label>
                         <select name="Status" id="select-beast" class="form-control  nice-select  custom-select">
                             <option value="{{ $user->Status}}">{{ $user->Status}}</option>
-                            <option value="مفعل">مفعل</option>
-                            <option value="غير مفعل">غير مفعل</option>
+                            <option value="Active">Active</option>
+                            <option value="NotActive ">Not Active</option>
                         </select>
                     </div>
                 </div>
@@ -87,14 +87,14 @@
                 <div class="row mg-b-20">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>نوع المستخدم</strong>
+                            <strong> User type </strong>
                             {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple'))
                             !!}
                         </div>
                     </div>
                 </div>
                 <div class="mg-t-30">
-                    <button class="btn btn-main-primary pd-x-20" type="submit">تحديث</button>
+                    <button class="btn btn-main-primary pd-x-20" type="submit"> Save </button>
                 </div>
                 {!! Form::close() !!}
             </div>

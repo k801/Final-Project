@@ -2,9 +2,8 @@
 @section('style') @endsection
 
 <link href="{{asset('css/details.css')}}" rel="stylesheet">
-<link href="{{asset('css/shoping.css')}}" rel="stylesheet">
+<link href="{{asset('css/shoping-cart.css')}}" rel="stylesheet">
 
-@section('content')
 <section id="details_main">
     <div class="details_inner clearfix container">
       <div class="row">
@@ -20,37 +19,41 @@
     </div>
 </section>
 
+
+@section('content')
+
 @if(Session::has('cart'))
 
 <section class="items">
     <div class="title">
-		<h2 class="text-center"> All Recieps You Orderd its </h2>
+		<h2 class="text-center"> All Recieps You Orderd Yet  </h2>
 	</div>
     
 <div class="container">
-	<div class="row div_row">
-<div class="container bg-danger">
-	<div class="row div_row col-md-8">
 
+	<div class="row div_row">
+	<div class="col-md-8">
         @foreach($reciepe as $reciepe)
 		<div class="col-xs-10 col-sm-6 col-md-6">
 			<div class="card clearfix">
 			<ul class="list-group">
 
                   <li class="lis-group-item">
-                  <h5>Number Of Meals : <span class="badge text-center ">{{$reciepe['qty']}}</span></h5>
-                  <h5 class="rec_name"> Meals Name : {{$reciepe['item']['name']}}</h5>
+                  <h5>Number Of Meals : <span class="badge text-center">{{$reciepe['qty']}}</span></h5>
+                  <h5 class="rec_name"> Meal Name : 
+                      <span class="badge text-center">{{$reciepe['item']['name']}}</span>
+                </h5>
                   <h5><span class="label label-success">{{$reciepe['item']['price']}}</span></h5>
 
                   <img src="{{asset('images')}}/{{$reciepe['item']['image']}}"
                        alt="Card image"class="img-responsive" 
-                       style="height: 200px ;  width: 100% ">
+                       style="height: 170px ;  width: 100% ">
 
                   <div class="btn-group">
                       <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="cart"></span></button>
                       <ul class="dropdown-menu">
-                          <li ><a href="{{route('rcps.reduceByOne',$reciepe['item']['id'])}}">Remove by 1</a></li>
-                          <li><a href="{{route('rcps.RemoveAll',$reciepe['item']['id'])}}"> Remove by All</a></li>
+                          <li ><a href="{{route('rcps.reduceByOne',$reciepe['item']['id'])}}">Remove One Of Its</a></li>
+                          <li><a href="{{route('rcps.RemoveAll',$reciepe['item']['id'])}}"> Remove All Meals</a></li>
                       </ul>
                   </div>
                   </li>

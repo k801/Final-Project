@@ -1,4 +1,4 @@
-@extends('front.master')
+{{-- @extends('front.master')
 @section('style') @endsection
 
 <link href="{{asset('css/login.css')}}" rel="stylesheet">
@@ -85,4 +85,4 @@
     </div>
 </div>
 </section>
-@endsection
+@endsection --}}

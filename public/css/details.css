@@ -1,3 +1,4 @@
+
 #details_main
 {
     background-image: url(../images/bg50.jpg);
@@ -120,6 +121,10 @@ div.header h3
     font-size: 30px;
 
 }
+.two-div-details
+{
+    margin-bottom: 80px;
+}
 
 .alldetails h4
  {
@@ -167,7 +172,7 @@ div.header h3
     padding: 10px;
     margin-right: 10px;
     margin-top: 5px;
-    height: 30%;
+    height: 25%;
  }
 
  .div_ingreds
@@ -177,9 +182,8 @@ div.header h3
      margin-right: 10px;
      border-radius: 5%;
      margin-top: 20px;
-     height: 40%;
+     height: 30%;
  }
-
  .price1
  {
      margin-top: 10px;
@@ -192,28 +196,3 @@ p.btn
 }
 
 
-
-<<<<<<< HEAD
-
-
-
-/*
-div.form
-{
-    width: 40%;
-}
-
-.lable-text
-{
-    font-size: 35px;
-    color: rgb(0, 2, 128);
-}
-input.btn
-{
-    margin: 5px;
-    padding: 10px 30px ;
-    text-align: center;
-} */
-
-=======
->>>>>>> db514c57f78583c1bf33f71aec0bf7a7dcb12fb5

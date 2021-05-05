@@ -55,7 +55,7 @@
 
                         <div class="form-group">
                             <a href="#"><input type="submit" class="btn-sign" value="Sign Up"></a>
-                            <a href="/login-user"  class="btn-login">Alreay have Account ? <a>
+                            <a href="{{route('login')}}"  class="btn-login">Alreay have Account ? <a>
                         </div>
                     </form>
                 </div>

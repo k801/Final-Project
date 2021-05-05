@@ -47,10 +47,10 @@
 			       placeholder="Enter Your Name"style="width: 450px;" />
         </div>
 
-       {{-- <div class="form-group mt-2">
+        <div class="form-group mt-2">
             <input type="text" name="email" class="form-control"  
 			       placeholder="Enter Your Email" style="width: 450px;"/>
-      </div> --}}
+        </div> 
 
         <div class="form-group ">
 			<label> Enter Your Message: </label>

@@ -72,29 +72,35 @@
 
 .items
 {
-    margin-top: 1%;
-    background-color: snow;
     border: rgb(37, 107, 72) 2px solid;
 }
 
 div.title 
 {
-  font-family: cursive;
-  background-color: rgb(81, 67, 116);
+  font-family:monospace ;
+  background-color: rgb(132, 112, 184);
   margin-bottom: 2%;
   padding: 2% ;
 }
 
 div.title h2
 {
-    color:rgb(241, 237, 237) ;
-    font-size: 40px;
+    color:rgb(236, 231, 231) ;
+    font-size: 50px;
 }
+
+.div_row
+{
+  background-color: #c5c298;
+  margin-bottom: 3%;
+  padding: 5% 0%;
+}
+
 
 div.card
 {
   border: #a00d0d9c 2px solid;
-  margin:1% ;
+  margin:2% ;
   padding: 10px;
   
 }   
@@ -114,7 +120,7 @@ span.badge
 span.label 
 {
     position: relative;
-    left: 265px;
+    left: 250px;
     top: 30px;
     font-size: 20px;
 }
@@ -122,6 +128,6 @@ span.label
 
 .btn-group button
 {
-    padding: 5px;
+    padding: 8px;
     font-size: 20px;
 }

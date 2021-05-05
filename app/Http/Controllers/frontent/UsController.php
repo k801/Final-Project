@@ -54,7 +54,7 @@ class UsController extends Controller
         $user->save();
         
         // user::create ($request->all()) ;
-        return view('front.login') ;
+        return view('auth.login') ;
     }
 
     /**

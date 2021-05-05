@@ -56,8 +56,7 @@ Route::resource('homePage',indexController::class);
     Route::resource('reciepes',RcpController::class);
     Route::resource('Categorys', CatController::class);
     Route::resource('sign', UsController::class);
-    Route::resource('contact',ContactController::class) ;
-    // ->Middleware("auth") ;
+    Route::resource('contact',ContactController::class);
     Route::get('section/{id}',[RcpController::class,'getRecipes']) ;
 
     // ->Middleware("auth") =
@@ -65,7 +64,7 @@ Route::resource('homePage',indexController::class);
   route::get('rcps.addToCart/{id}',[RcpController::class , 'addTOCart']);
 //   route::get('getRecipes/{id}',[RcpController::class , 'get_recipes']);
 
-  route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+  route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; 
   route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 
   Route::get('test',function(){
@@ -82,8 +81,8 @@ Route::get('get-stars',[RcpController::class,'getStars'])->name("stars-checkout"
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 Route::resource('reservations',ReservationsController::class);
 //cart
-route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart') ;
-route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart') ;
+route::get('cart/{id}',[RcpController::class , 'addTOCart'])->name('rcps.addToCart')->Middleware("auth") ; 
+route::get('cart',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; 
 route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 Route::get('offers_pgae',[RcpController::class,'offers']) ;
 

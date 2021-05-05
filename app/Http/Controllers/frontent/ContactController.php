@@ -39,26 +39,20 @@ class ContactController extends Controller
         $request->validate 
         ([
             'name'=>'required|min:3|max:30' , 
-            'email'=>'required|email'  
+            'email'=>'required'   
          ]) ;
          
-        $id = Auth::user()->id;
-        // $name = Auth::user()->name ;
-        $email= Auth::user()->email ;
-
-        dd($id) ;
-        // dd($name) ;
-        // dd($email) ;
+        // $id = Auth::user()->id;
 
         $contact = new contact ;
         $contact->name = request('name') ;
-        $contact->mail = $email ;
+        $contact->mail = request('email') ;
         $contact->message = request("message");
-        $contact->user_id= $id ;
+        // $contact->user_id= $id ;
         $contact->save() ;
     
         // contact::create($request->all());
-        // return redirect()->route('front.home') ;
+        return redirect()->route('reciepes.index') ;
     }
 
     /**

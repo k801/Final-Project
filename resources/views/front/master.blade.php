@@ -51,7 +51,6 @@
                          <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
                          <li><a href="/offers_pgae">Offers</a></li>
                          <li><a href="{{route('sign.create')}}">Sign Up</a></li>
-                         {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
                          <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
                          <li><a href="{{route('rcps.shoppingCart')}}">
                           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"

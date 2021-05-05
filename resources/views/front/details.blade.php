@@ -27,11 +27,11 @@
         <ul class="nav  w-50 ml-auto nav-recipe">
             <li class="active" ><a href="{{route('homePage.index')}}"class="text-danger">HOME</a></li>
             <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
+            <li><a href="/offers_pgae">Offers</a></li>
             <li><a href="{{route('sign.create')}}">Sign Up</a></li>
-            {{-- <li><a href="{{route('contact.create')}}">Contact Us </a></li> --}}
             <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
             <li><a href="{{route('rcps.shoppingCart')}}">
-             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"
                  fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89
                  3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0
@@ -75,7 +75,7 @@
                <h3> ـــــــــــ O ـــــــــــ </h3>
           </div>
 
-          <div class="row">
+          <div class="row two-div-details">
                <div class="col-sm-12 col-md-6">
                     <div class="alldetails">
                          <div class="div_name">
@@ -89,8 +89,8 @@
                             <i class="fas fa-star" style="font-size:20px;color:orange"></i>
 
                             @endfor
-                        </p>
-                                   </div>
+                              </p>
+                         </div>
                          <div class="div_descrip">
                               <h4 class=""><ins> About Recipe </ins></h4>
                               <p> {{$rc_data->description}} </p>
@@ -118,8 +118,6 @@
                          <div id="show-rting" style="text-align:center">
                               <x-rating></x-Rating>
                          </div>
-
-
                        <div class="cart">
                               <p class="bi bi-cart pull-right btn">
                                         <a href="{{route ('rcps.addToCart',['id'=>$rc_data->id])}}" class="button"> Buy

@@ -161,7 +161,7 @@ div.header h3
     border-radius: 5%;
     margin-right: 10px;
     margin-bottom: 20px;
-    height: 10%;
+    height: 25%;
  }
 
  .div_descrip
@@ -172,7 +172,7 @@ div.header h3
     padding: 10px;
     margin-right: 10px;
     margin-top: 5px;
-    height: 15%;
+    height: 35%;
  }
 
  .div_ingreds
@@ -182,7 +182,7 @@ div.header h3
      margin-right: 10px;
      border-radius: 5%;
      margin-top: 20px;
-     height: 20%;
+     height: 30%;
  }
  .price1
  {

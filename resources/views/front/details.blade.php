@@ -82,7 +82,7 @@
                               <h4 class=""><ins> Recipe Name </ins></h4>
                               <p> {{$rc_data->name}} </p>
                          </div>
-                         <div class="div_name">
+                         {{-- <div class="div_name">
                             <h4 class="div_name"><ins> Recipe Rating </ins></h4>
                             <p  class="text-center">
                             @for($i = 0; $i<$rc_data->averageRating; $i++)
@@ -90,7 +90,7 @@
 
                             @endfor
                               </p>
-                         </div>
+                         </div> --}}
                          <div class="div_descrip">
                               <h4 class=""><ins> About Recipe </ins></h4>
                               <p> {{$rc_data->description}} </p>
@@ -108,7 +108,7 @@
                <div class="div_img-price">
                          <div class="div_img">
                               <img src="{{asset('images')}}/{{$rc_data->image}}" alt="Card image"
-                              class="" height="35%" width="100%">
+                              class="" height="65%" width="100%">
                          </div>
                          <div class="div_price">
                               <p class="text-center alert-danger price1">List Price : <s>{{$rc_data->price+($rc_data->price*0.2)}}</s></p>

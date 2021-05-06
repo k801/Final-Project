@@ -16,6 +16,7 @@ class UserController extends Controller
 public function index(Request $request)
 {
 $data = User::orderBy('id','DESC')->paginate(5);
+// dd($data);
 return view('backend.users.index',compact('data'))
 ->with('i', ($request->input('page', 1) - 1) * 5);
 }
@@ -37,17 +38,19 @@ public function create()
     */
     public function store(Request $request)
     {
+        // dd($request->all());
     $this->validate($request, [
     'name' => 'required',
     'email' => 'required|email|unique:users,email',
     'password' => 'required|same:confirm-password',
-    'roles' => 'required'
+    'roles_name' => 'required'
     ]);
+    // dd($request->all());
     $input = $request->all();
     $input['password'] = Hash::make($input['password']);
     $user = User::create($input);
     $user->assignRole($request->input('roles'));
-    return redirect()->route('backend.users.index')
+    return redirect()->route('users.index')
     ->with('success','User created successfully');
     }
     /**
@@ -59,6 +62,7 @@ public function create()
     public function show($id)
     {
     $user = User::find($id);
+    dd($user);
     return view('backend.users.show',compact('user'));
     }
     /**

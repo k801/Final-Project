@@ -26,9 +26,8 @@ class ContactFactory extends Factory
 
             'name'=>$this->faker->name,
            'email'=>$this->faker->safeEmail,
-           'message'=>$this->faker->sentence(),
+           'message'=>$this->faker->sentence(6),
            'user_id'=>User::all(['id'])->random(),
-
 
         ];
 

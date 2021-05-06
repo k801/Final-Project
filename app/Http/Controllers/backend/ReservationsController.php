@@ -62,9 +62,12 @@ class ReservationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Reservation $reservation)
     {
-        //
+        $data['reservation']=$reservation;
+            //    dd($reservation);
+
+              return view('backend.reservations.show')->with($data);
     }
 
     /**
@@ -76,6 +79,7 @@ class ReservationsController extends Controller
     public function edit(Reservation $reservation)
     {
                $data['reservation']=$reservation;
+            //    dd($reservation);
 
               return view('backend.reservations.edit')->with($data);
 
@@ -99,7 +103,7 @@ if($request->status=="confirmed")
     $date=$request->date;
     $time=$request->time;
     $table_number=$request->table_number;
-
+// send email to user
     $reciver=$request->email;
     $name=$request->name;
     Mail::to($reciver)->send(new ReservationResponseMail($name,$date,$time,$table_number));

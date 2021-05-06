@@ -18,9 +18,9 @@ use HasRoles;
 *
 * @var array
 */
-protected $fillable = 
+protected $fillable =
 [
-'name', 'email', 'password','phone','address'
+'name', 'email', 'password','phone','address','roles_name','Status'
 ];
 
 function contact()
@@ -38,7 +38,7 @@ function orders()
 *
 * @var array
 */
-protected $hidden = 
+protected $hidden =
 [
     'password', 'remember_token',
 ];
@@ -47,7 +47,7 @@ protected $hidden =
 *
 * @var array
 */
-protected $casts = 
+protected $casts =
 [
     'email_verified_at' => 'datetime',
     'roles_name'=>'array'

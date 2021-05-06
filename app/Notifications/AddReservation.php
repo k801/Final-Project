@@ -14,7 +14,6 @@ class AddReservation extends Notification
 {
     use Queueable;
 
-    public $reservation;
     /**
      * Create a new notification instance.
      *
@@ -22,7 +21,6 @@ class AddReservation extends Notification
      */
     public function __construct()
     {
-        // $$this->reservation=$reservation;
     }
 
     /**
@@ -54,9 +52,9 @@ class AddReservation extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            
-        // 'id'=>$this->reservation->id,
-        'title'=>"new  reservation add by ",
+
+        // 'id'=>$reservation->id,
+        'title'=>"new  reservation added by ",
         'user'=> Auth::user()->name,
         ];
     }

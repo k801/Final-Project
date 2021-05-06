@@ -53,8 +53,10 @@ class orderDetailsControlle extends Controller
     public function show($id)
     {
         $data['orderDetails']=OrderDetail::where('order_id','=',$id)->get();
+        $data['Details']=OrderDetail::where('order_id','=',$id)->take(1)->get();
+        
         // dd($data);
-        $data['sum']=DB::table("orders_receipes")->get()->sum("price");
+        $data['sum']=DB::table("orders_reciepes")->get()->sum("price");
         return view('backend.ordersDetails.show')->with($data);
 
     }

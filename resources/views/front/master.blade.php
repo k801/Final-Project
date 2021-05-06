@@ -20,8 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}" />
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
           rel="stylesheet">
-          <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+          {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
           @yield('style')
           @yield('title')
   </head>

@@ -30,6 +30,7 @@
 
         <div class="col-12 col-md-6">
             <label for="halfstarsInput">Stars</label>
+            {{-- <span>{{$rc_data->id}}</span> --}}
             <input type="text" readonly id="halfstarsInput" class="form-control form-control-sm">
            
         </div>
@@ -39,7 +40,7 @@
         "half": true,
         "click": function (e) {
             // console.log($('#item_id').text());
-            // console.log(e.starts);
+            console.log(e.starts);
             $("#halfstarsInput").val(e.stars);
             //   e.preventDefault();
              $.ajax({
@@ -50,6 +51,7 @@
                     id:$('#item_id').text()
                 },
                 success: function (data) {
+                    console.log(data);
                        
 // $('#show-rating').html(data);
 

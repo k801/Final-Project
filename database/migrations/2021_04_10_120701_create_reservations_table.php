@@ -18,13 +18,13 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->integer('guests_number');
+            
             $table->dateTime('attendance_date');
             $table->time('attendance_time');
             $table->unsignedBigInteger('table_number');
-            $table->time('time');
             $table->enum('status',['pendding','confirmed','cancelled']);
             $table->timestamps();
-            $table->timestamps() ;
         });
     }
 

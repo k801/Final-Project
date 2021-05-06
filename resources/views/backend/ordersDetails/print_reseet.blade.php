@@ -27,8 +27,8 @@ Dinner Club
                         <div class="invoice-header">
                          
                         </div><!-- invoice-header -->
-                        <div class="row mg-t-20 bg-danger">
-                            <div class="col-md-4 bg-info offset-3 ">
+                        <div class="row mg-t-20 ">
+                            <div class="col-md-4  offset-3 ">
                                 {{-- <label class="tx-gray-600  bg-danger float-left"><h6>Billed To</h6></label> --}}
                                 <br>
                                 <div class="billed-to ">
@@ -125,7 +125,7 @@ Dinner Club
                                         {{-- <td class="tx-right" colspan="2"> {{ number_format($order->price, 2) }}</td> --}}
                                <div class="col-md  w-50 ">
                                 <p class="invoice-info-row"><span>Total Price </span>
-                                    <span>{{ $order->order_number }}333LG</span></p>
+                                    <span>{{ $order->order_number }}1333LG</span></p>
                                 <p class="invoice-info-row"><span>Price After Dissacount </span>
                                     <span>343434433</span></p>
                                </tr>
@@ -145,7 +145,7 @@ Dinner Club
 
 
                         <button class="btn btn-danger  float-left mt-3 mr-2" id="print_Button" onclick="printDiv()"> <i
-                                class="mdi mdi-printer ml-1"></i>طباعة</button>
+                                class="mdi mdi-printer ml-1"></i>Print</button>
                     </div>
                 </div>
             </div>

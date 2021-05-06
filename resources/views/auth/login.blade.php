@@ -77,7 +77,7 @@
                                     </a>
                                 @endif
                                     <a class="btn btn-link" style="background-color: rgb(106, 88, 155)" 
-                                       href="{{route('sign.create')}}"> {{ __('You Dont Have Account ? ') }}
+                                       href="{{route('sign.create')}}"> {{ __('Dont have Account ? ') }}
                                     </a>
                             </div>
                         </div>

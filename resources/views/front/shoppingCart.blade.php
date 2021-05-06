@@ -76,7 +76,7 @@
            <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form> 
         </div>
         </div>
-                <a  id="price" class="btn btn-success" style="font-size: 25px">Total Price:{{$totalPrice}}</a>
+                <a  id="price" class="btn btn-success" style="font-size: 25px">Totale Price:{{$totalPrice}}</a>
                 <a href="{{route('rcps.cash')}}" class="btn btn-primary" style="font-size: 25px">order later</a>  <br>
                 {{-- <a  id="checkout" href="{{route('offers-checkout',$reciepe['qty'])}}" class="btn btn-success" style="font-size: 25px">CheckOut</a> --}}
         </div>      

@@ -40,7 +40,6 @@
         <div class="card">
             <div class="card-header pb-0">
                 <div class="col-sm-1 col-md-2">
-                        <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">Add New </a>
 
                         <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}"> Add User </a>
                 </div>
@@ -78,7 +77,7 @@
 
                                     <td>
                                         @if (!empty($user->getRoleNames()))
-                                            @foreach ($user->getRoleNames() as $v)
+                                            @foreach ($user->roles_name as $v)
                                                 <label class="badge badge-success">{{ $v }}</label>
                                             @endforeach
                                         @endif

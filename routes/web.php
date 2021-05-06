@@ -64,7 +64,7 @@ Route::resource('homePage',indexController::class);
   route::get('rcps.addToCart/{id}',[RcpController::class , 'addTOCart']);
 //   route::get('getRecipes/{id}',[RcpController::class , 'get_recipes']);
 
-  route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; 
+//   route::get('section',[RcpController::class , 'getCart'])->name('rcps.shoppingCart')->Middleware("auth") ; 
   route::get('checkout',[RcpController::class , 'getCheckout'])->name('rcps.checkout') ;
 
   Route::get('test',function(){
@@ -102,7 +102,7 @@ Route::get('login-user', function ()
 
 // get the rate value
 
-Route::get('get_rate_value',[RcpController::class,'get_rate'])->name("store-stars");
+Route::get('get_rate_valu',[RcpController::class,'get_rate'])->name("store-stars");
 
 // get all recipes by Ajax
 Route::get('getRecipes/{id}',[RcpController::class,'get_recipes']);

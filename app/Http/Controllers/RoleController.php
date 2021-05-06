@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\DB;class RoleController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-// function __construct()
-// {
-// $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
-// $this->middleware('permission:role-create', ['only' => ['create','store']]);
-// $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
-// $this->middleware('permission:role-delete', ['only' => ['destroy']]);
-// }
-/**
+function __construct()
+{
+$this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
+$this->middleware('permission:role-create', ['only' => ['create','store']]);
+$this->middleware('permission:role-edit', ['only' => ['edit','update']]);
+$this->middleware('permission:role-delete', ['only' => ['destroy']]);
+}
+/*
 * Display a listing of the resource.
 *
 * @return \Illuminate\Http\Response
@@ -103,7 +103,7 @@ $role = Role::find($id);
 $role->name = $request->input('name');
 $role->save();
 $role->syncPermissions($request->input('permission'));
-return redirect()->route('backend.roles.index')
+return redirect()->route('roles.index')
 ->with('success','Role updated successfully');
 }
 /**

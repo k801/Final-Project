@@ -184,9 +184,9 @@ padding: 15px 16px;
  width: 40px;
  height: 47px;
  font-size: 20px;
- background-color:white;
+ /* background-color:white; */
  line-height: 46px;
- color: #f3f3f5;
+ /* color: #f3f3f5; */
 }
 .footer_3 li a i:hover{
  background-color:#e42929;

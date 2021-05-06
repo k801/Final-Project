@@ -25,10 +25,10 @@ class ReservationFactory extends Factory
 
             'name'=>$this->faker->name(),
             'email'=>$this->faker->safeEmail,
-            'date'=>$this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'attendance_date'=>$this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'attendance_time'=>$this->faker->date($format = 'H:i:s', $max = 'now'),
             'table_number'=>$this->faker->randomDigit,
             'guests_number'=>$this->faker->randomDigit,
-            'time'=>$this->faker->time($format = 'H:i:s', $max = 'now'),
             'status'=>$this->faker->randomElement(['pendding','cancelled','confirmed'])
 
         ];

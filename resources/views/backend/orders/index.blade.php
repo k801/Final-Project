@@ -53,8 +53,9 @@ Dinner Club
                         <thead>
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
-                                <th class="wd-15p border-bottom-0"> name</th>
-                                <th class="wd-20p border-bottom-0"> description</th>
+                                <th class="wd-15p border-bottom-0"> order Number</th>
+                                <th class="wd-20p border-bottom-0"> name</th>
+                                <th class="wd-20p border-bottom-0"> Email</th>
                                 <th class="wd-15p border-bottom-0"> Action</th>
 
                             </tr>
@@ -65,7 +66,8 @@ Dinner Club
                                 <tr>
                                     <td>{{ ++$i }}</td>
                                     <td>{{ $order->order_number }}</td>
-                                    <td>{{ $order->order_time }}</td>
+                                    <td>{{ $order->user->name }}</td>
+                                    <td>{{ $order->user->email }}</td>
 
                                     <td>
                                         <form action="{{ route('orders.edit', $order->id) }}" class="d-inline" method="POST">

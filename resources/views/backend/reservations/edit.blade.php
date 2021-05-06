@@ -74,13 +74,13 @@ Dinner Club
                             <div class="parsley-input col-md-6" id="fnWrapper">
                                 <label>date : <span class="tx-danger">*</span></label>
                                 <input class="form-control fc-datepicker" name="date"
-                                type="date" value="{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $reservation->date)->format('Y-m-d') }}" required>
+                                type="date" value="{{Carbon\Carbon::createFromFormat('Y-m-d', $reservation->attendance_date)->format('Y-m-d') }}" required>
                             </div>
 
                             <div class="parsley-input col-md-6" id="fnWrapper">
                                 <label>time: <span class="tx-danger">*</span></label>
                                 <input class="form-control form-control-sm mg-b-20"
-                                    data-parsley-class-handler="#lnWrapper" name="time" required="" type="time" value="{{$reservation->time}}">
+                                    data-parsley-class-handler="#lnWrapper" name="time" required="" type="time" value="{{$reservation->attendance_time}}">
 
 
                                 </div>
@@ -129,7 +129,7 @@ Dinner Club
 
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button class="btn btn-main-primary pd-x-20" type="submit">confirm</button>
+                        <button class="btn btn-main-primary pd-x-20" type="submit">update</button>
                     </div>
                 </form>
             </div>

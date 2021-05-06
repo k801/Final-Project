@@ -79,6 +79,8 @@
                <div class="col-sm-12 col-md-6">
                     <div class="alldetails">
                          <div class="div_name">
+                            <span id="item_id"class="d-none">{{$rc_data->id}}</span>
+
                               <h4 class=""><ins> Recipe Name </ins></h4>
                               <p> {{$rc_data->name}} </p>
                          </div>
@@ -94,6 +96,7 @@
                          <div class="div_descrip">
                               <h4 class=""><ins> About Recipe </ins></h4>
                               <p> {{$rc_data->description}} </p>
+
                          </div>
 
                          <div class="div_ingreds">
@@ -141,34 +144,11 @@
 @endsection
 
 
+@section('style')
 
-
-@section('scripts')
-
-
-<script>
-        $(document).on('click', '#dstar', function (e) {
-            console.log("data");
-              e.preventDefault();
-             $.ajax({
-                type: 'get',
-                url: "{{route('stars-checkout')}}",
-                data: {
-                    // price: $('#price').text(),
-                },
-                success: function (data) {
-                    // console.log(data);
-
-                        $('#show-rating').html(data);
-
-                }, error: function (reject) {
-                }
-            });
-        });
-     </script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @endsection
-
 
 
 

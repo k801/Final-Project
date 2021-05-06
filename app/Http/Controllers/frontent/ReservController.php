@@ -5,6 +5,10 @@ namespace App\Http\Controllers\frontent;
 use App\Http\Controllers\Controller;
 use App\Models\reservation;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Notifications\AddReservation;
+use Illuminate\Support\Facades\Notification;
+
 
 class ReservController extends Controller
 {
@@ -41,6 +45,13 @@ class ReservController extends Controller
             'name'=>'required|min:3|max:30' , 
             'email'=>'required|email' ,
          ]) ;
+
+         $user = User::first();
+         $id=Reservation::latest()->first();
+       
+       $id=$id->id;
+      //  dd($reservation);
+         Notification::send($user,new AddReservation($id));
         reservation::create ($request->all()) ;
         return redirect()->route('reserve.create') ;
     }
@@ -53,7 +64,9 @@ class ReservController extends Controller
      */
     public function show(reservation $reservation)
     {
-        //
+        
+        $data['reservation']=$reservation;
+        return view('backend.reservations.show')->with($data);
     }
 
     /**

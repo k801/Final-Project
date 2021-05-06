@@ -28,6 +28,10 @@ class ReciepeFactory extends Factory
             'ingrediens'=>$this->faker->sentence(7),
             'image'=>$this->faker->imageUrl(),
             'description'=>$this->faker->sentence(8),
+            'price'=>$this->faker->numberBetween($min = 100, $max = 500)  ,
+            'evaluation'=>$this->faker->numberBetween($min = 1, $max = 5)  ,
+            'prape_time'=>$this->faker->time(),
+
            'category_id'=>Category::all(['id'])->random(),
         ];
     }

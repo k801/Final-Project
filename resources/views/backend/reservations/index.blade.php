@@ -104,7 +104,13 @@ Dinner Club
                                                 ><i class="las la-trash"></i></button>
 
                                              </form>
-
+                                             <form action="{{ route('reservations.show', $reservation->id) }}" class="d-inline" method="POST">
+                                                @csrf
+                                                @method("get")
+                                                     <button class="btn btn-sm text-light btn-danger"
+                                                    ><i class="fas fa-eye"></i></button>
+    
+                                             </form>
 
                                         </td>
 

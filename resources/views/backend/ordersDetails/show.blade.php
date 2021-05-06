@@ -1,6 +1,5 @@
 @extends('backend.layout.master')
 @section('css')
-
 @section('title')
 Dinner Club
 @stop
@@ -46,16 +45,32 @@ Dinner Club
                 <div class="col-sm-1 col-md-2">
                 </div>
             </div>
+
+            
+            <table class="table table-hover" id="example1" data-page-length='10' style=" text-align: center;">
+                @foreach ($Details as $orderDetail )
+
+                <tr>
+                    {{-- <td>{{ $orderDetail->id }}</td> --}}
+                    {{-- <td>{{ $orderDetail->order_id }}</td> --}}
+                    <td>{{ $orderDetail->status}}</td>
+</tr>
+<tr>
+                    <td>{{ $orderDetail->order->user->email}}</td>
+
+         @endforeach
+
+            </table>
             <div class="card-body">
                 <div class="table-responsive hoverable-table">
                     <table class="table table-hover" id="example1" data-page-length='50' style=" text-align: center;">
                         <thead>
                             <tr>
-                                <th class="wd-10p border-bottom-0"> id</th>
-                                <th class="wd-10p border-bottom-0"> order id</th>
-                                <th class="wd-10p border-bottom-0">status</th>
-                                <th class="wd-10p border-bottom-0">  price</th>
-                                <th class="wd-15p border-bottom-0"> count </th>
+                                {{-- <th class="wd-10p border-bottom-0"> id</th> --}}
+                                <th class="wd-10p border-bottom-0">  id</th>
+                                <th class="wd-10p border-bottom-0">price</th>
+                                <th class="wd-10p border-bottom-0">  count</th>
+                                <th class="wd-15p border-bottom-0"> Total Price </th>
                                 <th class="wd-15p border-bottom-0">  user</th>
                                 <th class="wd-15p border-bottom-0">  total</th>
                                 {{-- <th class="wd-20p border-bottom-0"> count</th>
@@ -68,10 +83,10 @@ Dinner Club
                             @foreach ($orderDetails as $orderDetail )
 
                                 <tr>
-                                    {{-- <td>{{ ++$i }}</td> --}}
-                                    <td>{{ $orderDetail->id }}</td>
-                                    <td>{{ $orderDetail->order_id }}</td>
-                                    <td>{{ $orderDetail->status}}</td>
+                                    <td>{{ $loop->iteration}}</td>
+                                    {{-- <td>{{ $orderDetail->id }}</td> --}}
+                                    {{-- <td>{{ $orderDetail->order_id }}</td> --}}
+                                    {{-- <td>{{ $orderDetail->status}}</td> --}}
 
                                     <td>{{ $orderDetail->total_price}}</td>
                                     <td>{{ $orderDetail->count}}</td>

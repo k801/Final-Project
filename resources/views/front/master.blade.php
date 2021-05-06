@@ -47,10 +47,10 @@
                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                  <div>
                      <ul class="nav navbar-nav navbar">
-                         <li class="active" ><a href="{{route('homePage.index')}}">HOME</a></li>
+                         <li><a href="{{route('homePage.index')}}">HOME</a></li>
                          <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
                          <li><a href="/offers_pgae">Offers</a></li>
-                         <li><a href="{{route('sign.create')}}">Sign Up</a></li>
+                         {{-- <li><a href="{{route('sign.create')}}">Sign Up</a></li> --}}
                          <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
                          <li><a href="{{route('rcps.shoppingCart')}}">
                           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"

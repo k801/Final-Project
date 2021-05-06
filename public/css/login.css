@@ -1,6 +1,6 @@
 @media screen and (max-width : 769px)
 {
-    .form-group h4 
+    .head  h4 
     {
         font-size: 50px;
         margin-top: 20px;
@@ -8,10 +8,9 @@
 }
 @media screen and (max-width : 281px)
 {
-    .form-group h4 
+    .form-group h4
     {
-        font-size: 20px;
-        margin-top: 20px;
+        font-size: 25px ;
     }
 }
 .sec-login
@@ -37,7 +36,7 @@
 
 .form-group h4
 {
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     color: #fff ;
     background-color: rgb(24, 99, 70); 
@@ -70,4 +69,9 @@ button.btn , button.btn:hover
     margin-left: 10px;
     padding: 10px;
     font-size: 20px;
+}
+
+.btn-link
+{
+    margin: 10px 0px;
 }

@@ -25,10 +25,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <div>
         <ul class="nav  w-50 ml-auto nav-recipe">
-            <li class="active" ><a href="{{route('homePage.index')}}"class="text-danger">HOME</a></li>
+            <li><a href="{{route('homePage.index')}}"class="text-danger">HOME</a></li>
             <li><a href="{{route('reciepes.index')}}">RECIPES</a></li>
             <li><a href="/offers_pgae">Offers</a></li>
-            <li><a href="{{route('sign.create')}}">Sign Up</a></li>
+            {{-- <li><a href="{{route('sign.create')}}">Sign Up</a></li> --}}
             <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
             <li><a href="{{route('rcps.shoppingCart')}}">
              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"
@@ -82,7 +82,7 @@
                               <h4 class=""><ins> Recipe Name </ins></h4>
                               <p> {{$rc_data->name}} </p>
                          </div>
-                         {{-- <div class="div_name">
+                         <div class="div_name">
                             <h4 class="div_name"><ins> Recipe Rating </ins></h4>
                             <p  class="text-center">
                             @for($i = 0; $i<$rc_data->averageRating; $i++)
@@ -90,7 +90,7 @@
 
                             @endfor
                               </p>
-                         </div> --}}
+                         </div>
                          <div class="div_descrip">
                               <h4 class=""><ins> About Recipe </ins></h4>
                               <p> {{$rc_data->description}} </p>

@@ -16,13 +16,13 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group head row">
-                            <div class="col-md-8">
+                            <div class="col-xs-12 col-md-8">
                                 <h4 class="alert"> Login Form </h4>
                             </div>
                         </div>
 
                             <div class="form-group row">
-                            <div class="col-md-8">
+                            <div class="col-xs-12 col-md-8">
                                 <input id="email" type="email" class="form-control 
                                 @error('email') is-invalid @enderror" name="email" 
                                 value="{{ old('email') }}" required autocomplete="email" autofocus
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-8">
+                            <div class="col-xs-12 col-md-8">
                                 <input id="password" type="password" class="form-control 
                                 @error('password') is-invalid @enderror" name="password" 
                                 required autocomplete="current-password"
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-xs-12 col-md-8">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" 
                                     name="remember" id="remember" 
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-xs-12 col-md-8 foot">
                                 <button type="submit" class="btn">
                                     {{ __('Login') }}
                                 </button>
@@ -76,8 +76,12 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                    <a class="btn btn-link" style="background-color: rgb(106, 88, 155)" 
+                                       href="{{route('sign.create')}}"> {{ __('Dont have Account ? ') }}
+                                    </a>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

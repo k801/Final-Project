@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontent;
 use App\Http\Controllers\Controller;
 use App\Models\Reciepe;
 use App\Models\Category ;
+use App\Models\Order ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\Environment\Console;
@@ -291,4 +292,21 @@ public function get_recipes($category_id)
     {
         //
     }
+
+    public function getCash(Request $request)
+    {
+        if(!Session::has('cart')){
+            return view('front.shoppingCart');
+        }
+        $oldCart=Session::get('cart');
+        $cart=new Cart($oldCart);
+        $order=new order();
+        $order->cart=json_encode($cart,JSON_PRETTY_PRINT,20);
+        // dd($order->cart[0]);
+        Auth::user()->orders()->save($order);
+        sleep(1);
+        return redirect()->route('rcps.shoppingCart');
+
+    }
+
 }

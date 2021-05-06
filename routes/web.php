@@ -90,6 +90,7 @@ route::get('cash',[RcpController::class , 'getCash'])->name('rcps.cash') ;
 route::get('reduce/{id}',[RcpController::class , 'getReduceByOne'])->name('rcps.reduceByOne') ;
 route::get('remove/{id}',[RcpController::class , 'getRemoveItem'])->name('rcps.RemoveAll') ;
 
+
 // rating
 // Route::get('rating',[paymentProviderController::class,'getRating'])->name("rating-sars");
 Route::get('login-user', function ()

@@ -51,20 +51,6 @@
                             <label class="text-danger">{{$errors->first('email')}}</label>
                         </div>
 
-
-
-                        {{-- <div class="form-group">
-                            <input type="number" name="phone" class="form-control" value="{{old('phone')}}"
-                                   placeholder="Enter Your Phone Number" />
-                            <label class="error-lable">{{$errors->first('phone')}}</label>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea name="address" class="form-control"
-                            placeholder="Enter Your Address" rows="4"></textarea>
-                        </div> --}}
-
-
                         <div class="form-group">
                             <input type="text" name="card-name" class="form-control" 
                                    placeholder="Enter Your card Holder Name" required/>

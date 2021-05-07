@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\frontent;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\reservation;
 use Illuminate\Http\Request;
@@ -42,18 +42,30 @@ class ReservController extends Controller
     {
         $request->validate 
         ([
-            'name'=>'required|min:3|max:30' , 
-            'email'=>'required|email' ,
+            // 'name'=>'required|min:3|max:30' , 
+            // 'email'=>'required|email' ,
          ]) ;
 
+        // $id = Auth::user()->id;
          $user = User::first();
          $id=Reservation::latest()->first();
-       
-       $id=$id->id;
-      //  dd($reservation);
+
+         $id=Auth::user()->id;
          Notification::send($user,new AddReservation($id));
-        reservation::create ($request->all()) ;
-        return redirect()->route('reserve.create') ;
+
+        // $id = Auth::user()->id;
+        $name = Auth::user()->name ;
+        $email = Auth::user()->email;
+
+        $reservation = new reservation ;
+        $reservation->name = $name ;
+        $reservation->email = $email ;
+        $reservation->guests_number = request("guests_number");
+        $reservation->attendance_time = request("attendance_time");
+        $reservation->attendance_date = request("attendance_date");
+        $reservation->save() ;
+        // reservation::create ($request->all()) ;
+        return redirect()->route('reservation.create') ;
     }
 
     /**

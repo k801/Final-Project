@@ -85,12 +85,12 @@
 
                                     <td>
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-info"
-                                                title="تعديل"><i class="las la-pen"></i></a>
+                                                title="edit"><i class="las la-pen"></i></a>
 
 
                                             <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                 data-user_id="{{ $user->id }}" data-username="{{ $user->name }}"
-                                                data-toggle="modal" href="#modaldemo8" title="حذف"><i
+                                                data-toggle="modal" href="#modaldemo8" title="delete"><i
                                                     class="las la-trash"></i></a>
                                     </td>
                                 </tr>
@@ -108,20 +108,20 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">حذف المستخدم</h6><button aria-label="Close" class="close"
+                    <h6 class="modal-title"> delete User </h6><button aria-label="Close" class="close"
                         data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <form action="{{ route('users.destroy', 'test') }}" method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
                     <div class="modal-body">
-                        <p>هل انت متاكد من عملية الحذف ؟</p><br>
+                        <p> Sure You Want delete ?</p><br>
                         <input type="hidden" name="user_id" id="user_id" value="">
                         <input class="form-control" name="username" id="username" type="text" readonly>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
-                        <button type="submit" class="btn btn-danger">تاكيد</button>
+                        <button type="submit" class="btn btn-danger">Confirm</button>
                     </div>
             </div>
             </form>

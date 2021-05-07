@@ -52,16 +52,12 @@
 
 					<p class="text-center alert-danger price1">List Price : <s>{{$item->price+($item->price*0.2)}}</s></p>
 					<p class="text-center alert-success price2">After Discount : {{$item->price}} </p>
-					
-					{{-- <p class="detls">
-							<a href="{{url('rcps.addToCart/${item->id}')}}"class="button"> Details </a>
-						 </p> --}} 
-
+					 
 					<p class="detls">
 						<a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a>
 					</p>
 				<p class="bi bi-cart">
-					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}" class="button"> Buy
+					<a href="{{route ('receipes.addToCart',['id'=>$item->id])}}" class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
 					width="50" height="16" 
 					fill="currentColor" class="bi bi-cart " viewBox="0 0 50 16">

@@ -45,7 +45,7 @@
 	-			<p class="text-center alert-success price2">price : {{$item->price-($item->price*0.1)}}</p>
 				<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 				<p class="bi bi-cart">
-					<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+					<a href="{{route ('receipes.addToCart',['id'=>$item->id])}}"
 					class="button"> Buy
 					<svg xmlns="http://www.w3.org/2000/svg" 
 					width="50" height="16" 
@@ -83,7 +83,7 @@
 		-			<p class="text-center alert-success price2">After Discount : {{$item->price-($item->price*0.3)}}</p>
 					<p class="detls"><a href="{{route ('reciepes.show',$item)}}"class="button"> Details  </a></p>
 					<p class="bi bi-cart">
-						<a href="{{route ('rcps.addToCart',['id'=>$item->id])}}"
+						<a href="{{route ('receipes.addToCart',['id'=>$item->id])}}"
 						class="button"> Buy
 						<svg xmlns="http://www.w3.org/2000/svg" 
 						width="50" height="16" 

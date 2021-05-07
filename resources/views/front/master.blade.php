@@ -51,7 +51,7 @@
                          <li><a href="/offers_pgae">Offers</a></li>
                          {{-- <li><a href="{{route('sign.create')}}">Sign Up</a></li> --}}
                          <li><a href="{{route('reservation.create')}}"> Reserve Table </a></li>
-                         <li><a href="{{route('rcps.shoppingCart')}}">
+                         <li><a href="{{route('receipes.shoppingCart')}}">
                           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"
                               fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89
@@ -61,7 +61,7 @@
                               0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7
                               0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                           </svg>
-                         <span class="badge text-warning cart_count">
+                         <span class="badge badge2 text-warning cart_count">
                              {{Session::has('cart')?Session::get('cart')->totalQty:''}}
                         </span>
                             </a></li>

@@ -52,8 +52,8 @@
                   <div class="btn-group">
                       <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Remove<span class="cart"></span></button>
                       <ul class="dropdown-menu">
-                          <li ><a href="{{route('rcps.reduceByOne',$reciepe['item']['id'])}}">Remove One Of Its</a></li>
-                          <li><a href="{{route('rcps.RemoveAll',$reciepe['item']['id'])}}"> Remove All Meals</a></li>
+                          <li ><a href="{{route('receipes.reduceByOne',$reciepe['item']['id'])}}">Remove One Of Its</a></li>
+                          <li><a href="{{route('receipes.RemoveAll',$reciepe['item']['id'])}}"> Remove All Meals</a></li>
                       </ul>
                   </div>
                   </li>
@@ -76,8 +76,8 @@
            <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form> 
         </div>
         </div>
-                <a  id="price" class="btn btn-success" style="font-size: 25px">Totale Price:{{$totalPrice}}</a>
-                <a href="{{route('rcps.cash')}}" class="btn btn-primary" style="font-size: 25px">order later</a>  <br>
+                <a  id="price" class="btn btn-success" style="font-size: 25px">Total Price:{{$totalPrice}}</a>
+                <a href="{{route('receipes.cash')}}" class="btn btn-primary" style="font-size: 25px">order later</a>  <br>
                 {{-- <a  id="checkout" href="{{route('offers-checkout',$reciepe['qty'])}}" class="btn btn-success" style="font-size: 25px">CheckOut</a> --}}
         </div>      
     </div>
@@ -85,10 +85,12 @@
 
 
     @else
+    <div class="container">
     <div class="row">
         <div class="col-xs-10" style="margin: 2% 0px">
             <p class="alert alert-danger"> No Items In Cart yet</p>
         </div>
+    </div>
     </div>
 </div>
 @endif

@@ -221,9 +221,9 @@ private function getPaymentStatus($id, $resourcepath)
         $oldCart=Session::get('cart');
         $cart=new Cart($oldCart);
         $order=new order();
-        $order->allprice=json_encode($cart->totalPrice,JSON_PRETTY_PRINT,20);
-        $order->Countreceipes=json_encode($cart->totalQty,JSON_PRETTY_PRINT,20);
-        $order->cart=json_encode($cart->items,JSON_PRETTY_PRINT,20);
+        $order->totalprice=json_encode($cart->totalPrice,JSON_PRETTY_PRINT,20);
+        $order->countreceipes=json_encode($cart->totalQty,JSON_PRETTY_PRINT,20);
+        $order->orderdetails=json_encode($cart->items,JSON_PRETTY_PRINT,20);
         // dd($order->cart);
         Auth::user()->orders()->save($order);
         sleep(1);

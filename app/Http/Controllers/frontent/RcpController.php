@@ -43,7 +43,7 @@ class RcpController extends Controller
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 
-   
+
 
     public function showbycategory($id)
     {
@@ -118,7 +118,7 @@ class RcpController extends Controller
         return view("front.details", ["rc_data"=> $reciepe,'rating'=>$rating]);
     }
 
-  
+
 
     function get_rate(Request $request)
     {
@@ -301,7 +301,7 @@ public function get_recipes($category_id)
         $oldCart=Session::get('cart');
         $cart=new Cart($oldCart);
         $order=new order();
-        $order->cart=json_encode($cart,JSON_PRETTY_PRINT,20);
+        $order->cart=json_encode($cart);
         // dd($order->cart[0]);
         Auth::user()->orders()->save($order);
         sleep(1);

@@ -41,15 +41,6 @@ class RcpController extends Controller
         return view("front.recipes" ,["rc_data"=>$recps, "cat_data"=> $cat]) ;
     }
 
-    public function offers()
-    {
-        $recps = reciepe::all();
-        // dump($recps) ;
-        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(6)->get() ;
-        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(9)->get() ;
-        return view("front.offers" ,["rc_data1"=>$recps1,"rc_data2"=>$recps2]) ;
-    }
-   
 
     public function show($id)
     {
@@ -79,9 +70,6 @@ class RcpController extends Controller
 
         //    $rates= Rating::whe('rateable_id','=',$allRecipes)->get();
 
-        // $rating=$allRecipes->averageRating;
-        return json_decode($allRecipes);
-    }
 
     function get_rate(Request $request)
     {
@@ -105,13 +93,14 @@ class RcpController extends Controller
         return $count;
     }
 
+}
    
 
 
     public function getReduceByOne($id)
     {
-    // $reciepe = new reciepe ;
-    // $reciepe = $reciepe->findorfail($id);
+    $reciepe = new reciepe ;
+     $reciepe = $reciepe->findorfail($id);
     $oldCart=Session::has('cart')?Session::get('cart'):null;
     $cart=new Cart($oldCart);
     $cart->reduceByOne($id);
@@ -122,6 +111,8 @@ class RcpController extends Controller
     }
     return redirect()->route('receipes.shoppingCart');
     }
+
+
     public function getRemoveItem($id){
         $oldCart=Session::has('cart')?Session::get('cart'):null;
         $cart=new Cart($oldCart);
@@ -258,10 +249,21 @@ private function getPaymentStatus($id, $resourcepath)
         //
     }
 
-    public function store(Request $request)
-    {
-        
-    }
+    // public function store(Request $request)
+    // {
+    //     if(!Session::has('cart')){
+    //         return view('front.shoppingCart');
+    //     }
+    //     $oldCart=Session::get('cart');
+    //     $cart=new Cart($oldCart);
+    //     $order=new order();
+    //     $order->cart=json_encode($cart);
+    //     // dd($order->cart[0]);
+    //     Auth::user()->orders()->save($order);
+    //     sleep(1);
+    //     return redirect()->route('rcps.shoppingCart');
+
+    // }
 
    
 

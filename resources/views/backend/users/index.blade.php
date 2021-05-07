@@ -75,13 +75,13 @@
                                         @endif
                                     </td>
 
-                                    <td>
+                                    {{-- <td>
                                         @if (!empty($user->getRoleNames()))
                                             @foreach ($user->roles_name as $v)
                                                 <label class="badge badge-success">{{ $v }}</label>
                                             @endforeach
                                         @endif
-                                    </td>
+                                    </td> --}}
 
                                     <td>
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-info"

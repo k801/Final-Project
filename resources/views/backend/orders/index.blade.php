@@ -54,9 +54,12 @@ Dinner Club
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0"> order Number</th>
-                                <th class="wd-20p border-bottom-0"> name</th>
-                                <th class="wd-20p border-bottom-0"> Email</th>
-                                <th class="wd-15p border-bottom-0"> Action</th>
+                                <th class="wd-15p border-bottom-0"> user name</th>
+                                <th class="wd-15p border-bottom-0"> user email </th>
+                                <th class="wd-20p border-bottom-0" colspan="2"> orderdetails</th>
+                                <th class="wd-20p border-bottom-0"> countreceipes </th>
+                                <th class="wd-20p border-bottom-0"> Total Price </th>
+                                <th class="wd-15p border-bottom-0" colspan="2"> Action</th>
 
                             </tr>
                         </thead>
@@ -65,11 +68,13 @@ Dinner Club
                             @foreach ($orders as $order)
                                 <tr>
                                     <td>{{ ++$i }}</td>
-                                    <td>{{ $order->order_number }}</td>
-                                    <td>{{ $order->user->name }}</td>
-                                    <td>{{ $order->user->email }}</td>
-
-                                    <td>
+                                    <td>{{ $order->id}}</td>
+                                    <td>{{ $order->username}}</td>
+                                    <td>{{ $order->useremail}}</td>
+                                    <td colspan="2">{{ $order->orderdetails}}</td>
+                                    <td>{{ $order->countreceipes}}</td>
+                                    <td>{{ $order->totalprice}}</td>
+                                    <td colspan="2">
                                         <form action="{{ route('orders.edit', $order->id) }}" class="d-inline" method="POST">
                                        @csrf
                                        @method("get")

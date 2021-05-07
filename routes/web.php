@@ -75,7 +75,7 @@ Route::resource('homePage',indexController::class);
 Route::get('get-checkout-id',[paymentProviderController::class,'getChechOutId'])->name("offers-checkout");
 Route::get('get-stars',[RcpController::class,'getStars'])->name("stars-checkout");
     
-Route::resource('reservation' , ReservController::class) ;
+Route::resource('reservation' , ReservController::class)->middleware("auth") ;
 Route::resource('reservations',ReservationsController::class);
 Route::get('MarkAsRead_all',[CategoryController::class,'MarkAsRead_all'])->name('MarkAsRead_all');
 

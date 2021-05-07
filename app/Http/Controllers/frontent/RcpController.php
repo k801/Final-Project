@@ -213,7 +213,7 @@ private function getPaymentStatus($id, $resourcepath)
 
     }
 
-    public function getCash(Request $request)
+    public function getCash($id)
     {
         if(!Session::has('cart')){
             return view('front.shoppingCart');
@@ -223,7 +223,9 @@ private function getPaymentStatus($id, $resourcepath)
         $order=new order();
         $order->totalprice=json_encode($cart->totalPrice,JSON_PRETTY_PRINT,20);
         $order->countreceipes=json_encode($cart->totalQty,JSON_PRETTY_PRINT,20);
-        $order->orderdetails=json_encode($cart->items,JSON_PRETTY_PRINT,20);
+        $order->orderdetails=json_encode($cart->items[$id],JSON_PRETTY_PRINT,20);
+        $order->username = Auth::user()->name;
+        $order->useremail =Auth::user()->email;
         // dd($order->cart);
         Auth::user()->orders()->save($order);
         sleep(1);

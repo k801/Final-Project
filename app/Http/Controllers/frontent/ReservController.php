@@ -50,10 +50,11 @@ class ReservController extends Controller
          $user = User::first();
          $id=Reservation::latest()->first();
 
-         $id=Auth::user()->id;
+        //  $id=$id->id;
+         $id = Auth::user()->id;
          Notification::send($user,new AddReservation($id));
 
-        // $id = Auth::user()->id;
+         
         $name = Auth::user()->name ;
         $email = Auth::user()->email;
 

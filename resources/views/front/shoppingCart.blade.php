@@ -91,7 +91,6 @@
             <p class="alert alert-danger"> No Items In Cart yet</p>
         </div>
     </div>
-    </div>
 </div>
 @endif
 

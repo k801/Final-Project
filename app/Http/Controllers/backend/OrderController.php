@@ -19,8 +19,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data['orders']=Order::take(1)->get();
-        // dd($data);
+        $data['orders']=Order::get();
+        //  dd($data);
         return view('backend.orders.index')->with($data);
     }
 

@@ -23,6 +23,8 @@ class CreateOrdersTable extends Migration
             ->references('id')
             ->on('users')
             ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name');
+            $table->string('email');
             $table->timestamps();            
         });
     }

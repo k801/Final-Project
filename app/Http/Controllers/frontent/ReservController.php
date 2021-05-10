@@ -66,6 +66,8 @@ class ReservController extends Controller
         $reservation->attendance_date = request("attendance_date");
         $reservation->save() ;
         // reservation::create ($request->all()) ;
+        sleep(1) ;
+        
         return redirect()->route('reservation.create') ;
     }
 

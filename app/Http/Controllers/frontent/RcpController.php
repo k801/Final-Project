@@ -42,6 +42,15 @@ class RcpController extends Controller
     }
 
 
+   
+    public function offers()
+    {
+        // $recps = reciepe::all();
+        // dump($recps) ;
+        $recps1 = Reciepe::orderBy('evaluation', 'asc')->Limit(6)->get() ;
+        $recps2 = Reciepe::orderBy('price', 'desc')->Limit(9)->get() ;
+        return view("front.offers" ,["rc_data1"=>$recps1,"rc_data2"=>$recps2]) ;
+    }
     public function show($id)
     {
         $reciepe = new reciepe ;
@@ -94,8 +103,6 @@ class RcpController extends Controller
     }
 
 }
-   
-
 
     public function getReduceByOne($id)
     {
@@ -136,7 +143,7 @@ class RcpController extends Controller
         $request->session()->put('cart',$cart);
         // dd($request->session()->get('cart'));
 
-        return redirect()->route('reciepes.index');
+        return redirect()->route('receipes.shoppingCart');
     }
     
     public function getCart()
@@ -213,17 +220,33 @@ private function getPaymentStatus($id, $resourcepath)
 
     }
 
-    public function getCash($id)
+    public function getCash(Request $request)
     {
-        if(!Session::has('cart')){
+
+        if(!Session::has('cart'))
+        {
             return view('front.shoppingCart');
         }
         $oldCart=Session::get('cart');
+
+        
         $cart=new Cart($oldCart);
         $order=new order();
+        // dd($oldCart->items);
+        $items =[];
+        foreach($oldCart->items as $id => $item)
+        {
+                    // $items[] = ['receipe_id' => $id , 'receipe name' => $item['item']->name 
+                    //             , 'count receipes'=>$item['qty'] 
+                    //             ,  'price receipes ' =>$item['item']->price ] ;
+                    $items[] =['receipe name' => $item['item']->name  ,
+                                 'count'=>$item['qty'] ];
+                                
+        }
+        // dd($items) ;
         $order->totalprice=json_encode($cart->totalPrice,JSON_PRETTY_PRINT,20);
         $order->countreceipes=json_encode($cart->totalQty,JSON_PRETTY_PRINT,20);
-        $order->orderdetails=json_encode($cart->items[$id],JSON_PRETTY_PRINT,20);
+        $order->orderdetails=json_encode($items,JSON_PRETTY_PRINT,20);
         $order->username = Auth::user()->name;
         $order->useremail =Auth::user()->email;
         // dd($order->cart);
@@ -231,42 +254,4 @@ private function getPaymentStatus($id, $resourcepath)
         sleep(1);
         return redirect()->route('receipes.shoppingCart');
     }
-
-
-    
-    public function edit(Reciepe $reciepe)
-    {
-
-    }
-
-    
-    public function update(Request $request, Reciepe $reciepe)
-    {
-        //
-    }
-
-    
-    public function destroy(Reciepe $reciepe)
-    {
-        //
-    }
-
-    // public function store(Request $request)
-    // {
-    //     if(!Session::has('cart')){
-    //         return view('front.shoppingCart');
-    //     }
-    //     $oldCart=Session::get('cart');
-    //     $cart=new Cart($oldCart);
-    //     $order=new order();
-    //     $order->cart=json_encode($cart);
-    //     // dd($order->cart[0]);
-    //     Auth::user()->orders()->save($order);
-    //     sleep(1);
-    //     return redirect()->route('rcps.shoppingCart');
-
-    // }
-
-   
-
 }

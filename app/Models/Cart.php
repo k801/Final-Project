@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Models;
-
-
 class Cart
 {
     public $items=NULL;
@@ -19,7 +17,7 @@ class Cart
     }
 
     public function add($item,$id){
-$storedItem=['qty'=>0,'price'=>$item->price,'item'=>$item];
+$storedItem=['qty'=>0,  'price'=>$item->price,'item'=>$item ];
 if($this->items){
     if(array_key_exists($id,$this->items))
     {
@@ -32,7 +30,11 @@ $this->items[$id]=$storedItem;
 $this->totalQty++;
 $this->totalPrice+=$item->price;
 }
-public function reduceByOne($id){
+
+
+
+public function reduceByOne($id)
+{
     $this->items[$id]['qty']--;
     $this->items[$id]['price']-=$this->items[$id]['item']['price'];
     $this->totalQty--;

@@ -76,7 +76,7 @@
            <form action="{shopperResultUrl}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form> 
         </div>
         </div>
-                <a  id="price" class="btn btn-success" style="font-size: 25px">Total Price:{{$totalPrice}}</a>
+                <a  id="price" class="btn btn-success" style="font-size: 25px">Totale Price:{{$totalPrice}}</a>
                 <a href="{{route('receipes.cash')}}" class="btn btn-primary" style="font-size: 25px">order later</a>  <br>
                 {{-- <a  id="checkout" href="{{route('offers-checkout',$reciepe['qty'])}}" class="btn btn-success" style="font-size: 25px">CheckOut</a> --}}
         </div>      
@@ -85,7 +85,6 @@
 
 
     @else
-    <div class="container">
     <div class="row">
         <div class="col-xs-10" style="margin: 2% 0px">
             <p class="alert alert-danger"> No Items In Cart yet</p>
@@ -131,4 +130,3 @@
 
 
 @stop
-
